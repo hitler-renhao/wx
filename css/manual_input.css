@@ -1,0 +1,307 @@
+body {
+  background: #1a91e3;
+}
+
+.header {
+  display: block;
+  font-size: 0.36rem;
+  line-height: 0.88rem;
+  -border-bottom: 1px solid #e4e4e4;
+  text-indent: 0.24rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  background: #1a91e3;
+}
+
+/*æ‰‹åŠ¨è¾“å…¥ä¼˜æƒ åˆ¸*/
+.box {
+  padding: 0.8rem 0.3rem;
+  margin-top: 0.88rem;
+  min-height: 10.5rem;
+}
+
+.box1 {
+  padding: 0.8rem 0.3rem;
+  margin-top: 0.88rem;
+  -height: 9rem;
+ 
+}
+
+.promotionCode {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 0.2rem;
+  position: relative;
+   padding-bottom:2rem;  
+}
+
+.input {
+  display: inline-block;
+  width: 2.08rem;
+  height: 2.08rem;
+  position: absolute;
+  top: 0rem;
+  left: 3.5rem;
+  margin-top: -1.04rem;
+  margin-left: -1.04rem;
+  border-radius: 50%;;
+}
+
+.manual {
+  display: inline-block;
+  width: 6rem;
+  margin-top: 2rem;
+  background: red;
+  height: 1rem;
+  margin-left: 0.5rem;
+  background: url(../images/tel.png) left center no-repeat;
+  background-size: 0.26rem 0.35rem;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.manual input {
+  display: inline-block;
+  width: 4rem;
+  line-height: 1rem;
+  padding: 0 0.3rem;
+  border: none;
+  outline: none;
+  margin-left: 0.3rem;
+  font-size: 0.3rem;
+  color: #aaaaaa;
+}
+
+.sure {
+  display: block;
+  width: 6rem;
+  height: 1rem;
+  background: #1f9ef5;
+  border-radius: 0.5rem;
+  margin: 2rem auto 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.34rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.flicking {  
+  text-align: center;  
+  color: #fff;
+  font-size: 0.4rem;
+  -width: 100%;
+  font-weight: bold;
+  background:url(../images/scan.png) left center no-repeat;
+  background-size: 0.47rem 0.44rem;
+  text-indent: 0.6rem;
+  margin:0 auto;
+  width:2rem;  
+}
+
+/*æ‰‹åŠ¨è¾“å…¥ä¼˜æƒ åˆ¸ç»“æŸ*/
+/*æ‰«æç»“æžœï¼ˆæœªä½¿ç”¨ï¼‰*/
+.money {
+  font-size: 0.48rem;
+  color: #1f9ef5;
+  text-align: center;
+  padding-top: 1.2rem;
+  border-bottom: 1px solid #dedede;
+  line-height: 1.5rem;
+}
+
+.money i {
+  font-size: 0.72rem;
+}
+
+.meal {
+  border-top: 0.17rem solid #f0f0f0;
+  float: left;
+  width: 100%;
+}
+
+.meal h4 {
+  font-size: 0.26rem;
+  color: #999;
+  line-height: 0.8rem;
+  border-bottom: 1px solid #dedede;
+  border-top: 1px solid #dedede;
+  text-indent: 0.24rem;
+  ;
+}
+
+.mealList {
+  padding: 1.2rem 0.24rem 0 0.24rem;
+}
+
+.mealList li {
+  display: block;
+  width: 100%;
+  line-height: 0.5rem;
+  color: #333;
+  font-size: 0.26rem;
+}
+
+.mealList li p {
+  display: inline-block;
+  text-align: right;
+  width: 20%;
+}
+
+.mealList li p:first-child {
+  text-align: left;
+  width: 55%;
+}
+
+.mealList li p:last-child {
+  width: 22%;
+}
+
+.all {
+  text-align: right;
+  padding-right: 0.24rem;
+  line-height: 0.5rem;
+  color: #333;
+  font-size: 0.26rem;
+}
+
+.sureUse {
+  display: block;
+  width: 6rem;
+  height: 1rem;
+  background: #1f9ef5;
+  border-radius: 0.5rem;
+  margin: 2rem auto 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.34rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/**/
+/*æ‰«æç»“æžœæ•°æ®å¼‚å¸¸*/
+.headerScan {
+  display: block;
+  font-size: 0.36rem;
+  line-height: 0.88rem;
+  border-bottom: 1px solid #e4e4e4;
+  text-indent: 0.24rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #fff;
+  background: #fff;
+  color: #333;
+}
+
+.resultBox {
+  width: 100%;
+  -border-top: 0.18rem solid #faf9fe;
+  -margin-top: 0.88rem;
+}
+
+.error {
+  border-top: 1px solid #e4e4e4;
+}
+
+.error img {
+  display: block;
+  width: 4.2rem;
+  height: 3.8rem;
+  margin: 1.2rem auto 0.3rem
+}
+
+.error p {
+  color: #999;
+  font-size: 0.28rem;
+  text-align: center;
+  padding: 0 1.28rem;
+}
+
+.error a {
+  display: block;
+  width: 4.9rem;
+  height: 0.9rem;
+  background: #26a1f6;
+  color: #fff;
+  font-size: 0.36rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 1.5rem auto 0.8rem;
+  border-radius: 0.45rem;
+  line-height: 0.9rem;
+}
+
+.error a i {
+  background: url(../images/scan.png) 0 0 no-repeat;
+  background-size: 0.43rem 0.4rem;
+  display: inline-block;
+  width: 0.43rem;
+  height: 0.4rem;
+  float: left;
+  margin: 0.25rem 0.1rem 0 1.5rem;
+}
+
+.error a b {
+  float: left;
+}
+
+.error .word {
+  color: #333;
+  background: #e1e1e1;
+  margin: 0 auto;
+}
+
+.error .word i {
+  background: url(../images/word.png) 0 0 no-repeat;
+  background-size: 0.43rem 0.4rem;
+}
+
+/*æ‰«æç»“æžœï¼ˆå·²ä½¿ç”¨ï¼‰*/
+.moneyused {
+  font-size: 0.48rem;
+  color: #999;
+  text-align: center;
+  padding-top: 1.2rem;
+  line-height: 1rem;
+}
+
+.moneyused i {
+  font-size: 0.72rem;
+}
+
+.allPrice {
+  text-align: right;
+  padding-right: 0.24rem;
+  line-height: 0.5rem;
+  color: #999;
+  font-size: 0.26rem;
+}
+
+.mealinfo {
+  text-align: center;
+  -line-height: 0.8rem;
+  color: #999;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 0.5rem;
+}
+
+.sureUsed {
+  display: block;
+  width: 6rem;
+  height: 1rem;
+  background: #b6b5b5;
+  border-radius: 0.5rem;
+  margin: 2rem auto 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.34rem;
+  font-weight: bold;
+  text-align: center;
+}

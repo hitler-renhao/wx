@@ -1,0 +1,245 @@
+#infor {
+	width: 100%;
+	height: 1.5rem;
+	border-bottom: 0.24rem solid #f2f2f3;
+	position: relative;
+	overflow: hidden;
+}
+
+#infor img {
+	width: 0.29rem;
+	height: 0.35rem;
+	position: absolute;
+	top: 50%;
+	left: 0.24rem;
+	margin-top: -0.175rem;
+}
+
+#infor .name {
+	margin-left: 0.8rem;
+	margin-top: 0.28rem;
+	height: 0.3rem;
+}
+
+#infor .name p {
+	font-size: 0.28rem;
+	color: #414141;
+	float: left;
+	line-height: 0.28rem;
+	margin-right: 0.9rem;
+}
+
+#infor .address {
+	width: 6.1rem;
+	margin-left: 0.8rem;
+	font-size: 0.2rem;
+	color: #727272;
+	line-height: 0.24rem;
+	margin-top: 0.15rem;
+}
+
+.goods_status {
+	position: relative;
+}
+
+#goods_infor {
+	border-bottom: 0.24rem solid #f2f2f3;
+	-border-top: .24rem solid #f2f2f3;
+}
+
+#goods_infor h2 {
+	display: inline-block;
+	float: left;
+	-width: 7.26rem;
+	height: 0.88rem;
+	padding-left: 0.24rem;
+	font-size: 0.32rem;
+	color: #414141;
+	line-height: 0.88rem;
+}
+
+#goods_infor b {
+	display: inline-block;
+	width: 4.8rem;
+	float: left;
+	margin-top: 0.28rem;
+	font-size: 0.28rem;
+}
+
+#goods_infor .order_status {
+	position: absolute;
+	top: 0;
+	right: .24rem;
+	line-height: .88rem;
+	font-size: .32rem;
+}
+
+#goods_infor .detail {
+	width: 7.26rem;
+	height: 1.35rem;
+	padding-left: 0.24rem;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	border-top: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	position: relative;
+}
+
+#goods_infor li .goodsImg {
+	float: left;
+	width: 1.82rem;
+	height: 1.30rem;
+	border: 1px solid #d6d6d6;
+}
+
+#goods_infor li .goodsImg img {
+	width: 100%;
+	height: 100%;
+}
+
+#goods_infor li .infor {
+	width: 4.9rem;
+	height: 100%;
+	float: left;
+	margin-left: 0.2rem;
+	position: relative;
+}
+
+#goods_infor .total p {
+	line-height: .88rem;
+	font-size: .32rem;
+	float: right;
+	padding-right: .24rem;
+}
+
+#goods_infor .total i {
+	color: #ff0000;
+}
+
+.infor .name {
+	font-size: 0.28rem;
+	color: #333;
+	margin-top: 0.1rem;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.infor .price {
+	font-size: 0.32rem;
+	line-height: 1rem;
+	color: #ff0000;
+}
+
+.infor .num {
+	font-size: 0.28rem;
+	color: #414141;
+	position: absolute;
+	right: 0;
+	top: .88rem;
+}
+
+#order_infor .head {
+	width: 7.02rem;
+	/* height: 0.86rem; */
+	padding: .24rem;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+#order_infor .head p {
+	font-size: 0.28rem;
+	color: #999;
+	line-height: 0.6rem;
+}
+
+#order_infor .head p i {
+	color: #333;
+}
+
+.logistics {
+	border-bottom: .24rem solid #f2f2f3;
+}
+
+#order_infor .orderNum {
+	width: 7.26rem;
+	height: 1.48rem;
+	padding-left: 0.24rem;
+	overflow: hidden;
+	font-size: 0.24rem;
+	color: #414141;
+	line-height: 0.28rem;
+}
+
+#order_infor .orderNum p {
+	margin-top: 0.18rem;
+}
+
+#address_infor .head {
+	width: 7.02rem;
+	/* height: 0.86rem; */
+	padding: .24rem;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+#address_infor .head p {
+	font-size: 0.28rem;
+	color: #999;
+	line-height: 0.6rem;
+}
+
+#address_infor .head p i {
+	color: #333;
+}
+
+.logistics {
+	border-bottom: .24rem solid #f2f2f3;
+}
+
+#address_infor .orderNum {
+	width: 7.02rem;
+	height: 1.48rem;
+	padding-left: 0.24rem;
+	overflow: hidden;
+	font-size: 0.24rem;
+	color: #414141;
+	line-height: 0.28rem;
+}
+
+#address_infor .orderNum p {
+	margin-top: 0.18rem;
+}
+
+#price {
+	-width: 7.26rem;
+	height: 0.88rem;
+	border-top: 1px solid #e4e4e4;
+}
+
+#price .pay {
+	float: right;
+	width: 1.5rem;
+	height: 0.5rem;
+	border: 1px solid #ff8b36;
+	text-align: center;
+	line-height: 0.55rem;
+	font-size: 0.24rem;
+	color: #ff8b36;
+	margin-top: 0.5rem;
+	border-radius: 0.25rem;
+	margin-right: 0.24rem;
+}
+
+
+/*���よ���綣号�*/
+
+.bigbox {
+	width: 100%;
+	height: 100%;
+	background: url(../images/z_big.png);
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}

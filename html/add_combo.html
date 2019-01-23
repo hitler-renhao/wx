@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>添加商品</title>
+  <link rel="stylesheet" href="../css/common/common.css?1.0" />
+  <link rel="stylesheet" href="../css/common/header.css?1.0" />
+  <link rel="stylesheet" href="../css/common/iconfont1.css">
+  <link rel="stylesheet" href="../css/common/layui.css?1.0" />
+  <link rel="stylesheet" href="../css/common/layer.css?1.0" />
+  <link rel="stylesheet" href="../css/add_combo.css?v1.11" />
+  <style>
+    .centers {
+      text-align: center;
+    }
+    #container,
+    .layui-col-space1 {
+      margin: 0;
+    }
+	</style>
+</head>
+
+<body>
+  <div id="container">
+    <!-- 套餐简介开始 -->
+    <ul class="info">
+      <li>
+        <label><i>*</i>&nbsp;套餐名称:</label>
+        <input type="text" placeholder="如：时尚轻薄配镜套餐、少年验光配镜套餐" id='title' />
+      </li>
+      <li>
+        <label><i>*</i>&nbsp;套餐说明:</label>
+        <input type="text" placeholder="如：仅售599元，价值798元！球面镜片+多款镜架" id="combo_info" />
+      </li>
+      <li>
+        <label><i>*</i>&nbsp;门市价:</label>
+        <input type="number" placeholder="请输入商品门市价" id="shop_price" />
+      </li>
+      <li>
+        <label><i>*</i>&nbsp;平台价:</label>
+        <input type="number" placeholder="请输入商品平台价" id="platform_price" />
+      </li>
+    </ul>
+    <!-- 套餐简介结束 -->
+
+    <!-- 套餐明细开始 -->
+    <div class="combo_detail">
+      <div class="add_combo">
+        <span class="combo_title">套餐明细</span>
+        <em class="add_btn">
+          <i class="iconfont icon-tianjia"></i>
+          <i>新增项</i>
+        </em>
+      </div>
+      <div class="combo_input combo_details">
+        <div class="layui-row layui-col-space1">
+          <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
+
+          </div>
+          <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 centers">
+            名称
+          </div>
+          <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 centers">
+            数量
+          </div>
+          <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 centers">
+            单位
+          </div>
+          <div class="layui-col-xs2 layui-col-sm2 layui-col-md2 centers">
+            价格
+          </div>
+        </div>
+        <div class="layui-row layui-col-space1">
+          <div class="layui-col-xs1 layui-col-sm1 layui-col-md1 del">
+            <i class="iconfont icon-wrong"></i>
+          </div>
+          <div class="layui-col-xs5 layui-col-sm5 layui-col-md5">
+            <input type="text" placeholder="明月防蓝光镜片" class="name">
+          </div>
+          <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+            <input type="number" placeholder="2" class="sum">
+          </div>
+          <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+            <input type="text" placeholder="片" class="company">
+          </div>
+          <div class="layui-col-xs2 layui-col-sm2 layui-col-md2">
+            <input type="number" placeholder="299" class="price">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 套餐明细结束 -->
+
+    <!-- 套餐有效期开始 -->
+    <div class="combo_detail">
+      <div class="add_combo">
+        <span class="combo_title">套餐有效期</span>
+      </div>
+      <div class="combo_input">
+        <ul class="clearfix click_month" style="margin:0 .5rem">
+          <li class="month active">一个月</li>
+          <li class="month">三个月</li>
+          <li class="month">六个月</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 套餐有效期结束 -->
+
+    <!-- 购买使用须知开始 -->
+    <div class="combo_know">
+      <div class="add_combo">
+        <span class="combo_title">购买使用须知</span>
+      </div>
+      <div class="combo_input">
+        <textarea name="" id="user_know">如：本品为套餐抵用券，需到店使用；套餐券不兑换、不折现、不找零；如您到店后变更套餐的部分商品如超出套餐价需要您补齐差价；
+          镜片属于定制商品，凡已加工的商品，不支持退换货（如商品存在质量问题，则按照店铺的售后条款提供售后服务）</textarea>
+        <i class="buy_know"><i class="text_number">122</i>/500</i>
+
+      </div>
+    </div>
+    <!-- 购买使用须知结束 -->
+    <!--上传图片-->
+    <div class="combo_detail">
+      <div class="add_combo">
+        <span class="combo_title">套餐图片</span>
+      </div>
+      <div class="release_up_pic">
+        <div class="up_pic">
+          <span id="chose_pic_btn0" class="main_pic">
+            <button type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="main_btn" /></button>
+            <img src="" alt="" id="goods-pic" />
+          </span>
+        </div>
+      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <p class="notice">添加套餐详情图</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="release_up_pic1">
+                <div class="up_pic1">
+                  <!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
+                  <span id="chose_pic_btn1" style="">
+                    <button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="idCardUp" /></button>
+                    <img src="" alt="" id="goods-pic1" />
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="release_up_pic2">
+                <div class="up_pic2">
+                  <!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
+                  <span id="chose_pic_btn2" style="">
+                    <button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="idCardDown" /></button>
+                    <img src="" alt="" id="goods-pic2" />
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="release_up_pic3">
+                <div class="up_pic3">
+                  <!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
+                  <span id="chose_pic_btn3" style="">
+                    <button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="zige" /></button>
+                    <img src="" alt="" id="goods-pic3" />
+                  </span>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 发布协议 -->
+    <div class="public_agreement">
+      <img src="../images/check.png" alt="" class="public_check">
+      <span>我已阅读并同意<a href="combo_agreement.html" target="_blank">《e可平台商品发布协议》</a></span>
+    </div>
+
+    <a href="javascript:;" class="submit">提交</a>
+  </div>
+  <script type="text/javascript" src="../js/common/jquery-3.3.1.min.js?1.0"></script>
+  <script type="text/javascript" src="../js/common/common.js?1.0"></script>
+  <script type="text/javascript" src="../js/common/lay/modules/layer.js?1.0"></script>
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js?1.0"></script>
+  <script type="text/javascript" src="../js/common/jweixin-1.0.0.js?1.0" tppabs="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript" src="../js/common/zepto.min.js?1.0" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
+  <script src="../js/common/demo.js?1.0" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
+  <script type="text/javascript" src="../js/alljs/add_combo.js?v1.0"></script>
+</body>
+
+</html>

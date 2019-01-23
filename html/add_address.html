@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/common/common.css" />
+  <link rel="stylesheet" href="../css/common/layer.css" />
+  <link rel="stylesheet" href="../css/common/LArea.min.css">
+  <link rel="stylesheet" href="../css/common/swiper-4.2.2.min.css" />
+  <link rel="stylesheet" href="../css/add_addres.css">
+  <title>添加修改收货地址</title>
+</head>
+
+<body>
+  <!-- 表单开始 -->
+  <form class="showbox" id="form">
+    <div class="ipt name">
+      <span>姓名 :</span>
+      <input type="text" id="shopName" placeholder="请输入姓名" value="" />
+    </div>
+    <div class="ipt phone">
+      <span>电话 :</span>
+      <input type="text" id="shopPhone" placeholder="请输入联系方式" value="" />
+    </div>
+    <div class="ipt city">
+      <span>地区 :</span>
+      <input id="city" type="text" readonly="" placeholder="-请选择地区-" readonly="" value="" />
+      <img src="../images/to_bottom.png" alt="" style="float: right; width: .3rem; margin-top: .5rem; margin-right: .24rem;">
+      <input id="value2" type="hidden" />
+    </div>
+    <div class="ipt phone">
+      <span>地址 :</span>
+      <input type="text" id="shopAddress" placeholder="-请输入详细地址-" value="" />
+    </div>
+  </form>
+  <!-- 表单结束 -->
+
+  <!-- 设为默认地址开始 -->
+  <div class="set_default">
+    <span>设为默认地址</span>
+    <img src="../images/default.png" alt="" class="defaults">
+  </div>
+  <!-- 设为默认地址结束 -->
+
+  <!-- footer start -->
+  <footer>
+    <p>保存</p>
+  </footer>
+  <!-- footer end -->
+
+
+
+  <script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/common/common.js"></script>
+  <script type="text/javascript" src="../js/common/iscroll.js"></script>
+  <script type="text/javascript" src="../js/common/lay/modules/layer.js"></script>
+  <script type="text/javascript" src="../js/common/LArea.min.js"></script>
+  <script type="text/javascript" src="../js/common/LAreaData2.js"></script>
+  <script type="text/javascript" src="../js/common/jquery.date.js"></script>
+  <script type="text/javascript" src="../js/common/swiper-4.2.2.min.js"></script>
+  <script type="text/javascript" src="../js/alljs/add_address.js?v1.4"></script>
+  <!-- 轮播 -->
+  <script>
+    // 自动刷新一次页面
+    //  var mySwiper = new Swiper('.swiper-container', {
+    //    autoplay: true, //可选选项，自动滑动
+    //    loop: true,
+    //  })
+  </script>
+  <!-- 省市区 -->
+  <script>
+    function cityChoice() {
+      var area2 = new LArea();
+      area2.init({
+        'trigger': '#city',
+        'valueTo': '#value',
+        'keys': {
+          id: 'value',
+          name: 'text'
+        },
+        'type': 2,
+        'data': [provs_data, citys_data, dists_data]
+      });
+    }
+    cityChoice();
+  </script>
+</body>
+
+</html>

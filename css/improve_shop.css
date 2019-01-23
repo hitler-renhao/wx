@@ -1,0 +1,434 @@
+html {
+	font-size: 100px;
+}
+
+#container {
+	padding: 0 0.25rem;
+}
+
+#container>div {
+	margin-top: .25rem;
+	border-bottom:0.2rem solid #f2f2f2;padding: 0 0 0.25rem 0.24rem;
+}
+
+.introduce-text {
+	line-height: .5rem;
+	padding-left: .25rem;
+	font-size: 0.3rem;;
+}
+
+.layui-upload-img1 {
+	border: 1px dashed #000;
+	width: 2.5rem;
+	height: 1.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.shop-pic-text p {
+	line-height: 0.36rem;
+	font-size: 0.24rem;
+	margin-top: 0.2rem;
+}
+
+#faces p {
+	text-align: center;
+	line-height: 1.5rem;
+	font-size: 0.7rem;
+}
+
+.shop-pic-text {
+	width: 2.8rem;
+	position: absolute;
+	right: 0.5rem;
+	margin-top: 0.3rem;
+	margin-left: 0.2rem;
+}
+
+.layui-btn {
+	width: 2.5rem;
+	height: 1.5rem;
+	background-color: #fff;
+	border: 1px dashed #000;
+}
+
+.btn-add {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.layui-upload-list {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2.5rem;
+	height: 1.5rem;
+	margin: 0;
+}
+
+.shop-info-list {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.95rem;
+	height: 1.2rem;
+	margin: 0;
+}
+
+.shop-goods-info,
+.shop-info-upload {
+	width: 1.95rem;
+	height: 1.2rem;
+	margin-left: 0.1rem;
+}
+
+.shop-goods-infos,
+.shop-info-uploads1 {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+}
+
+.idcard-text {
+	text-align: center;
+	line-height: 0.5rem;
+}
+
+.face {
+	position: relative;
+}
+
+.upload-file {
+	width: 2.5rem;
+	height: 1.5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.upload-pic #faces {
+	width: 2rem;
+}
+
+table {
+	margin-top: 0.5rem;
+}
+
+tr td:nth-child(n + 2) {
+	padding-left: 0.38rem;
+}
+
+
+/* 店员 */
+
+.straff-info {
+	position: relative;
+	border: 1px solid #999;
+	padding: .2rem;
+	margin-top: .2rem;
+	width:6.55rem;
+}
+
+.staff-introduce input {
+	display: inline-block;
+	border: none;
+	outline: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-right: 0.2rem;
+	width: 5.2rem;
+	color: #434343;
+	font-size: 0.24rem;
+}
+
+.staff-introduce input:first-child {
+	font-size: 0.28rem;
+	;
+}
+
+.upload-staff-pic,
+.upload-staff-pic .layui-upload-img,
+.upload-staff-pic .layui-upload-img input {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+}
+
+.layui-upload-img#faces .staff-header {
+	line-height: 1rem;
+	font-size: .5rem;
+}
+
+.input-optometrist {
+	margin: .15rem;
+}
+
+.staff-introduce {
+	width: 80%;
+	position: absolute;
+	top: 0.1rem;
+	right: 0;
+	line-height: .6rem;
+}
+
+
+/* 删除按钮 */
+
+.layui-icon-close-fill {
+	position: absolute;
+	top: -0.26rem;
+	right: -0.26rem;
+	font-size: 0.5rem;
+	color: red;
+}
+
+
+/* 新增验光师 */
+
+.new-optometrist {
+	width: 3rem;
+	height: .88rem;
+	background-color: #fe820b;
+	color: #fff;
+	line-height: 0.88rem;
+	text-align: center;
+	margin: 0.3rem auto 0;
+	border-radius: 0.1rem;
+}
+
+.new-optometrist p {
+	font-size: .4rem;
+	text-align: center;
+	line-height: .8rem;
+}
+
+
+/* 按钮 */
+
+.optometrist-next {
+	display: block;
+	width: 3rem;
+	height: .8rem;
+	margin: .5rem auto;
+}
+
+.submit-btn {
+	width: 3rem;
+	height: .8rem;
+	background-color: #198fe0;
+	border: none;
+	border-radius: .1rem;
+	color: #ffffff;
+}
+
+#test1 {
+	background: url(../images/shop.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	width: 3.5rem;
+	height: 2.15rem;
+	border-radius: 0.1rem;
+	margin: 0.12rem 0 0 0.12rem;
+	border: 1px solid #dedede;
+}
+
+#demo1 {
+	width: 3.5rem;
+	height: 2.15rem;
+	border-radius: 0.1rem;
+	margin: 0.12rem 0 0 0.12rem;
+	border: 1px solid #dedede;
+}
+
+.Facilities-introduce textarea {
+	border: 1px solid #dedede;
+	border-radius: 0.1rem;
+	padding: 0.2rem;
+	width: 6.4rem;
+	font-size: 0.24rem;
+	color: #333;
+	line-height: 0.36rem;
+}
+
+.submit {
+	display: block;
+	/*position: fixed;
+	bottom: 0.6rem;
+	left: 0.24rem;*/
+	width: 7.02rem;
+	height: 0.88rem;
+	background: #198fe0;
+	line-height: 0.88rem;
+	text-align: center;
+	border: none;
+	outline: none;
+	color: #fff;
+	border-radius: 0.2rem;
+	font-size: 0.32rem;
+}
+
+
+/* 提示 */
+
+.notice {
+	font-size: 0.3rem;
+	padding-left: .1rem;
+	line-height:0.5rem;
+}
+
+.release_up_pic,
+.up_pic,
+#chose_pic_btn {
+	width: 3.5rem;
+	height: 100%;
+	border-radius: 0.1rem;
+	position: relative;
+}
+
+.release_up_pi1,
+.release_up_pi2,
+.release_up_pi3,
+.up_pic1,
+.up_pic2,
+.up_pic3,
+#chose_pic_btn1,
+#chose_pic_btn2,
+#chose_pic_btn3 {
+	width: 2rem;
+	height: 100%;
+}
+
+div.release_up_pic div.up_pic1,
+div.release_up_pic div.up_pic2,
+div.release_up_pic div.up_pic3 {
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	margin: 0;
+}
+
+#chose_pic_btn0 {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3.5rem;
+	height: 2.15rem;
+	background: url(../images/shop.png) 0 0 no-repeat;
+	background-size: 3.5rem 2.15rem;
+}
+
+#chose_pic_btn1,
+#chose_pic_btn2,
+#chose_pic_btn3 {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 1.5rem;
+	background: url(../images/person.png) 0 0 no-repeat;
+	background-size: 2rem 1.5rem;
+}
+
+#chose_pic_btns,
+#chose_pic_btns1,
+#chose_pic_btns2,
+#chose_pic_btns3 {
+	display: flex;
+	margin-top: 0;
+	width: 3.5rem;
+	height: 2.15rem;
+}
+
+#idCardUp,
+#idCardDown,
+#zige {
+	width: 2rem;
+	height: 1.5rem;
+	opacity: 0;
+	z-index: 9999;
+}
+
+#headPortraitUpload {
+	width: 3.5rem;
+	height: 2.15rem;
+	opacity: 0;
+	z-index: 9999;
+}
+
+#idCardDoUp,
+#idCardDoDown,
+#card {
+	width: 2rem;
+	height: 1.5rem;
+	border-radius: 0.1rem;
+}
+
+#goods-pic {
+	width: 3.5rem;
+	height: 2.15rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#chose_pic_btn1,
+#chose_pic_btn2,
+#chose_pic_btn3 {
+	position: relative;
+}
+
+#goods-pic1,
+#goods-pic2,
+#goods-pic3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2rem;
+	height: 1.5rem;
+}
+.textinfo{display:inline-block;color:#333;font-size: 0.3rem;line-height:0.6rem;}
+.serivetype{display:inline-block;outline: none;border:none;line-height:0.6rem;width:3.8rem;background:url(../images/8.png) right center no-repeat;background-size: 0.2rem 0.35rem;padding:0 0.25rem 0 0.05rem;/*overflow:hidden;text-overflow:ellipsis;white-space:nowrap*/ }
+.bigbox{width:100%;height:100%;background:rgba(0,0,0,.5);position:fixed;top:0;left:0;z-index: 10000;display:none;}
+.serivebox{background:#fff;position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;border-radius: 0.1rem;width:5.8rem;height:6.3rem;padding:0.6rem 0.5rem;}
+.serivebox h4{color:#333;font-size: 0.28rem;font-weight: bold;}
+.serivebox h4 i{font-size: 0.6rem;float:right;color:#333;line-height:0.36rem;}
+.seriveList{width:100%;float:left;margin-top:0.3rem;}
+.seriveList li{float:left;height:0.7rem;width:100%;}
+.seriveList li input{display:inline-block;width:0.2rem;height:0.2rem;background:url(../images/check.png) 0 0 no-repeat;background-size: 100% 100%;float:left;margin:0.23rem 0.24rem 0 0 ;}
+.seriveList li p{float:left;font-size: 0.26rem;line-height:0.7rem;}
+.sure{display:block;width:2.45rem;height:0.78rem;color:#fff;background:#fe7c00;border-radius: 0.1rem;line-height:0.78rem;text-align: center;outline: none;border:none;margin:0.45rem 0 0 1.7rem;float:left;}
+/*店内人员*/
+.input-optometrist-name1{color:#434343;font-size: 0.3rem;;}
+.input-optometrist-intro1{color:#666;font-size: 0.2rem;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;padding-right:0.1rem;}
+.add-optometrist {
+	position: absolute;
+	top: 0;
+	right: 0.24rem;
+	width: 1.8rem;
+	height: .49rem;
+	border-radius: .2rem;
+	border: none;
+	background-color: #FD8818;
+	color: #fff;
+	box-shadow: 1px 1px 3px #FD8818,
+	-1px -1px 3px #FD8818;line-height:0.49rem;padding-left:0.2rem;font-size: 0.24rem;
+}
+.add-optometrist i{color:#fff;font-size: 0.24rem;}
+.ek{font-size: 0.2rem;color:#666;text-indent: 0.1rem;}
+/*添加银行卡*/
+.cardList{padding:0.22rem;margin:0.3rem 0.24rem 0 0 ;height:auto;border:1px solid #999;padding-bottom:0.5rem;}
+.cardList li{width:100%;-float:left;border-bottom:1px solid #e4e4e4;line-height:0.56rem;margin-top:0.2rem;}
+.cardList li p{display:inline-block;float:left;color:#434343;font-size: 0.26rem;}
+.cardList li input{display:inline-block;float:left;color:#434343;font-size: 0.26rem;outline: none;border:none;line-height:0.56rem;width:5rem;padding:0 0.1rem;}
+.cardList li .cardName{width:4.7rem;}
+.cardList li input::-webkit-input-placeholder{color:#666;font-size: 0.2rem;}

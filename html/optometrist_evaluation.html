@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>验光师评价</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/header.css" />
+	<link rel="stylesheet" href="../css/common/layer.css" />
+	<link rel="stylesheet" href="../css/common/mui.css" />
+	<link rel="stylesheet" href="../css/common/news.css" />
+	<link rel="stylesheet" href="../css/optometrist_evaluation.css" />
+	<style>
+		/* #chose_pic_btn{float:left;} */
+			#chose_pic_btn button {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+	}
+		</style>
+</head>
+
+<body>
+	<div id="container">
+		<div class="toptop">
+			<!-- 头部 -->
+			<header>
+				<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
+				<p class="title">填写评价</p>
+			</header>
+		</div>
+		<!--内容-->
+		<form>
+			<ul class="content">
+				<li>
+					<label><i>*</i>验光师服务态度:</label>
+					<span id="rating1">
+						<i class="rating-item" title="很不好"></i>
+						<i class="rating-item" title="不好"></i>
+						<i class="rating-item" title="一般"></i>
+						<i class="rating-item" title="好"></i>
+						<i class="rating-item" title="很好"></i>
+					</span>
+				</li>
+				<li>
+					<label><i>*</i>验光师专业技术:</label>
+					<span id="rating2">
+						<i class="rating-itema" title="很不好"></i>
+						<i class="rating-itema" title="不好"></i>
+						<i class="rating-itema" title="一般"></i>
+						<i class="rating-itema" title="好"></i>
+						<i class="rating-itema" title="很好"></i>
+					</span>
+				</li>
+				<li>
+
+				</li>
+				<li>
+					<label><i>*</i>您的评价:</label>
+					<textarea rows="5" placeholder="您可以详细的点评您的体验及建议" id="commentContent"></textarea>
+				</li>
+			</ul>
+			<!--上传-->
+			<div class="release_up_pic">
+				<div class="up_pic">
+					<span id="chose_pic_btn" style="">
+						<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="headPortraitUpload" /></button>
+					</span>
+				</div>
+			</div>
+			<!--上传图片结束-->
+			<a href="javascript:;" class="submit">提交</a>
+		</form>
+	</div>
+	<script src="../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+	<script src="../js/common/jweixin-1.0.0.js" tppabs="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="../js/common/zepto.min.js" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
+	<script src="../js/common/demo.js" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
+	<script type="text/javascript" src="../js/common/lay/modules/layer.js"></script>
+	<script type="text/javascript" src="../js/alljs/optometrist_evaluation.js?v1.0"></script>
+</body>
+
+</html>

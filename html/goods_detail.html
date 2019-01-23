@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../css/common/layer.css" />
+		<link rel="stylesheet" href="../css/common/common.css" />		
+		<link rel="stylesheet" href="../css/common/swiper-4.2.2.min.css" />
+		<link rel="stylesheet" href="../css/goods_detail.css?v1.0" />			
+	</head>
+	<body>
+		<div id="container" style="margin:0 0 0.98rem 0;">			
+			<div id="intro">
+				<!-- banner -->
+				<div id="banner">
+					<div class="swiper-container">
+					    <div class="swiper-wrapper">
+					    	<!--<div class="swiper-slide">
+					    		<img src="" alt="商品图片">
+					    	</div>-->
+					    </div>
+					    <div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<!-- 商品信息 -->
+				<div id="goodsInfor">
+					<p class="name">摩根波士镜架+蔡司镜片 男士 英伦风格  2018年新款 自然大气商务款</p>
+					<p class="price">￥256</p>
+					<li>
+						<h3>服务</h3>
+						<p><img src="../images/su.png">无忧退货</p>
+						<p><img src="../images/su.png">快速退款</p>
+						<p><img src="../images/su.png">正品保障</p>						
+					</li>
+				</div>
+				<!-- 选择 -->
+				<div id="choice">
+					<li class="choiceRef">
+						<p class="fl">规格</p>
+						<p class="goodsshow"></p>
+						<p class="goodsnumber"></p>
+						<p class="fr">选择规格</p>
+						<img src="../images/jiantou_you.png">
+					</li>
+					<li class="canShu">
+						<p class="fl">参数</p>
+						<p class="goodsshow" id="productparm" style="width:2rem;overflow:hidden; text-overflow:ellipsis; white-space:nowrap"></p>
+						<p class="fr">商品参数</p>
+						<img src="../images/jiantou_you.png">
+					</li>
+				</div>
+				<!--商品介绍-->
+				<div class="showbox">
+					<h3 class="goodss">商品介绍</h3>
+					<span class="goodshow">
+						<!--<img src="../images/book.png" />
+						<img src="../images/book.png" />-->
+					</span>
+				</div>
+				<!--商品介绍结束-->
+				<!--套餐搭配-->
+				<div class="showbox">
+					<h3 class="goodss">套餐搭配</h3>
+					<ul class="likeList" id="mealList">
+						<!--<li>
+							<img src="../images/go.png" />
+							<p>摩根波士镜架男士摩根波士镜架男士</p>
+							<p class="goodPrice">￥256</p>
+						</li>						-->
+					</ul>
+				</div>					
+				<!--套餐搭配结束-->
+				<!--猜你喜欢-->
+				<div class="showbox">
+					<h3 class="goodss">猜你喜欢</h3>
+					<ul class="likeList" id="likeList">
+						<!--<li>
+							<img src="../images/go.png" />
+							<p>摩根波士镜架男士摩根波士镜架男士</p>
+							<p class="goodPrice">￥256</p>
+						</li>						-->
+					</ul>
+				</div>		
+				<!--猜你喜欢结束-->
+				<!--没有更多-->
+				<p class="nonemore">-&nbsp;没有更多了&nbsp;-</p>
+				<!-- 商品规格  弹框-->
+				<div id="ref" class="model">
+					<div class="chooseCon">
+						<img class="cancel" src="../images/cancel.png">
+						<div class="goodsInfor">
+							<p class="buyNumber"></p>
+							<p class="skuce"></p>
+						</div>
+						<div class="ref">
+							<h2>规格</h2>
+							<ul class="flex">
+								<!--<li>摩根波士c13镜架+依视路1.65镜片</li>
+								<li>摩根波士c13镜架+依视路1.65镜片</li>
+								<li>摩根波士c13镜架+依视路1.65镜片</li>								-->
+							</ul>
+						</div>
+						<div class="buyNum">
+							<p>购买数量</p>
+							<div class="change_num">
+								<input class="reduce reSty" type="submit" value="-"/>
+								<input class="num" type="button" value="1">
+								<input class="add" type="submit" value="+"/>
+							</div>
+						</div>
+						<div class="bottom">
+							<div id="addCar" class="btn fl">加入购物车</div>
+							<!--<div id="payNow" class="btn fr" onclick="window.location.href='../html/order_fill.html'">立即购买</div>-->
+							<div id="payNow" class="btn fr">立即购买</div>
+						</div>
+					</div>
+				</div>
+				<!-- 商品规格  弹框结束-->
+				<!-- 商品参数 弹框-->
+				<div id="goodsCan" class="model">
+					<div class="parameter">
+						<img class="cancel" src="../images/cancel.png">
+						<h2>商品参数</h2>
+						<ul>
+							<!--<li>
+								<p>商品编号</p>
+								<p>11111</p>
+							</li>							-->
+						</ul>
+					</div>
+				</div>
+				<!-- 商品参数 结束-->
+				<!--基础保障弹框-->
+				<div id="hero" class="model">
+					<div class="herobox">
+						<img class="cancel" src="../images/cancel.png">
+						<h2>基础保障</h2>
+						<ul>
+							<li>
+								<p>正品保障</p>
+								<p class="info">正品保障说明</p>
+							</li>
+							<li>
+								<p>7天无理由退货</p>
+								<p class="info">7天无理由退货说明书</p>
+							</li>
+							<li>
+								<p>极速退款</p>
+								<p class="info">退款说明书</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--基础保障弹框结束-->
+			</div>
+			<div id="detailsImg"></div>
+			<!-- footer -->
+			<footer>
+				<div class="fl">
+					<a class="flex" href="" id="enterShop">
+						<img class="goodshop" src="../images/goodshop.png">
+						<p style="margin-top:0.16rem;">进店</p>
+					</a>
+					<a class="flex news" href="">
+						<img class="help" src="../images/goodnew.png">
+						<p style="margin-top:0.15rem;">咨询店铺</p>
+					</a>
+					<a class="flex" href="car.html">
+						<img class="car" src="../images/goodcar.png">
+						<p>购物车</p>
+					</a>
+				</div>
+				<div class="fr btn comBtn">立即购买</div>
+				<div class="cen btn comBtn">加入购物车</div>
+				
+			</footer>
+		</div>
+		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="../js/common/swiper-4.2.2.min.js"></script>	
+		<script type="text/javascript" src="../js/common/lay/modules/layer.js" ></script>
+		<script type="text/javascript" src="../js/common/common.js?v1.3" ></script>
+		<script type="text/javascript" src="../js/alljs/goods_detail.js?v1.0" ></script>		
+	</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/header.css" />
+	<link rel="stylesheet" href="../css/common/layui.css">
+	<link rel="stylesheet" href="../css/common/layer.css">
+	<link rel="stylesheet" href="../css/goods_list_points.css?v1.3">
+	<title>积分商城</title>
+</head>
+
+<body>
+	<!-- header picture start -->
+	<header>
+		<img src="../images/banner.png" alt="">
+		<a href="./point_rules.html">积分规则</a>
+	</header>
+	<!-- header picture end -->
+
+	<!-- middle banner start -->
+	<ul class="banner">
+		<li class="get_points">
+			<img src="../images/zhuanjifen.png" alt="">
+			<strong>赚积分</strong>
+		</li>
+		<li class="points_detail">
+			<img src="../images/jifenmingxi.png" alt="">
+			<strong>积分明细</strong>
+		</li>
+		<li class="share">
+			<img src="../images/fenxiang.png" alt="">
+			<strong>分享</strong>
+		</li>
+	</ul>
+	<!-- middle banner end -->
+
+	<!-- lottery start -->
+	<div class="lottery"></div>
+	<!-- lottery end -->
+
+	<!-- goods start -->
+	<div class="goods clearfix">
+		<ul class="goods_things">
+
+		</ul>
+		<footer>
+			<span>积分兑奖名单</span>
+		</footer>
+		<div class="user_list">
+			<img src="../images/bottom.png" alt="">
+			<table class="clearfix">
+				<thead>
+					<tr>
+						<td>用户</td>
+						<td>奖品</td>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	<!-- goods end -->
+
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/template.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script src="../js/common/dropload.js"></script>
+	<script src="../js/common/layui.js"></script>
+	<script src="../js/common/layer.js"></script>
+	<script src="../js/common/demo.js?v1.1" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
+	<!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script> -->
+	<script src="../js/common/jweixin-1.4.0.js" tppabs="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+	<script src="../js/common/zepto.min.js" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
+	<script src="../js/alljs/goods_list_points.js?v1.6"></script>
+	<!--<script type="text/javascript" src="../jsweixin.js"></script>-->
+	<script>
+		var tokenKey = localStorage.getItem("tokenKey");
+		// 分享	
+		wx.ready(function () {
+			wx.onMenuShareAppMessage({
+				title: '配眼镜, 上e可',
+				desc: '',
+				link: 'http://wx.bjysjglasses.com/ek/web/html/goods_list_points.html',
+				imgUrl: 'http://wx.bjysjglasses.com/ek/web/images/ek.png',
+				trigger: function (res) {
+					// 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回						
+					//layer.msg('用户点击发送给朋友')
+				},
+				success: function (res) {
+					$.ajax({
+						type: "POST",
+						url: global + "/ekIntegral/share",
+						async: true,
+						data: {
+							"tokenKey": tokenKey
+						},
+						success: function (data) {
+							//console.log(data);
+							if (data.code == 200) {
+								layer.msg('分享成功');
+							}
+						}
+					});
+					layer.msg('已分享')
+				},
+				cancel: function (res) {
+					layer.msg('已取消');
+				},
+				fail: function (res) {
+					//alert(JSON.stringify(res));
+				}
+			});
+			// alert('结束');
+			// });
+		})
+		//layer.msg('敬请期待')
+	</script>
+</body>
+
+</html>

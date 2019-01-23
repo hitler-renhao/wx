@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>填写示例</title>
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/header.css" />
+	<link rel="stylesheet" href="../css/common/mui.css" />
+	<!--<link rel="stylesheet" href="../css/common/news.css" />-->
+	<link rel="stylesheet" href="../css/common/iconfont1.css">
+	<link rel="stylesheet" href="../css/common/layui.css?1.1" />
+	<link rel="stylesheet" href="../css/common/layer.css" />
+	<link rel="stylesheet" href="../css/add_goods.css?v1.2" />
+	<style>
+		body{background: #f5f5f5;}
+			input::-webkit-input-placeholder { /* WebKit browsers */  
+			color: #000!important;
+		}  
+		input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */  
+			color: #000!important;  
+		}  
+		input::-moz-placeholder { /* Mozilla Firefox 19+ */  
+			color: #000!important;  
+		}  
+		input:-ms-input-placeholder { /* Internet Explorer 10+ */  
+			color: #000!important;  
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="setting">
+			<ul class="setlist">
+				<li class="whiteone">
+					<h3 style="color:#fc8535;font-size: 0.3rem;margin-top:0.1rem;">镜架规格示例</h3>
+					<span class="libox">
+						<label>商品名称:</label>
+						<input type="text" placeholder="例如：玫红色镜架" class="goodsname1" readonly/>
+					</span>
+					<span class="liboxa">
+						<span class="spanBox">
+							<label>价格:</label>
+							<input type="text" placeholder="399" class="goodsprice" readonly/>
+						</span>
+						<span class="spanBoxa">
+							<label>库存:</label>
+							<input type="text" placeholder="500" class="goodscount" readonly/>
+						</span>
+					</span>
+					<!--<i class="goodsDel">×</i>-->
+				</li>
+				<li class="whitetwo">
+					<h3 style="color:#fc8535;font-size: 0.3rem;margin-top:0.1rem;">隐形眼镜规格示例</h3>
+					<span class="libox">
+						<label>商品名称:</label>
+						<input type="text" placeholder="例如：黑色镜架+明月1.56镜片" class="goodsname1" readonly/>
+					</span>
+					<span class="liboxa">
+						<span class="spanBox">
+							<label>价格:</label>
+							<input type="text" placeholder="399" class="goodsprice" readonly/>
+						</span>
+						<span class="spanBoxa">
+							<label>库存:</label>
+							<input type="text" placeholder="500" class="goodscount" readonly/>
+						</span>
+					</span>
+					<!--<i class="goodsDel">×</i>-->
+				</li>
+				<li class="whiteone">
+					<h3 style="color:#fc8535;font-size: 0.3rem;margin-top:0.1rem;">镜片规格示例</h3>
+					<span class="libox">
+						<label>商品名称:</label>
+						<input type="text" placeholder="例如：折射率1.56（较薄适合低度数戴）" class="goodsname1" readonly/>
+					</span>
+					<span class="liboxa">
+						<span class="spanBox">
+							<label>价格:</label>
+							<input type="text" placeholder="399" class="goodsprice" readonly/>
+						</span>
+						<span class="spanBoxa">
+							<label>库存:</label>
+							<input type="text" placeholder="500" class="goodscount" readonly/>
+						</span>
+					</span>
+					<!--<i class="goodsDel">×</i>-->
+				</li>
+				<li class="whitethree">
+					<h3 style="color:#fc8535;font-size: 0.3rem;margin-top:0.1rem;">太阳镜规格示例</h3>
+					<span class="libox">
+						<label>商品名称:</label>
+						<input type="text" placeholder="例如：银色镜框" class="goodsname1" readonly/>
+					</span>
+					<span class="liboxa">
+						<span class="spanBox">
+							<label>价格:</label>
+							<input type="text" placeholder="399" class="goodsprice" readonly/>
+						</span>
+						<span class="spanBoxa">
+							<label>库存:</label>
+							<input type="text" placeholder="500" class="goodscount" readonly/>
+						</span>
+					</span>
+					<!--<i class="goodsDel">×</i>-->
+				</li>
+			</ul>
+			<div class="anniu">
+				<a href="javascript:;" class="submit">确定</a>
+			</div>
+
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script>
+		$('.submit').click(function () {
+			window.history.go(-1);
+		})
+	</script>
+</body>
+
+</html>

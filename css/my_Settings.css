@@ -1,0 +1,189 @@
+body {
+  color: #333;
+  background: #f8f8f8;
+}
+
+.header {
+  display: block;
+  font-size: 0.36rem;
+  line-height: 0.88rem;
+  -border-bottom: 1px solid #e4e4e4;
+  -border-bottom: 0.18rem solid #faf9fe;
+  text-indent: 0.24rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.content li {
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #d8d8d8;
+  background: #fff;
+}
+
+.content li p {
+  width: 7.02rem;
+  line-height: 0.88rem;
+  font-size: 0.28rem;
+  margin: 0 0.24rem;
+  background: url(../images/href.png) right center no-repeat;
+  background-size: 0.12rem 0.22rem;
+}
+
+.quit {
+  display: inline-block;
+  float: left;
+  margin-top: 0.24rem;
+  line-height: 0.88rem;
+  text-align: center;
+  color: #f52410;
+  font-size: 0.32rem;
+  width: 100%;
+  background: #fff;
+}
+
+/*更换旧手机号*/
+.content li h3,
+.content li i {
+  color: #666;
+  font-size: 0.28rem;
+  line-height: 0.88rem;
+  float: left;
+  background: #fff;
+  text-indent: 0.24rem;
+  ;
+}
+
+#iphone {
+  color: #666;
+  font-size: 0.28rem;
+  line-height: 0.88rem;
+  float: left;
+  background: #fff;
+  padding: 0 0.2rem;
+  outline: none;
+  border: none;
+}
+
+.code {
+  display: inline-block;
+  width: 3rem;
+  padding: 0 0.2rem;
+  outline: none;
+  border: none;
+  background: #fff;
+  line-height: 0.88rem;
+  font-size: 0.28rem;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 0.24rem;
+  color: #999;
+}
+
+.getCode {
+  display: inline-block;
+  width: 1.64rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  border: 1px solid #1f9df4;
+  color: #1f9df4;
+  float: right;
+  border-radius: 0.05rem;
+  margin: 0.12rem 0.24rem 0 0;
+  background: #fff;
+  font-size: 0.28rem;
+}
+
+.title {
+  font-size: 0.2rem;
+  color: #999;
+  text-indent: 0.24rem;
+  line-height: 0.5rem;
+  float: left;
+}
+
+.next,
+.submit,
+.finish {
+  display: inline-block;
+  width: 7.02rem;
+  background: #1a91e2;
+  height: 0.88rem;
+  color: #fff;
+  font-size: 0.36rem;
+  margin: 0 0.24rem;
+  margin-top: 0.7rem;
+  border-radius: 0.1rem;
+  text-align: center;
+  line-height: 0.88rem;
+}
+
+/*修改密码*/
+.padBox {
+  padding: 0 0.45rem;
+  float: left;
+  /* margin-top: 1.15rem; */
+}
+
+.padBox li {
+  flaot: left;
+  width: 100%;
+  display: block;
+  margin-top: 0.24rem
+}
+
+.padBox li p {
+  display: inline-block;
+  float: left;
+  width: 2rem;
+  line-height: 0.8rem;
+  font-size: 0.28rem;
+}
+
+.padBox li input {
+  display: inline-block;
+  float: left;
+  width: 4.1rem;
+  padding: 0 0.2rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  background: #fff;
+  outline: none;
+  border: none;
+  font-size: 0.28rem;
+  border-radius: 0.05rem;
+}
+
+.padBox li .iptCode {
+  width: 1.75rem
+}
+
+.padBox li .get {
+  display: inline-block;
+  float: right;
+  width: 2.15rem;
+  height: 0.8rem;
+  background: #ccc;
+  color: #fff;
+  line-height: 0.8rem;
+  text-align: center;
+  border-radius: 0.05rem;
+}
+
+.padBox li .info {
+  color: #999;
+  font-size: 0.2rem;
+  width: auto;
+  margin-left: 2rem;
+  line-height: 0.36rem;
+  display: none;
+}

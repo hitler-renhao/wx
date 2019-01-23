@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>商品列表</title>
+  <link rel="stylesheet" href="../css/common/common.css" />
+  <link rel="stylesheet" href="../css/common/header.css" />
+  <link rel="stylesheet" href="../css/common/layui.css">
+  <link rel="stylesheet" href="../css/common/layer.css">
+  <link rel="stylesheet" href="../css/common/swiper-4.2.2.min.css" />
+  <link rel="stylesheet" href="../css/combo_list.css?1.0" />
+  <style>
+    .actives li {
+      color: orange
+    }
+    .swiList a{
+    	line-height:0.6rem;
+    }
+    .userInfo{
+    	height:1.55rem;
+    }
+    .price{line-height:0.36rem;margin-top:0.2rem;}
+  </style>
+</head>
+
+<body>
+
+
+
+  <div id="container">
+    <div class="content-tab">
+      <ul class="content_top" id="aBtn">
+        <li class="active" id="putaway">已上架</li>
+        <li id="soldout">已下架</li>
+      </ul>
+    </div>
+    <div class="swiper-container" style="width: 100% ;margin-top: 1rem; -border-bottom: 1px solid #ccc; position: fixed; top: 0; background-color: #fff;">
+      <ul class="swiper-wrapper swiList">
+        <a href="javascript:;" class="cur all actives" types="1">
+          <li class="swiper-slide">全部</li>
+        </a>
+        <a href="javascript:;" class="mirror" types="2">
+          <li class="swiper-slide">镜架</li>
+        </a>
+        <a href="javascript:;" class="lens" types="3">
+          <li class="swiper-slide">镜片</li>
+        </a>
+        <a href="javascript:;" class="contact" types="5">
+          <li class="swiper-slide">太阳镜</li>
+        </a>
+        <a href="javascript:;" class="sun" types="6">
+          <li class="swiper-slide">隐形眼镜</li>
+        </a>
+        <a href="javascript:;" class="presbyopic" types="7">
+          <li class="swiper-slide">老花镜</li>
+        </a>
+        <a href="javascript:;" class="nice" types="8">
+          <li class="swiper-slide">护理产品</li>
+        </a>
+      </ul>
+    </div>
+    <!--消息列表-->
+    <div class="putaway-list" style="margin-top: 1.5rem;">
+      <ul class="khfxPane evalist" style="display:block">
+      </ul>
+    </div>
+    <div class="soldout-list" style="margin-top: 1.5rem;">
+      <ul class="khfxPane evalists" style="display:block">
+      </ul>
+    </div>
+    <div class="bottom">
+      <a href="javascript:;" class="add_combo">新增商品</a>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/common/template.js"></script>
+  <script type="text/javascript" src="../js/common/common.js"></script>
+  <script src="../js/common/dropload.js"></script>
+  <script src="../js/common/layui.js"></script>
+  <script src="../js/common/layer.js"></script>
+  <script type="text/javascript" src="../js/common/swiper-4.2.2.min.js"></script>
+  <script src="../js/alljs/goods_list.js?v1.1"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+
+</html>

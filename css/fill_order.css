@@ -1,0 +1,526 @@
+#count_down {
+  width: 100%;
+  height: 1.14rem;
+  background: #fff;
+  font-size: 0.24rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.sheng {
+  float: left;
+  padding: 0.24rem;
+}
+
+#goods_infor {
+  border-bottom: 0.14rem solid #f2f2f3;
+}
+
+#goods_infor h2 {
+  width: 7.26rem;
+  height: 0.88rem;
+  padding-left: 0.24rem;
+  font-size: 0.32rem;
+  color: #414141;
+  line-height: 0.88rem;
+}
+
+#goods_infor li {
+  width: 7.26rem;
+  height: 1.35rem;
+  padding-left: 0.24rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #e4e4e4;
+  position: relative;
+}
+
+#goods_infor li .goodsImg {
+  float: left;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: .2rem;
+}
+
+#goods_infor li .goodsImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: .2rem;
+}
+
+#goods_infor li .infor {
+  width: 5.5rem;
+  height: 100%;
+  float: left;
+  margin-left: 0.2rem;
+  position: relative;
+}
+
+.infor .name {
+  display: block;
+  font-size: 0.28rem;
+  color: #333;
+  margin-top: 0.1rem;
+  max-width: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.infor .color {
+  font-size: 0.24rem;
+  color: #727272;
+  line-height: 0.24rem;
+  margin: 0.14rem 0;
+}
+
+.infor .price {
+  font-size: 0.32rem;
+  width: 2.6rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.infor .num {
+  font-size: 0.28rem;
+  color: #666;
+  position: absolute;
+  right: 0;
+  bottom: 0.12rem;
+}
+
+#order_infor .head {
+  width: 7.26rem;
+  height: 0.86rem;
+  padding-left: 0.24rem;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+#order_infor .head p {
+  font-size: 0.28rem;
+  color: #414141;
+  line-height: 0.86rem;
+}
+
+#order_infor .total {
+  width: 7.26rem;
+  padding-left: 0.24rem;
+  border-bottom: 0.14rem solid #f2f2f3;
+  overflow: hidden;
+}
+
+#order_infor .total p {
+  font-size: 0.28rem;
+  color: #666;
+  line-height: 0.28rem;
+  margin: 0.18rem auto;
+}
+
+.order_info {
+  margin-right: .24rem;
+  color: #333;
+}
+
+#order_infor .orderNum {
+  width: 7.26rem;
+  height: 1.48rem;
+  padding-left: 0.24rem;
+  overflow: hidden;
+  font-size: 0.24rem;
+  color: #414141;
+  line-height: 0.28rem;
+}
+
+#order_infor .orderNum p {
+  margin-top: 0.18rem;
+}
+
+#price {
+  width: 7.26rem;
+  height: 0.88rem;
+  padding-left: 0.24rem;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  z-index: 999;
+  border-top: 1px solid #e4e4e4;
+}
+
+#price .fl {
+  float: left;
+  font-size: 0.28rem;
+  color: #727272;
+  line-height: 0.88rem;
+}
+
+#price .fl i {
+  color: #ff0000;
+}
+
+#price .cancel {
+  float: right;
+  width: 1.18rem;
+  height: 0.48rem;
+  border: 1px solid #d4d4d4;
+  text-align: center;
+  line-height: 0.48rem;
+  font-size: 0.24rem;
+  color: #727272;
+  margin-top: 0.15rem;
+  border-radius: 0.1rem;
+  margin-right: 0.24rem;
+}
+
+#price .pay {
+  float: right;
+  width: 1.18rem;
+  height: 0.48rem;
+  border: 1px solid #67a9fe;
+  text-align: center;
+  line-height: 0.48rem;
+  font-size: 0.24rem;
+  color: #67a9fe;
+  margin-top: 0.15rem;
+  border-radius: 0.1rem;
+  margin-right: 0.24rem;
+}
+
+/*取消订单弹框*/
+.tk {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: url(../images/z_big.png) 0 0 no-repeat;
+  background-size: cover;
+  display: none;
+  z-index: 2
+}
+
+.popout {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.popout_top {
+  width: 100%;
+  height: 0.88rem;
+  border-bottom: 0.03rem solid #67a9fe;
+  color: #67a9fe;
+  font-size: 0.34rem;
+  line-height: 0.88rem;
+  text-align: center;
+  position: relative;
+}
+
+.z_cancel {
+  position: absolute;
+  top: 0.28rem;
+  right: 0.24rem;
+  display: inline-block;
+  width: 0.32rem;
+  height: 0.32rem;
+}
+
+.popout_bottom {
+  padding: 0 0.24rem;
+  height: auto;
+  padding-top: 0.15rem;
+}
+
+.popout_bottom p {
+  color: #727272;
+  font-size: 0.28rem;
+  line-height: 0.65rem;
+  padding-right: 0.6rem;
+}
+
+.popout_bottom .bule_title {
+  color: #67a9fe;
+  line-height: 0.45rem;
+}
+
+.reason_list {
+  width: 100%;
+  height: auto;
+}
+
+.reason_list li {
+  display: block;
+}
+
+.reason_list li img {
+  display: inline-block;
+  width: 0.24rem;
+  height: 0.24rem;
+  float: left;
+  margin: 0.2rem 0.2rem 0 0;
+}
+
+.confirm {
+  display: block;
+  width: 1.87rem;
+  height: 0.65rem;
+  color: #fff;
+  background: #67a9fe;
+  font-size: 0.36rem;
+  line-height: 0.65rem;
+  text-align: center;
+  margin: 0.25rem auto;
+  border-radius: 0.1rem;
+}
+
+/*删除订单弹框*/
+.bigbox {
+  width: 100%;
+  height: 100%;
+  background: url(../images/z_big.png);
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.big_box {
+  width: 5.92rem;
+  padding: 0.024rem;
+  height: 2.35rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.big_box p {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e4e4e4;
+  color: #67a9fe;
+  font-size: 0.32rem;
+  text-align: center;
+  line-height: 1.4rem;
+}
+
+.word {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.word a {
+  display: inline-block;
+  width: 49%;
+  height: 0.96rem;
+  float: left;
+  color: #666;
+  line-height: 0.96rem;
+  font-size: 0.32rem;
+  border-right: 1px solid #e4e4e4;
+  text-align: center;
+}
+
+.word a:last-child {
+  float: right;
+  color: #67a9fe;
+  border-right: none;
+}
+
+/*弹出层*/
+.take {
+  width: 2.35rem;
+  height: 1.35rem;
+  background: url(../images/block.png);
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+}
+
+.error {
+  display: block;
+  width: 0.46rem;
+  height: 0.46rem;
+  margin: 0.23rem auto 0;
+}
+
+.write {
+  color: #fff;
+  font-size: 0.28rem;
+  line-height: 0.6rem;
+  text-align: center;
+}
+
+#wrapper {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+  -ms-touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+#scroller {
+  background: #fff;
+}
+
+.pull-loading {
+  background: #fff;
+  text-align: center;
+  height: 1rem;
+  line-height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 收货方式 */
+#way {
+  padding: .24rem;
+}
+
+#way li {
+  height: .7rem;
+  line-height: .7rem;
+}
+
+#way span {
+  margin-left: .24rem;
+}
+
+.way_pic,
+.select {
+  width: .4rem;
+}
+
+.select {
+  float: right;
+  margin-top: .16rem;
+}
+
+.color_border {
+  width: 100%;
+}
+
+/* 收货地址 */
+#infor {
+  width: 100%;
+  height: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#infor .locations {
+  width: 0.29rem;
+  height: 0.35rem;
+  position: absolute;
+  top: 50%;
+  left: 0.24rem;
+  margin-top: -0.175rem;
+}
+#infor .to_right {
+  width: 0.16rem;
+  height: 0.26rem;
+  position: absolute;
+  top: 50%;
+  right: 0.24rem;
+  margin-top: -0.175rem;
+}
+
+#infor .name {
+  margin-left: 0.8rem;
+  margin-top: 0.28rem;
+  height: 0.3rem;
+}
+
+#infor .name p {
+  font-size: 0.28rem;
+  color: #414141;
+  float: left;
+  line-height: 0.28rem;
+  margin-right: 0.9rem;
+}
+
+#infor .address {
+  width: 5.5rem;
+  margin-left: 0.8rem;
+  font-size: 0.2rem;
+  color: #727272;
+  line-height: 0.24rem;
+  margin-top: 0.15rem;
+}
+
+#balance {
+  width: 100%;
+  height: 0.98rem;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  -moz-box-shadow: 0px -6px 6px rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 0px -6px 6px rgba(0, 0, 0, .1);
+  box-shadow: 0px -6px 6px rgba(0, 0, 0, .1);
+}
+
+#balance .left {
+  width: 1.5rem;
+  height: 100%;
+  float: left;
+  line-height: 0.98rem;
+  font-size: 0.28rem;
+  color: #808080;
+  position: relative;
+  padding-left: 0.42rem;
+}
+
+#balance .center {
+  width: 4.5rem;
+  height: 100%;
+  float: left;
+}
+
+#balance .center p {
+  font-size: 0.28rem;
+  color: #333;
+  text-align: right;
+  line-height: 0.98rem;
+}
+
+#balance .right {
+  width: 2.8rem;
+  height: 100%;
+  float: right;
+  background: #67a9fe;
+  color: #fff;
+  text-align: center;
+  line-height: 0.98rem;
+  font-size: 0.32rem;
+
+  background: linear-gradient(to right, #fc7500, #ff4b00);
+}

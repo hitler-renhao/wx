@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>验光师入住</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/header.css" />
+	<link rel="stylesheet" href="../css/common/LArea.min.css">
+	<link rel="stylesheet" href="../css/common/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/common/layui.css">
+	<link rel="stylesheet" href="../css/common/layer.css">
+	<link rel="stylesheet" href="../css/index.css?1.0" />
+	<link rel="stylesheet" href="../css/common/mui.css">
+	<link rel="stylesheet" href="../css/common/news.css">
+	<style>
+		#chose_pic_btn1,
+		#chose_pic_btn2,
+		#chose_pic_btn3 {
+			position: relative;
+		}
+		#goods-pic1,
+		#goods-pic2,
+		#goods-pic3 {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<style>
+		input.layui-upload-file {
+			display: block!important;
+			width: 2.8rem;
+			height: 1.7rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 999;
+			}
+			.release_up_pic,
+			.up_pic,
+			#chose_pic_btn {
+				width: 1.7rem;
+				height: 100%;
+			}
+			div.release_up_pic div.up_pic {
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: none;
+				margin: 0;
+			}
+			#chose_pic_btn {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 1.3rem;
+				height: 1.3rem;
+				border-radius: 50%;
+				background: url(../images/radiu.png) 0 0 no-repeat;
+				background-size: 1.3rem 1.3rem;
+			}
+			#chose_pic_btns {
+				display: flex;
+				margin-top: 0;
+				width: 1.3rem;
+				height: 1.3rem;
+				border-radius: 50%;
+			}
+			#container {
+				background-color: #fff;
+			}
+			#headPortraitUpload {
+				width: 1.3rem;
+				height: 1.3rem;
+				border-radius: 50%;
+			}
+			#chose_pic_btn button {
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			}
+			#container {
+				margin-top: 0;
+			}
+		</style>
+</head>
+
+<body>
+	<div id="container">
+		<!-- 头部 -->
+
+		<!--顶部结束-->
+		<div class="notice" style="margin:0;border:none;">
+			<a href="../html/notice.html">
+				<span>入驻说明</span>
+			</a>
+		</div>
+		<!--验光师入住-->
+		<form id="form2">
+			<div class="iptbox">
+				<div class="iptb">
+					<!--<label>头像：</label>-->
+					<div class="release_up_pic">
+						<div class="up_pic">
+							<!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
+							<span id="chose_pic_btn">
+								<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="headPortraitUpload" /></button>
+								<img src="" alt="" id="goods-pic" />
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="iptright">
+					<span>
+						<p>姓名 :</p>
+						<input id="name" type="text" placeholder="请输入您的姓名" value="" />
+					</span>
+					<span>
+						<p>身份证号 :</p>
+						<input id="idCard" type="text" placeholder="请输入您的身份证号" style="width:3.5rem" value="" />
+					</span>
+				</div>
+				<!--<p class="imgdel">头像将在您的详情页展示，方便用户更好的了解您！</p>-->
+			</div>
+			<div class="ipt name">
+				<p>登录手机号 :</p>
+				<input id="phone" type="text" placeholder="请输入验光师登录手机号" value="" />
+			</div>
+			<div class="ipt name">
+				<p>登录密码 :</p>
+				<input id="password" type="text" placeholder="请输入验光师登录密码" value="" />
+			</div>
+			<!-- <div class="ipt city">
+					<p>服务地区 :</p>
+					<input id="city" type="text" readonly="" placeholder="请选择服务地区" readonly="" />
+					<input id="value" type="hidden" />
+				</div>
+				<div class="ipt addr">
+					<p>详细地址 :</p>
+					<input id="addr" type="text" placeholder="请输入详细地址"/>
+				</div> -->
+			<!--<div class="ipt phone">
+					<p>身份证号:</p>
+					<input id="idCard" type="text" placeholder="请输入您的身份证号" />
+				</div>-->
+			<!--<div class="ipt time main">
+					<p>工作时间 :</p>-->
+			<!-- <input id="beginTime" type="text" placeholder="请选择上门时间" value="" /> -->
+			<!--<input class="time" type="text" value="00:00" onchange="console.log('Time changed')" placeholder="请选择营业时间" style="width:2rem;"/>
+					<span>至</span>
+					<input class="time1" type="text" value="24:00" onchange="console.log('Time changed')" placeholder="请选择营业时间" style="width:2rem;" />
+				</div>-->
+			<div class="shop-pic" style="border-top:0.18rem solid #f2f2f2;padding:0.2rem 0;border-bottom: 1px solid #f5f5f5;height:3rem">
+				<p>身份证</p>
+				<ul class="ul">
+					<li>
+						<div class="release_up_pic1">
+							<div class="up_pic1">
+								<!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
+								<span id="chose_pic_btn1" style="">
+									<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="idCardUp" /></button>
+									<img src="" alt="" id="goods-pic1" />
+								</span>
+							</div>
+						</div>
+
+						<!--<div class="layui-upload face">
+								<div class="layui-upload-img" id="faces">
+									<p>+</p>
+								</div>
+								<input class="upload-file" type="file" accept="undefined" name="file">
+								<p class="idcard-text">头像面</p>
+							</div>-->
+
+					</li>
+					<li class="shop-pic-text">
+						<div class="release_up_pic2">
+							<div class="up_pic2">
+								<!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
+								<span id="chose_pic_btn2" style="">
+									<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="idCardDown" /></button>
+									<img src="" alt="" id="goods-pic2" />
+								</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="shop-pic">
+				<p>验光师资格证</p>
+				<ul class="ul">
+					<li>
+						<div class="release_up_pic3">
+							<div class="up_pic3">
+								<!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
+								<span id="chose_pic_btn3" style="">
+									<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="zige" /></button>
+									<img src="" alt="" id="goods-pic3" />
+								</span>
+							</div>
+						</div>
+					</li>
+					<li class="shop-pic-text">
+						<p>请上传完整、清晰的营业执照图片，营业执照中的公司名称需与填写的的店铺名称一致！</p>
+					</li>
+				</ul>
+			</div>
+			<input type="button" value="下一步" onfocus="this.blur();" id="sm" />
+		</form>
+	</div>
+
+	<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KN9omYs9VP6sdG4c2kuem8PBDjCGqgfL"></script> -->
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/iscroll.js"></script>
+	<script type="text/javascript" src="../js/common/jquery.cookie.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+	<script src="../js/common/jweixin-1.0.0.js" tppabs="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="../js/common/zepto.min.js" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
+	<script src="../js/common/demo.js" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
+	<script type="text/javascript" src="../js/common/layui.js"></script>
+	<script type="text/javascript" src="../js/common/layer.js"></script>
+	<script type="text/javascript" src="../js/common/jquery-clock-timepicker.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script type="text/javascript" src="../js/alljs/optometrist_enter.js?v1.3"></script>
+	<!-- tab栏切换选择 -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.time').clockTimePicker({});
+			$('.time1').clockTimePicker({});
+		});
+	</script>
+</body>
+
+</html>

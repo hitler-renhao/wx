@@ -1,0 +1,116 @@
+/* 输入金额 */
+body {
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+}
+.putmoney {
+  position: relative;
+  width: 6.5rem;
+  background-color: #fff;
+  border-radius: .1rem;
+  margin-top: .2rem;
+  padding-bottom: .2rem;
+}
+.bank-card {
+  background-color: #fbfbfb;
+  padding: .5rem 0 .2rem .5rem;
+}
+.iconfont {
+  font-size: .4rem;
+}
+.bank {
+  margin-top: .2rem;
+}
+/* .to-card {
+  float: left;
+} */
+/* .bank {
+  float: left;
+} */
+.bank > p {
+  font-size: .2rem;
+}
+.drawal-history {
+  position: absolute;
+  top: .15rem;
+  right: .2rem;
+  color: orange;
+}
+.bank-logo {
+  font-size: .5rem;
+  margin-left: .2rem;
+}
+.bank-name {
+  font-size: .35rem;
+  color: #229EF5;
+}
+
+h3 {
+  font-size: .45rem;
+}
+
+.daozhang {
+  display: block;
+  margin-left: .85rem;
+  color: #999;
+}
+
+/* 金额 */
+.much-money {
+  padding-left: .5rem;
+  margin-top: .5rem;
+}
+
+.money {
+  margin: 0 .5rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.money label {
+  font-size: 1rem;
+}
+
+.money input {
+  border: none;
+  width: 4rem;
+  height: .8rem;
+  font-size: .8rem;
+  margin-left: .2rem;
+}
+
+.most {
+  margin-left: .5rem;
+  color: #999;
+}
+
+
+.rules {
+  display: block;
+  margin-top: .2rem;
+  color: #229EF5;
+}
+.rules:link,
+.rules:visited {
+  color: #229EF5;
+}
+
+
+.submit {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 0.88rem;
+  background: #198fe0;
+  line-height: 0.88rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 0.2rem;
+  margin: 1rem 0;
+  font-size: 0.36rem;
+}
+.submit:link {
+  color: #fff;
+}

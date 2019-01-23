@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>账号设置</title>
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/layer.css" />
+	<link rel="stylesheet" href="../css/my_Settings.css?v1.0" />
+</head>
+
+<body>
+	<div class="container">
+		<!--顶部-->
+		<!-- <p class="header">设置</p> -->
+		<ul class="content">
+			<a href="../html/change_password.html">
+				<li>
+					<p>修改密码</p>
+				</li>
+			</a>
+			<a href="change_oldNumber.html">
+				<li>
+					<p>更改手机号</p>
+				</li>
+			</a>
+		</ul>
+		<ul class="content" style="margin-top:0.24rem">
+			<li onclick="location.href='about_Us.html'">
+				<p>关于我们</p>
+			</li>
+			<li>
+				<!-- <p>意见反馈</p> -->
+			</li>
+		</ul>
+		<a href="javascript:;" class="quit">退出登录</a>
+	</div>
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/lay/modules/layer.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script>
+		$(function () {
+			// 获取openId
+			var tokenKey = localStorage.getItem('tokenKey')
+			if (!!tokenKey) {
+				getOpenid(1, tokenKey);
+				console.log(localStorage.getItem('openId'));
+			}
+			
+			//退出登录
+			$('.quit').click(function () {
+				//alert(1);
+				localStorage.clear();
+				window.location.reload();
+			})
+			//判断是否登录	
+			var tokenKey = localStorage.getItem('tokenKey'); // 登录凭证
+			if (tokenKey == null || tokenKey == "") {
+				//alert(2);
+				layer.alert('您还未登录，请先登录', function () {
+					localStorage.setItem('typeId', '8')
+					location.href = 'login.html';
+				})
+			}
+
+		})
+	</script>
+</body>
+
+</html>

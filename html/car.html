@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>购物车</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../css/common/common.css" />
+  <link rel="stylesheet" href="../css/common/header.css" />
+  <link rel="stylesheet" href="../css/common/layer.css">
+  <link rel="stylesheet" href="../css/car.css?v1.2" />
+  <style>
+    #container {
+        margin: 0;
+      }
+      </style>
+</head>
+
+<body>
+  <div id="container">
+    <!-- 提示 -->
+    <div id="tips">
+      <span>您的购物车共有<i class="totalNum">0</i>件商品</span>
+      <a href="javascript:;" id="del" class="red">删除</a>
+    </div>
+    <!-- 购物车商品 -->
+    <div id="items">
+    </div>
+    <!-- 删除 -->
+    <div id="model">
+      <div class="box">
+        <p class="sure">确认要删除所选择的商品吗?</p>
+        <p class="yes">确认</p>
+        <p class="no">取消</p>
+      </div>
+    </div>
+    <!-- 结算 -->
+    <div id="balance">
+      <div class="left">
+        <img src="../images/before_select.jpg" alt="" class="whole_check">
+        <span>全选</span>
+      </div>
+      <div class="center">
+        <p>合计 :&nbsp;&nbsp;&nbsp;&nbsp;<i class="red">¥0</i></p>
+      </div>
+      <div class="right">
+        <p class="pay">去结算</p>
+      </div>
+    </div>
+  </div>
+  <!-- 购物车为空 -->
+  <div id="kong">
+    <header>
+      <a href="javascript:;">
+        <img class="back" src="http://wx.bjysjglasses.com/static/wxshop/images/head_jiantou.png" onClick="JavaScript :history.back(1);" />
+      </a>
+      <p class="title">购物车</p>
+    </header>
+    <img class="kong_img" src="http://wx.bjysjglasses.com/static/wxshop/images/carKong.png">
+    <h2>您的购物袋空空如也~</h2>
+    <p class="go">赶快去购物吧！</p>
+    <a class="come" href="index.html">去逛逛</a>
+  </div>
+  <script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/common/common.js?v1.3"></script>
+  <script type="text/javascript" src="../js/common/layer.js"></script>
+  <script type="text/javascript" src="../js/alljs/car.js?v1.2"></script>
+</body>
+
+</html>

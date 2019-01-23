@@ -1,0 +1,127 @@
+body {
+	background: #f0f0f0;
+}
+
+
+/*顶部*/
+
+.header {
+	width: 100%;
+	height: 2.3rem;
+	background: url(../images/info_one.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	padding-top: 0.9rem;
+	position: fixed;
+	top:0;left:0;
+}
+
+.force {
+	display: block;
+	margin: 0 auto;
+	/* background: url() left bottom no-repeat; */
+	background-size: 0.14rem 0.16rem;
+	color: #fff;
+	font-size: 0.3rem;
+	min-width: 2.5rem;
+	text-indent: 0.25rem;
+	height: 0.5rem;
+	text-align: center;
+}
+
+.force i {
+	font-size: 0.48rem;
+}
+
+.header a {
+	display: block;
+	width: 1.5rem;
+	height: 0.46rem;
+	line-height: 0.46rem;
+	background: #5dd8fb;
+	color: #fff;
+	font-size: 0.22rem;
+	margin: 0.3rem auto 0;
+	border-radius: 0.23rem;
+	text-align: center;
+	line-height: 0.46rem;
+}
+
+
+/*积分明细*/
+
+.content {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-top:2.1rem;
+}
+
+.conBox {
+	margin: 0 0.24rem 0.24rem 0.24rem;
+	background: #fff;
+	border-radius: 0.1rem;
+	padding-top: 0.15rem;
+	width: 7.02rem;
+	float: left;
+}
+
+.list {
+	width: 7.02rem;
+	float: left;
+}
+
+.list li {
+	width: 6.45rem;
+	padding: 0.2rem 0.45rem 0.15rem 0.24rem;
+	float: left;
+}
+
+.share {
+	display: inline-block;
+	float: left;
+}
+
+.info {
+	color: #0888f3;
+	font-size: 0.28rem;
+	line-height: 1rem;
+	text-indent: 0.24rem;
+	font-weight: bold;
+}
+
+.time {
+	color: #999;
+	font-size: 0.28rem;
+	padding: 0 0.24rem;
+	border-bottom: 1px solid #f7f7f7;
+	line-height: 0.55rem;
+}
+
+.share p {
+	color: #333;
+	font-size: 0.26rem;
+	line-height: 0.48rem;
+	font-weight: bold;
+}
+
+.share .shareT {
+	color: #999;
+	font-size: 0.22rem;
+}
+
+.forceNum {
+	float: right;
+	color: #fb6a42;
+	font-size: 0.32rem;
+	display: inline-block;
+	line-height: 1.05rem;
+	font-weight: bold;
+}
+.forcenum {
+	float: right;
+	color: #0888f3;
+	font-size: 0.32rem;
+	display: inline-block;
+	line-height: 1.05rem;
+	font-weight: bold;
+}

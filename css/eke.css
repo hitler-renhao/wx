@@ -1,0 +1,36 @@
+#container {
+  margin-top: 0.89rem;
+  padding: 0;
+  height: 100px;
+}
+/* tab栏 */
+.tab {
+  height: .4rem;
+	border-top: 0.01rem solid #000;
+	border-bottom: 0.01rem solid #000;
+  z-index:1;
+  text-align: center;
+  padding: .2rem 0;
+}
+
+.bleft {
+  border-right: 1px solid #4FB7FF;
+}
+
+/* 商家列表 */
+.popular li {
+  border: 1px solid #000;
+}
+
+/* 验光师列表 */
+.userpic {
+	display: inline-block;
+	float: left;
+	width: 1rem;
+	height: 1.5rem;
+	margin: 0 0.1rem 0 0.24rem;
+}
+
+.display {
+  display: none;
+}

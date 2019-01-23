@@ -1,0 +1,133 @@
+body {
+  background-color: #ccc;
+}
+
+/* 条形码 */
+.bar-code {
+  background-color: #fff;
+  padding: 0 .2rem .2rem;
+}
+
+.imgs {
+  height: 4.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar-code img {
+  width: 4rem;
+  height: 4rem;
+}
+.code {
+  text-align: center;
+  font-size: .3rem;
+}
+
+.shop-detail.combo_detail {
+  margin: 0;
+}
+
+/* 商家信息 */
+.shop-detail {
+  position: relative;
+  margin-top: .2rem;
+  padding: 0 .2rem .2rem;
+  background-color: #fff;
+}
+
+.shop-name-detail {
+  font-size: .4rem;
+}
+.shop-name-detail {
+  font-size: .35rem;
+}
+
+.shop-name,
+.combo_detail {
+  color: #c2c2c2;
+  border-bottom: 1px solid #ccc;
+  line-height: .8rem;
+  font-size: .4rem;
+}
+
+.shop-detail ul li {
+  line-height: .6rem;
+  width: 5.5rem;
+}
+
+.telphone {
+  position: absolute;
+  top: 1.7rem;
+  right: .5rem;
+  padding-left: .5rem;
+  font-size: .5rem;
+  color: #219FF5;
+  border-left: 1px solid #ccc;
+}
+
+.telphone:visited,
+.telphone:link {
+  color: #219FF5;
+}
+
+.icon-dianhua {
+  font-size: .5rem;
+}
+
+/* 套餐 */
+.combo-detail p {
+  font-size: .3rem;
+  line-height: .6rem;
+}
+
+.combo-detail table {
+  width: 100%;
+}
+.back {
+  border-top: 1px solid #ccc;
+}
+.draw_back {
+  display: block;
+  border: 1px solid #ccc;
+  width: 1.5rem;
+  text-align: center;
+  border-radius: .1rem;
+  margin-top: .2rem;
+}
+
+.shop-detail .money {
+  width: 100%;
+}
+
+/* 购买须知 */
+.combo_detail {
+  border-bottom: 1px solid #ccc;
+}
+.buy-know p {
+  padding: .2rem .5rem;
+}
+
+/* 进店导航 */
+.gps {
+  background-color: #fff;
+  height: 1.5rem;
+}
+.submit {
+  display: block;
+  float: left;
+  width: 7.02rem;
+  height: 0.88rem;
+  background: #198fe0;
+  line-height: 0.88rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 0.2rem;
+  margin: 0.24rem 0 0.24rem 0.24rem;
+  font-size: 0.36rem;
+}
+.submit:link {
+  color: #fff;
+}

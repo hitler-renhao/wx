@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>欢迎页面</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../css/common/common.css" />
+		<link rel="stylesheet" href="../css/common/header.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div id="container">
+			<div class="toptop">
+				<!-- 头部 -->
+				<header hidden="true" id="header_">
+					<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
+					<p class="title">欢迎您1</p>
+					<ul>
+						<li>
+							<a href="#" onclick="button1()">验光配镜</a>
+						</li>
+						<li>
+							<a href="#" onclick="button2()">积分商城</a>
+						</li>
+						<li>
+							<a href="#" onclick="button3()">消息列表 </a>
+						</li>
+						<li>
+							<a href="#" onclick="button4()">商家中心</a>
+						</li>
+						<li>
+							<a href="#" onclick="button5()">验光师中心</a>
+						</li>
+						<li>
+							<a href="#" onclick="button6()">个人中心</a>
+						</li>
+						<li>
+							<a href="#" onclick="button7()">账号设置</a>
+						</li>
+					</ul>
+
+				</header>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../jsweixin.js"></script>
+		<script type="text/javascript">
+			// alert(2);
+			var href = window.location.href;
+			console.info(href + "1");
+			var type;
+			try {
+
+				type = href.split('?')[1].split('&')[0].split('=')[1]; // 用户类型
+			// var openId = href.split('?')[1].split('&')[1].split('=')[1]; //openid
+			
+				if (type == '1' || type == 1) {
+					button1();
+				} else if (type == '2' || type == 2) {
+					// alert("跳转 店铺");
+					button2();
+				} else if (type == '3' || type == 3) {
+					button3();
+				} else if (type == '4' || type == 4) {
+					button4();
+				} else if (type == '5' || type == 5) {
+					button5();
+				} else if (type == '6' || type == 6) {
+					button6();
+				} else if (type == '7' || type == 7) {
+					button7();
+				} else if (type == '8' || type == 8) {
+					var msg = href.split('?')[1].split('&')[1].split('=')[1]; //openid
+					alert("错误提示：" + msg);
+				} else {
+					location.href = "welcome.html";
+				}
+			} catch (err) {
+				$("#header_").toggle();
+				console.info(err);
+			}
+
+
+			function button1() {
+				location.href = "home_page.html";
+			}
+
+			function button2() {
+				location.href = "goods_list_points.html";
+			}
+
+			function button3() {
+				location.href = "message_list.html";
+			}
+
+			function button4() {
+				location.href = "shop_info.html";
+			}
+
+			function button5() {
+				location.href = "optometrist_info_staff.html";
+			}
+			function button6() {
+				location.href = "mineC.html";
+			}
+			function button7() {
+				location.href = "my_Settings.html";
+			}
+		</script>
+
+	</body>
+</html>

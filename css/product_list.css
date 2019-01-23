@@ -1,0 +1,421 @@
+.serbox {
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #fff;
+}
+
+.searchbox {
+	display: inline-block;
+	margin: 0.22rem 0.24rem 0 0.24rem;
+	width: 7.02rem;
+	border-radius: 0.3rem;
+	background: #f2f2f2;
+	height: 0.6rem;
+}
+
+.searchbox i {
+	display: inline-block;
+	width: 0.27rem;
+	height: 0.28rem;
+	float: left;
+	margin: 0.16rem 0.16rem 0 0.4rem;
+	background: url(../images/ser.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+
+.searchbox .ipt {
+	display: inline-block;
+	float: left;
+	border: none;
+	outline: none;
+	color: #999;
+	font-size: 0.24rem;
+	line-height: 0.6rem;
+	background: none;
+}
+
+.sortbox {
+	padding: 0 0.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.sortbox li {
+	line-height: 1.1rem;
+	text-align: center;
+	color: #333;
+	font-size: 0.3rem;
+}
+
+.sortbox .active {
+	color: #ff5100;
+}
+
+.sortdiv {
+	display: inline-block;
+	padding: 0 0.5rem;
+	height: 0.8rem;
+	background: #f8f8f8;
+	width: 6.5rem;
+}
+
+
+.sortdiv a {
+	display: inline-block;
+	padding: 0.09rem 0.2rem;
+	border: 1px solid #999;
+	color: #999;
+	font-size: 0.28rem;
+	line-height: 0.28rem;
+	margin: 0.15rem 0.3rem 0 0;
+	border-radius: 0.05rem;
+}
+
+.sortdiv .show {
+	color: #ff5100;
+	border: 1px solid #ff5100;
+}
+
+
+/*内容*/
+
+.content {
+	width: 7.26rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-left: 0.24rem;
+	margin-bottom: 0.8rem;
+}
+
+.content li {
+	border-top: 1px solid #efefef;
+	float: left;
+	width: 100%;
+	padding: 0.2rem 0;
+}
+
+.content li:last-child {
+	border-bottom: 1px solid #efefef;
+}
+
+.content li:first-child {
+	border-top: none;
+}
+
+.border-bottom {
+	color: #222;
+	font-size: 0.32rem;
+	line-height: 0.5rem;
+}
+
+.user {
+	width: 100%;
+	height: 100%;
+}
+
+.style {
+	display: block;
+	float: left;
+	width: 2.3rem;
+	height: 2.3rem;
+}
+
+.evaluate1 {
+	width: 100%;
+	color: #666;
+	font-size: 0.2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.star {
+	margin-top: 0;
+}
+
+.style1 {
+	display: block;
+	float: left;
+	width: 1.12rem;
+	height: 1.12rem;
+	margin: 0 0.1rem 0 0.24rem;
+	border-radius: 0.1rem;
+}
+
+.product_name {
+	color: #222;
+	font-size: 0.32rem;
+	line-height: 0.5rem;
+	padding-right: 0.14rem;
+	display: inline-block;
+	height: 1.03rem;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	word-break: break-all;
+	overflow: hidden;
+	width: 4.45rem;
+}
+
+.opbox {
+	padding: 0.04rem 0 0 0.15rem;
+	float: left;
+	width: 4.7rem;
+	height: 2.3rem;
+}
+
+.namebox {
+	width: 100%;
+	display: inline-block;
+	-margin: 0.2rem 0;
+}
+
+.namebox p {
+	color: #666;
+	font-size: 0.24rem;
+	display: inline-block;
+	float: right;
+	margin-right: 0.24rem;
+	line-height: 0.36rem;
+}
+
+.namebox p:first-child {
+	color: #f52410;
+	float: left;
+	margin-right: 0;
+}
+
+.namebox p:first-child b {
+	color: #f52410;
+	font-size: 0.36rem;
+}
+
+.shop {
+	padding-right: 0.2rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.name {
+	color: #434343;
+	font-size: 0.28rem;
+	display: inline-block;
+	float: left;
+}
+
+.namebox i {
+	float: right;
+	font-size: 0.18rem;
+}
+
+.namebox a {
+	display: inline-block;
+	float: left;
+	width: 1.18rem;
+	height: 0.28rem;
+	border: 1px solid #399af5;
+	color: #399af5;
+	font-size: 0.18rem;
+	line-height: 0.28rem;
+	text-align: center;
+	border-radius: 0.05rem;
+	margin: 0.07rem 0 0 0.1rem;
+}
+
+.title1 {
+	display: inline;
+	color: #666666;
+	font-size: 0.2rem;
+}
+
+.star {
+	margin-left: 0.1rem;
+}
+
+.star i {
+	display: inline-block;
+	float: left;
+	width: 0.3rem;
+	height: 0.26rem;
+	background: url(../images/wu.png);
+	background-size: cover;
+	margin-top: 0.05rem;
+	margin-right: 0;
+	-display: none;
+}
+
+.star .aaa {
+	background: url(../../images/change.png);
+}
+
+.evaluate {
+	width: 5rem;
+	margin-left: .22rem;
+	color: #666;
+	font-size: 0.2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.evaluate i {
+	color: orange
+}
+
+.renz {
+	display: inline-block;
+	margin-top: 0.06rem;
+	width: 100%;
+}
+
+.renz p {
+	color: #666;
+	font-size: 0.22rem;
+	display: inline-block;
+}
+
+.renz p:first-child {
+	width: 3.25rem;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.renz p:nth-child(2) {
+	float: right;
+	margin-top: 0.03rem;
+}
+
+.news {
+	outline: none;
+	border: none;
+	background: #fff;
+	border: 1px solid #399af5;
+	font-size: 0.18rem;
+	line-height: 0.28rem;
+	text-align: center;
+	border-radius: 0.05rem;
+	margin: 0.07rem 0 0 0.1rem;
+	padding: 0 0.1rem;
+	background: #399af5;
+	color: #fff;
+}
+
+.close {
+	position: absolute;
+	top: 0.3rem;
+	right: 0.3rem;
+	color: #fff;
+	z-index: 100000;
+	font-size: 1em;
+}
+
+.clear {
+	clear: both;
+}
+
+
+/*搜索商品*/
+
+.serbox {
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #fff;
+	-box-shadow: 0px 0.02rem 0.1rem 0 #f5f5f5;
+	z-index: 1000;
+}
+
+.searchbox {
+	display: inline-block;
+	margin: 0.22rem 0.24rem 0 0.24rem;
+	width: 7.02rem;
+	border-radius: 0.3rem;
+	background: #f2f2f2;
+	height: 0.6rem;
+}
+
+.searchbox i {
+	display: inline-block;
+	width: 0.27rem;
+	height: 0.28rem;
+	float: left;
+	margin: 0.16rem 0.16rem 0 0.4rem;
+	background: url(../images/ser.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+
+.searchbox .ipt {
+	display: inline-block;
+	float: left;
+	border: none;
+	outline: none;
+	color: #999;
+	font-size: 0.24rem;
+	line-height: 0.6rem;
+	background: none;
+	width: 6rem;
+}
+
+.sortboxa {
+	padding: 0 0.5rem;
+}
+
+.sortboxa li {
+	line-height: 0.9rem;
+	text-align: center;
+	color: #333;
+	font-size: 0.3rem;
+	margin-right: 0.8rem;
+	float: left;
+}
+
+.sortboxa .active {
+	color: #ff5100;
+}
+/*搜索无商品*/
+
+.nonegoods {
+	width: 100%;
+	margin-top: 1.8rem;
+	/* display:none; */
+}
+
+.nonebpx {
+	padding: 0.6rem 0 0.4rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nonebpx img {
+	display: inline-block;
+	width: 1.1rem;
+	height: 1rem;
+	margin-bottom: 0.3rem;
+}
+
+.nonebpx p {
+	color: #333;
+	font-size: 0.28rem;
+	line-height: 0.44rem;
+}
+
+.nonebpx .search {
+	color: #999;
+	font-size: 0.24rem;
+}
+
+.yousel {
+	width: 100%;
+	height: auto;
+}

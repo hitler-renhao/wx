@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../css/common/common.css" />
+		<link rel="stylesheet" href="../css/common/layui.css" />
+		<link rel="stylesheet" href="../css/common/layer.css" />
+		<link rel="stylesheet" href="../css/common/header.css" />
+		<link rel="stylesheet" href="../css/login.css?1.0" />
+	</head>
+
+	<body>
+		<div id="container" style="margin-top:0;">
+			<!-- 头部 -->
+			<!--<div class="toptop">			
+			<header>
+				<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
+				<p class="title">注册</p>
+			</header>
+		</div>-->
+			<form class="content">
+				<span class="conbox">
+				<img src="../images/phone.png" alt="" class="phoneImg" />
+				<input type="text" placeholder="请输入手机号" id="tel">
+			</span>
+				<span class="conbox">
+				<img src="../images/psd.png" alt="" />
+				<input type="password" placeholder="设置6到20位登录密码" id="psd">
+			</span>
+				<span class="conbox">
+				<img src="../images/psd.png" alt="" />
+				<input type="password" placeholder="请再次输入登录密码" id="yzm">
+			</span>
+				<li class="btn">注册</li>
+				<p class="info">
+					<label class="checked"></label>
+					<b>已阅读并同意</b>
+					<a href="In_agreement.html">《用户服务协议》</a>
+				</p>
+			</form>
+		</div>
+		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../js/common/layer.js"></script>
+		<script>
+			/*是否同意阅读*/
+			var colorArr = ['url(../images/c1.png)', 'url(../images/c2.png)'];
+			//console.log(colorArr[0]);
+			var count = 0;
+			$('.info label').click(function() {
+				var $this = $(this);
+				$this.css({
+					'background': colorArr[count % 2],
+					'background-size': '100% 100%'
+				});
+				count++;
+			});
+			/*是否同意阅读 -- end -- */
+			var productId = location.search.substring(1).split('=')[1];
+			var typeId = localStorage.getItem('typeId');
+			var register = {
+				init: function() {
+					this.registerData();
+				},
+				registerData: function() {
+
+					//1.店主  2.门店验光师  3.独立验光师   4.C端用户
+					$(".btn").click(function() {
+						var $optistmobile = $("#tel").val();
+						var $password = $("#psd").val();
+						var $messigeCode = $("#yzm").val();
+						var isMobile = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+						if(!$optistmobile) {
+							layer.msg('请输入手机号码，不能为空');
+							return false;
+						} else if(!isMobile.test($optistmobile)) {
+							layer.msg('请输入有效的手机号码');
+							return false;
+						}
+						if(!$messigeCode) {
+							layer.msg('请输入二次密码，不能为空');
+							return false;
+						}
+						if(!$password) {
+							layer.msg('请输入密码，不能为空');
+							return false;
+						}
+						if($password != $messigeCode) {
+							layer.msg('两次密码不一致,请重新输入');
+							return false;
+						}
+						console.log($optistmobile);
+						$.ajax({
+							type: "post",
+							url: global + "/login/publicRegister",
+							async: true,
+							data: {
+								"iphone": $optistmobile,
+								"password": $password,
+								"type": typeId,
+							},
+							success: function(data) {
+								console.log(data);
+								var res = data.data;
+								if(data.code == 200) {
+									layer.msg('注册成功！');
+									localStorage.setItem('usertel', $optistmobile);
+									switch(typeId) {
+										case '1':
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId', res.id);
+											location.href = "../html/shop_info.html";
+											break;
+										case '3':
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId', res.id);
+											location.href = "../html/optometrist_info_staff.html";
+											break;
+										case '4':
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId', res.id);
+											location.href = './optometrist_evaluation.html?typeid=' + typeId;
+											break;
+										case '5':
+											console.log(data);
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId', res.id);
+											//									alert(111)
+											location.href = './shop_evaluation.html?typeid=' + typeId;
+											break;
+										case '6':
+											console.log(data);
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId6', res.id);
+											var shopId = localStorage.getItem('shopId')
+											//									alert(111)
+											location.href = './shop_detail.html?shopId=' + shopId;
+											break;
+											// 验光师极光
+										case '7':
+											console.log(data);
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId', res.id);
+											var infoId = localStorage.getItem('infoId');
+											location.href = './optometrist_detail.html?shopId=' + shopId + '&infoId=' + infoId;
+											break;
+										case '8':
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId', res.id);
+											localStorage.setItem('iphone', $optistmobile); //存手机号
+											location.href = './my_Settings.html?typeid=' + typeId + '&openid' + openId;
+											break;
+										case '9':
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId', res.id);
+											localStorage.setItem('iphone', $optistmobile); //存手机号
+											location.href = './mainC.html?typeid=' + typeId + '&openid' + openId;
+											break;
+										case '10':
+											localStorage.setItem('tokenKey', res.tokenKey);
+											localStorage.setItem('userId', res.id);											
+											location.href = './goods_detail.html?productId=' + productId;
+											break;
+									}
+								} else {
+									layer.alert("此号码已经注册,请直接登录！", function() {
+										window.location.href = "login.html";
+									})
+								}
+							}
+						});
+					})
+				}
+			}
+			register.init();
+		</script>
+	</body>
+
+</html>

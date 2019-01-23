@@ -1,0 +1,152 @@
+/*C端我的*/
+
+body {
+	background: #f0f0f0;
+}
+
+
+/*顶部*/
+
+.header {
+	width: 100%;
+	height: 2.85rem;
+	background: url(../images/main_back.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	padding-top: 1rem;
+	position: relative;
+}
+
+.header img {
+	display: block;
+	width: 1.35rem;
+	height: 1.35rem;
+	margin: 0 auto;
+	border-radius: 50%;
+	;
+}
+
+.header p {
+	color: #fff;
+	font-size: 0.3rem;
+	text-align: center;
+	line-height: 0.88rem;
+}
+
+.header p i {
+	display: inline-block;
+	width: 0.26rem;
+	height: 0.26rem;
+	background: url(../images/my_edit.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+
+.force {
+	display: inline-block;
+	position: absolute;
+	width: 5.98rem;
+	height: 0.96rem;
+	background: #fff;
+	left: 0.5rem;
+	bottom: -0.4rem;
+	border-radius: 0.1rem;
+	box-shadow: 0 0.02rem 0.1rem #bfe5ea;
+	padding: 0 0.24rem;
+}
+
+.force b {
+	color: #333;
+	font-size: 0.28rem;
+	float: left;
+	line-height: 0.96rem;
+}
+
+.force b i {
+	color: #f58fce;
+}
+
+.force a {
+	display: inline-block;
+	width: 1.02rem;
+	height: 0.44rem;
+	background: #fb9ed6;
+	color: #fff;
+	font-size: 0.26rem;
+	float: right;
+	line-height: 0.44rem;
+	margin-top: 0.25rem;
+	text-align: center;
+	border-radius: 0.05rem;
+	box-shadow: 0 0 0.1rem #fb9ed6;
+}
+
+.mainList {
+	width: 6.45rem;
+	float: left;
+	margin: 0.75rem 0.45rem 0 0.5rem;
+	background: #fff;
+	border-radius: 0.1rem;
+	position: relative;
+	box-shadow: 0 0.02rem 0.1rem #bfe5ea;
+}
+
+.leftbox1,
+.leftbox2 {
+	display: inline-block;
+	width: 0.34rem;
+	height: 0.34rem;
+	background: #f0f0f0;
+	border-radius: 50%;
+	position: absolute;
+	left: -0.17rem;
+	top: 33.33%;
+	margin-top: -0.17rem;
+}
+
+.rightbox1,
+.rightbox2 {
+	display: inline-block;
+	width: 0.34rem;
+	height: 0.34rem;
+	background: #f0f0f0;
+	border-radius: 50%;
+	position: absolute;
+	right: -0.17rem;
+	top: 33.33%;
+	margin-top: -0.17rem;
+}
+
+.leftbox2,
+.rightbox2 {
+	top: 66.66%;
+}
+
+.mainList li {
+	float: left;
+	line-height: 1rem;
+	border-bottom: 1px dotted #d3d3d3;
+	border-right: 1px dotted #d3d3d3;
+	width: 2.12rem;
+	height: 2.12rem;
+}
+
+.mainList li:nth-child(7){
+	border-bottom: none;
+}
+
+.mainList li:nth-child(3n) {
+	border-right: none;
+}
+
+.mainList li img {
+	display: block;
+	width: 0.9rem;
+	height: 0.9rem;
+	margin: 0.4rem auto 0.1rem;
+}
+
+.mainList li p {
+	color: #333;
+	font-size: 0.28rem;
+	text-align: center;
+	line-height: 0.68rem;
+}

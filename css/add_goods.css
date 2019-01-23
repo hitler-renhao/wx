@@ -1,0 +1,704 @@
+.submit {
+	display: block;
+	float: left;
+	width: 7.02rem;
+	height: 0.88rem;
+	background: #198fe0;
+	line-height: 0.88rem;
+	text-align: center;
+	border: none;
+	outline: none;
+	color: #fff;
+	border-radius: 0.2rem;
+	margin: 0.5rem 0.24rem;
+	font-size: 0.36rem;
+}
+
+header .del {
+	position: absolute;
+	width: 0.4rem;
+	height: 0.44rem;
+	right: 0.24rem;
+	top: 50%;
+	margin-top: -0.22rem;
+}
+
+body {
+	background: #fff;
+}
+
+.release_up_pic {
+	width: 100%;
+	height: 3.4rem;
+	float:left;
+	-border-bottom: 0.2rem solid #f0f4f3;
+}
+
+#chose_pic_btn {
+	width: 4.3rem;
+	height: 2.05rem;
+	margin: 0.5rem auto;
+	background: url(../images/upload.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	display: block;
+	position:relative;
+}
+
+#chose_pic_btns {
+	width: 4.3rem;
+	height: 2.05rem;
+	margin: 0.5rem auto;
+	background-size: 100% 100%;
+	display: block;
+}
+
+#goods-pic,#goods-pic2,#goods-pic1 {
+	width: 100%;
+	height: 100%;
+}
+
+.release_up_pic .up_pic .pic_look {
+	width: 4.3rem;
+	height: 2.05rem;
+	margin: 0;
+}
+.pic_looka{
+	width:100%;
+	height:100%;
+}
+.goodtype {
+	padding: 0.3rem 0.24rem;
+	border-bottom: 0.2rem solid #f0f4f3;
+}
+
+.goodtype h4 {
+	color: #333;
+	font-size: 0.3rem;
+	line-height: 0.36rem;
+}
+
+.goodtype h4 i {
+	color: red;
+}
+
+.type {
+	display: inline-block;
+	height: auto;
+	padding: 0.24rem 0.4rem;
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 1px solid #f2f2f3;
+}
+
+.type button {
+	display: inline-block;
+	border: 1px solid #fff;
+	border-radius: 0.3rem;
+	text-align: center;
+	color: #333;
+	font-size: 0.26rem;
+	padding: 0.1rem 0.56rem;
+	background: #f7f7f7;	
+	margin: 0.1rem auto;
+}
+
+.type .active {
+	background: #cdeafe;
+	border: 1px solid #1f9ef5;
+	color: #1f9ef5;
+}
+
+.info {
+	padding: 0.36rem 0.24rem;
+}
+
+.info li {
+	width: 100%;
+	min-height: 0.6rem;
+	margin-bottom: 0.36rem;
+}
+
+.info li:last-child {
+	margin-bottom: 0;
+}
+
+.info li label {
+	color: #333;
+	font-size: 0.3rem;
+	line-height: 0.6rem;
+}
+
+.info li label i {
+	color: red;
+}
+
+.info li input {
+	display: inline-block;
+	width: 5.25rem;
+	height: 0.58rem;
+	border: 1px solid #cfcfcf;
+	color: #666;
+	font-size: 0.24rem;
+	line-height: 0.58rem;
+	text-indent: 0.13rem;
+	border-radius: 0.1rem;
+	;
+	margin-left: 0.1rem;
+}
+
+.bigbox {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: none;
+	z-index: 100;
+}
+
+.big_box {
+	width: 5rem;
+	height: 2.4rem;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
+	padding: 0.7rem 0.3rem;
+	background: #fff;
+	border-radius: 0.1rem;
+}
+
+.big_box h4 {
+	color: #333;
+	font-size: 0.3rem;
+	text-align: center;
+}
+
+.big_box p {
+	display: block;
+	color: #333;
+	font-size: 0.24rem;
+	text-align: center;
+	line-height: 0.36rem;
+	margin-top: 0.3rem;
+}
+
+.word {
+	padding: 0 0.5rem;
+	display: flex;
+	float: left;
+	justify-content: space-between;
+	width: 3.9rem;
+	margin-top: 0.3rem;
+}
+
+.word a {
+	display: inline-block;
+	width: 1.5rem;
+	;
+	height: 0.6rem;
+	background: #fff;
+	color: #333;
+	line-height: 0.6rem;
+	font-size: 0.24rem;
+	text-align: center;
+	border-radius: 0.05rem;
+	border: 1px solid #333;
+	box-sizing: border-box;
+}
+
+.word a:last-child {
+	background: #198fe0;
+	color: #fff;
+	border: none;
+}
+
+.layui-layer-dialog .layui-layer-content {
+	width: 2.5rem;
+	height: .5rem;
+	font-size: 20px;
+	line-height: .5rem;
+}
+
+
+/*添加商品改版*/
+
+.line {
+	width: 100%;
+	height: 0.2rem;
+	border-top: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
+	background: #f0f0f0;
+	float: left;
+}
+
+.setting {
+	wdth: 100%;
+	background: #f5f5f5;
+}
+
+.addtype {
+	display: inline-block;
+	width: 6rem;
+	height: 0.8rem;
+	border: 1px solid #fc9335;
+	text-align: center;
+	line-height: 0.8rem;
+	margin: 0.55rem 0.7rem;
+	color: #333;
+	border-radius: 0.05rem;
+}
+
+.addagu {
+	display: inline-block;
+	width: 6rem;
+	height: 0.8rem;
+	border: 1px solid #fc9335;
+	text-align: center;
+	line-height: 0.8rem;
+	margin: 0.25rem 0.7rem;
+	color: #333;
+	border-radius: 0.05rem;
+}
+
+.addagu p,
+.addtype p {
+	display: inline-block;
+	margin-top: -0.12rem;
+}
+
+.addtype i,
+.addagu i {
+	font-size: 0.4rem;
+	font-weight: bold;
+}
+
+.settitle {
+	width: 7.02rem;
+	padding: 0 0.24rem;
+	line-height: 0.9rem;
+	background: #fff;
+	height: 0.9rem;
+	float: left;
+}
+
+.settitle h3 {
+	font-size: 0.28rem;
+	color: #333;
+	float: left;
+}
+
+.settitle p {
+	float: right;
+	font-size: 0.24rem;
+	color: #ff3f3e;
+	background: url(../images/infored.png) left center no-repeat;
+	background-size: 0.3rem 0.3rem;
+	text-indent: 0.35rem;
+}
+
+.setlist {
+	padding: 0.45rem 0.24rem 0 0.24rem;
+	height: auto;
+	float: left;
+}
+
+.setlist li {
+	padding: 0 0.24rem;
+	margin-bottom: 0.65rem;
+	float: left;
+	width: 6.55rem;
+	position: relative;
+	z-index: 100;
+	height: 2.78rem;
+	background: url(../images/whiteback.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+.setlist .whiteone{
+	background: url(../images/whiteone.png) 0 0 no-repeat;background-size: 100% 100%;
+}
+.setlist .whitetwo{
+	background: url(../images/whitetwo.png) 0 0 no-repeat;background-size: 100% 100%;
+}
+.setlist .whitethree{
+	background: url(../images/whitethree.png) 0 0 no-repeat;background-size: 100% 100%;
+}
+.setlist li input::-webkit-input-placeholder {
+	color: #999;
+	font-size: 0.28rem;
+}
+
+.setlist li:last-child {
+	margin-bottom: 0;
+}
+
+.setlist li h3 {
+	color: #1f9ef5;
+	font-size: 0.3rem;
+}
+
+.libox {
+	display: inline-block;
+	width: 100%;
+	line-height: 0.95rem;
+	border-bottom: 1px solid #cfcfcf;
+	height: 0.95rem;
+}
+
+.liboxa {
+	display: inline-block;
+	width: 100%;
+	line-height: 0.95rem;
+	height: 0.95rem;
+}
+
+.libox label,
+.liboxa label {
+	/* color: #999; */
+	font-size: 0.28rem;
+}
+
+.goodsname1 {
+	display: inline-block;
+	border: none;
+	outline: none;
+	color: #666;
+	font-size: 0.28rem;
+	padding: 0 0.3rem;
+	width: 4.5rem;
+}
+
+
+.liboxa span {
+	display: inline-block;
+	width: 2.8rem;
+	height: 0.95rem;
+	border-bottom: 1px solid #cfcfcf;
+	float: left;
+}
+
+.liboxa span:last-child {
+	float: right;
+}
+
+.goodsprice,
+.goodscount {
+	display: inline-block;
+	border: none;
+	outline: none;
+	color: #333;
+	font-size: 0.28rem;
+	padding: 0 0.25rem;
+	width: 1.5rem;
+}
+
+.goodsDel {
+	position: absolute;
+	top: 0.3rem;
+	right: 0.24rem;
+	color: #ff3f3e;
+	font-size: 0.5rem;
+	font-weight: bold;
+}
+
+
+/*设置参数*/
+
+.agu {
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #fff;
+}
+
+.set {
+	color: #333;
+	line-height: 0.95rem;
+	font-size: 0.28rem;
+	text-indent: 0.24rem;
+	border-bottom: 1px solid #f2f2f3;
+}
+
+.goodsImg {
+	color: #666;
+	font-size: 0.24rem;
+	line-height: 0.7rem;
+	border-top: 1px solid #f2f2f3;
+	text-indent: 0.24rem;
+}
+
+.combo_input {
+	padding: .2rem 0.24rem;
+}
+
+.icon-wrong {
+	font-size: .5rem;
+	color: red;
+}
+
+.name,
+.sum,
+.company,
+.price {
+	display: block;
+	width: 80%;
+	height: 0.58rem;
+	border: 1px solid #cfcfcf;
+	font-size: 0.24rem;
+	line-height: 0.58rem;
+	text-indent: 0.13rem;
+	border-radius: 0.1rem;
+	margin: 0 auto;
+	color: #333;
+}
+
+#chose_pic_btn button {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#container {
+	margin-top: 0;
+}
+.anniu{
+	float:left;
+	width:100%;padding:0.3rem 0;margin-top:0.6rem;
+	background:#fff;
+}
+/*上传商品介绍图*/
+.release_up_pic1 .tit {
+	padding: 12px;
+	font-size: 1.4rem;
+	color: #999;
+}
+.release_up_pic1 .tit h4 {
+	font-weight: normal;
+}
+.release_up_pic1 .tit h4 em {
+	font-size: 1.1rem;
+}
+.release_up_pic1 .up_pic1 {
+	background-color: #fff;
+	padding: 15px 12px;
+	font-size: 0;
+	margin-left: -3.33333%;
+	padding-bottom: 3px;
+	-border-bottom: 1px solid #e7e7e7;
+	border-top: 1px solid #e7e7e7;
+}
+.release_up_pic1 .up_pic1 .pic_look1 {
+	width: 30%;
+	height: 80px;
+	display: inline-block;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	margin-left: 3.3333%;
+	margin-bottom: 12px;
+	position: relative;
+	float:left;
+}
+.release_up_pic1 .up_pic1 .pic_look1 em {
+	position: absolute;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-color: #ff0000;
+	color: #fff;
+	font-size: 18px; 
+	right: 5px;
+	top: 5px;
+	text-align: center;
+	line-height: 22px;
+	border-radius: 50%;
+	font-weight: bold;
+}
+#chose_pic_btn1 {
+	width: 30%;
+	height: 2.08rem;
+	position: relative;
+	display: inline-block;
+	-background-image: url(../images/add.png);
+	box-sizing: border-box;
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border: 1px dashed #dbdbdb;
+	margin-left: 3.3333%;
+	margin-bottom: 12px;
+}
+.photo{display:block;width:0.66rem;height:0.48rem;margin:0.5rem auto 0;}
+.photoNim{text-align: center;color:#cdcdcd;font-size: 0.3rem;line-height:1rem;}
+#chose_pic_btn1 button {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+#chose_pic_btn1 input {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+.release_btn {
+	padding: 0 24px;
+	margin-top: 70px;
+}
+.release_btn button {
+	width: 100%;
+	background-color: #2c87af;
+	font-size: 1.4rem;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	height: 45px;
+	outline: none;
+}
+.release_btn button.none_btn {
+	background-color: #f2f2f2;
+	color: #2c87af;
+	border: 1px solid #2c87af;
+	margin-top: 15px;
+}
+
+/*商品详情图*/
+.release_up_pic2 .tit {
+	padding: 12px;
+	font-size: 1.4rem;
+	color: #999;
+}
+.release_up_pic2 .tit h4 {
+	font-weight: normal;
+}
+.release_up_pic2 .tit h4 em {
+	font-size: 1.1rem;
+}
+.release_up_pic2 .up_pic2{
+	background-color: #fff;
+	padding: 15px 12px;
+	font-size: 0;
+	margin-left: -3.33333%;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #e7e7e7;
+	border-top: 1px solid #e7e7e7;
+	height:2.25rem;	
+}
+.release_up_pic2 .up_pic2 .pic_look2 {
+	width: 30%;
+	height: 2.08rem;
+	display: inline-block;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	margin-left: 3.3333%;
+	margin-bottom: 12px;
+	position: relative;
+	float:left;
+}
+
+.release_up_pic2 .up_pic2 .pic_look2 em {
+	position: absolute;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-color: #ff0000;
+	color: #fff;
+	font-size: 18px; 
+	right: 5px;
+	top: 5px;
+	text-align: center;
+	line-height: 22px;
+	border-radius: 50%;
+	font-weight: bold;
+}
+#chose_pic_btn2 {
+	width: 30%;
+	height: 2.08rem;
+	position: relative;
+	display: inline-block;
+	-background-image: url(../images/add.png);
+	box-sizing: border-box;
+	background-size: 30px 30px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border: 1px dashed #dbdbdb;
+	margin-left: 3.3333%;
+	margin-bottom: 12px;
+}
+.photo{display:block;width:0.66rem;height:0.48rem;margin:0.5rem auto 0;}
+.photoNim{text-align: center;color:#cdcdcd;font-size: 0.3rem;line-height:1rem;}
+#chose_pic_btn2 button {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+#chose_pic_btn2 input {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+.release_btn {
+	padding: 0 24px;
+	margin-top: 70px;
+}
+.release_btn button {
+	width: 100%;
+	background-color: #2c87af;
+	font-size: 1.4rem;
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	height: 45px;
+	outline: none;
+}
+.release_btn button.none_btn {
+	background-color: #f2f2f2;
+	color: #2c87af;
+	border: 1px solid #2c87af;
+	margin-top: 15px;
+}
+.selt{
+	 display: inline-block;
+    width: 5.25rem;
+    height: 0.58rem;
+    border: 1px solid #cfcfcf;
+    color: #666;
+    font-size: 0.24rem;
+    line-height: 0.58rem;
+    text-indent: 0.13rem;
+    border-radius: 0.1rem;
+    margin-left: 0.1rem;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */  
+  color: #999!important;
+}  
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */  
+  color: #999!important;  
+}  
+input::-moz-placeholder { /* Mozilla Firefox 19+ */  
+  color: #999!important;  
+}  
+input:-ms-input-placeholder { /* Internet Explorer 10+ */  
+  color: #999!important;  
+}

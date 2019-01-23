@@ -1,0 +1,356 @@
+body {
+	background: #f5f5f5;
+}
+
+.content {
+	padding: 0 0.24rem;
+	height: auto;
+	margin-top: 0.5rem;
+	float: left;
+}
+
+.content li {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin-bottom: 0.3rem;
+}
+
+.content li:last-child {
+	margin-bottom: 0.5rem;
+}
+
+.content li label {
+	color: #333;
+	display: inline-block;
+	float: left;
+	line-height: 0.5rem;
+	font-size: 0.24rem;
+}
+
+.content li label i {
+	color: red;
+}
+
+.content li span {
+	display: inline-block;
+	float: left;
+	min-width: 2rem;
+	-border: 1px solid #ccc;
+	height: 0.4rem;
+	margin-left: 0.1rem;
+}
+
+.content li textarea {
+	display: inline-block;
+	width: 6.75rem;
+	padding: 0.1rem;
+	line-height: 0.36rem;
+	font-size: 0.2rem;
+	border-radius: .1rem;
+	border: #dedede 1px solid;
+}
+
+.submit {
+	display: block;
+	float: left;
+	-position: fixed;
+	-bottom: 1rem;
+	-left: 0;
+	width: 7.02rem;
+	height: 0.88rem;
+	background: #198fe0;
+	line-height: 0.88rem;
+	text-align: center;
+	border: none;
+	outline: none;
+	color: #fff;
+	border-radius: 0.2rem;
+	margin: 0.24rem 0 0.24rem 0.24rem;
+}
+
+.content li span i {
+	float: left;
+	width: 0.5rem;
+	height: 0.5rem;
+	cursor: pointer;
+}
+
+/*店铺完善资料*/
+.form {
+	padding: 0 0.24rem;
+}
+
+.content_item {
+	float: left;
+	width: 100%;
+	margin-top: 0.88rem;
+}
+
+#bindingshop {
+	width: 3rem;
+	height: .5rem;
+	float: right;
+	background: #fff;
+	border: none;
+	border-radius: .05rem;
+	color: #999;
+	margin-right: 0.2rem
+		/* color: #fff; */
+}
+
+.binding {
+	border: 1px solid #ccc;
+	padding: .2rem 0;
+	border-radius: .1rem;
+}
+
+/*上传图片*/
+.identity {
+	width: 1.6rem;
+	height: 1.6rem;
+	margin: 0 0.2rem 0.2rem 0;
+	position: relative;
+	float: left;
+}
+
+.identity img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: 1px solid #dedede;
+}
+
+.identity input {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.upload {
+	width: 7.02rem;
+	height: auto;
+	margin: 0 0.24rem;
+	float: left;
+}
+
+.identity p {
+	position: absolute;
+	left: 0;
+	top: 0;
+	line-height: 1.6rem;
+	text-align: center;
+	display: block;
+	width: 100%;
+	color: #dedede
+}
+
+.add {
+	width: 1.6rem;
+	height: 1.6rem;
+	margin: 0 0.2rem 0.2rem 0;
+	position: relative;
+	line-height: 1.6rem;
+	text-align: center;
+	border: 1px solid #dedede;
+	float: left;
+}
+
+.demo input,
+.demo textarea,
+.demo select {
+	border: 1px solid #999;
+	border-radius: 5px;
+	color: #333;
+	display: inline-block;
+	height: 27px;
+	font-size: 1.5em;
+	text-align: center;
+	width: 135px;
+	vertical-align: middle
+}
+
+.demo input:focus,
+.demo textarea:focus,
+.demo select:focus {
+	border: 1px solid #95BDD4
+}
+
+.demo input:hover,
+.demo textarea:hover,
+.demo select:hover {
+	border: 1px solid #BDBDBD
+}
+
+.demo textarea {
+	resize: none;
+	height: 27px
+}
+
+.demo select {
+	text-align: left
+}
+
+.demo .target-demo {
+	display: inline-block;
+	vertical-align: middle
+}
+
+.demo div.hint {
+	background-color: #F8F8F8;
+	border-radius: 5px;
+	color: #333;
+	display: inline-block;
+	height: 27px;
+	font-size: 1.5em;
+	text-align: center;
+	width: 135px;
+	vertical-align: middle
+}
+
+.demo label {
+	color: #444;
+	font-size: 1.7em;
+	letter-spacing: .7px;
+	margin-right: 5px;
+	padding-left: 6px;
+	vertical-align: middle
+}
+
+.demo a.run {
+	font-size: 1.5em;
+	margin-left: 5px;
+	letter-spacing: .7px;
+	vertical-align: middle
+}
+
+body {
+	background: #fff;
+}
+
+.pic_looka {
+	width: 100%;
+	height: 80px;
+	display: inline-block;
+	-z-index: 100000;
+}
+
+.release_up_pic {
+	-float: left;
+	width: 100%;
+	height: auto;
+}
+
+.pic_look {
+	float: left;
+}
+
+.textinfo {
+	display: inline-block;
+	color: #333;
+	font-size: 0.3rem;
+	line-height: 0.6rem;
+}
+
+.serivetype {
+	display: inline-block;
+	outline: none;
+	border: none;
+	line-height: 0.6rem;
+	background: url(../images/8.png) right center no-repeat;
+	background-size: 0.2rem 0.35rem;
+	padding: 0 0.25rem 0 0.05rem;
+	margin-right: 0.22rem;
+	/*overflow:hidden;text-overflow:ellipsis;white-space:nowrap*/
+}
+
+.shop-pic {
+	border-top: 0.2rem solid #f2f2f2;
+	padding: 0.2rem 0 0.25rem 0.24rem;
+	float: left;
+	margin-bottom: 0.5rem;
+}
+
+.bigbox {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	display: none;
+}
+
+.serivebox {
+	background: #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 0.1rem;
+	width: 5.8rem;
+	height: 6.3rem;
+	padding: 0.6rem 0.5rem;
+}
+
+.serivebox h4 {
+	color: #333;
+	font-size: 0.28rem;
+	font-weight: bold;
+}
+
+.serivebox h4 i {
+	font-size: 0.6rem;
+	float: right;
+	color: #333;
+	line-height: 0.36rem;
+}
+
+.seriveList {
+	width: 100%;
+	float: left;
+	margin-top: 0.3rem;
+}
+
+.seriveList li {
+	float: left;
+	height: 0.7rem;
+	width: 100%;
+}
+
+.seriveList li input {
+	display: inline-block;
+	width: 0.2rem;
+	height: 0.2rem;
+	background: url(../images/check.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	float: left;
+	margin: 0.23rem 0.24rem 0 0;
+}
+
+.seriveList li p {
+	float: left;
+	font-size: 0.26rem;
+	line-height: 0.7rem;
+}
+
+.sure {
+	display: block;
+	width: 2.45rem;
+	height: 0.78rem;
+	color: #fff;
+	background: #fe7c00;
+	border-radius: 0.1rem;
+	line-height: 0.78rem;
+	text-align: center;
+	outline: none;
+	border: none;
+	margin: 0.45rem 0 0 1.7rem;
+	float: left;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>搜索商品</title>
+	<link rel="stylesheet" href="../css/common/common.css" />
+
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../css/common/style.css" />
+	<link rel="stylesheet" href="../css/search_goods.css?v1.0" />
+	<style>
+		.dropload-noData,
+			.pull-loading {
+				text-align: center;
+			}
+			.nav-pills>li.active>a,
+			.nav-pills>li.active>a:focus,
+			.nav-pills>li.active>a:hover {
+				color: #ff5100;
+				background: #fff;
+			}
+			.nav>li>a {
+				color: #333;
+			}
+		</style>
+</head>
+
+<body>
+	<div class="container" style="padding:0;">
+		<div class="serbox">
+			<span class="searchbox">
+				<i></i>
+				<input type="text" placeholder="请输入商品名称" class="ipt" id="ipt"/>
+			</span>
+			<!--<ul class="sortboxa">
+					<li class="active" id="finecount">好评量</li>
+					<li id="newscount">销量</li>
+				</ul>-->
+		</div>
+		<!--商品列表-->
+		<!--<div id="wrapper" style="margin-top:1.8rem;">
+				<div id="scroller" class="khfxWarp">					
+					<ul class="content khfxPane" id="popular">
+						<li>
+							<a href="javascript:;" class="style" style="background:url(../images/book.png) 0 0 no-repeat;background-size: 2.3rem 2.3rem;"></a>
+							<span class="opbox">
+								<p class="product_name">摩根波士镜架+蔡司镜片 男士 英伦风格 </p>
+								<span class="namebox">
+									<p>￥<b>498.00</b></p>
+									<p>123人购买</p>
+								</span>
+							<p class="shop">北京亿视界眼镜店</p>
+							</span>
+						</li>
+					</ul>
+					<ul class="newsC">
+
+					</ul>
+					<ul class="all">
+
+					</ul>
+				</div>
+			</div>-->
+		<div class="tab-content" style="width:100%;margin-top:1rem;">
+			<!--1-->
+			<div class="tab-pane active" id="divstyle">
+				<div class="tabbable" style="margin: 3px;">
+					<ul class="nav nav-pills" id="divstyletab">
+						<li class="active reputation" id="reputation">
+							<a href="#tab11" data-toggle="tab">好评</a>
+						</li>
+						<li class="sales" id="sales">
+							<a href="#tab12" data-toggle="tab">销量</a>
+						</li>
+					</ul>
+					<div class="tab-content" style="width:100%;">
+						<!-- 第一个tab -->
+						<div class="tab-pane fade active in content" id="tab11">
+
+						</div>
+						<!-- 第二个tab -->
+						<div class="tab-pane fade newsC" id="tab12">
+
+						</div>
+						<!-- 中间图表结束 -->
+					</div>
+				</div>
+			</div>
+			<!-- tab end -->
+		</div>
+
+		<!--搜索无商品-->
+		<!--<div class="nonegoods">
+				<div class="nonebpx">
+					<img src="../images/nonesearch.png" />
+					<p>抱歉，没有发现的相关内容</p>
+					<p class="search">换个关键词试试吧</p>
+				</div>				
+				<div class="yousel">
+					<h3 class="goodstui">推荐搜索</h3>
+					<span class="goodsname">
+						<a href="javascript:;">啦啦</a>						
+						<a href="javascript:;">优选商家</a>
+						<a href="javascript:;">镜片</a>
+						<a href="javascript:;">镜框</a>
+					</span>
+				</div>				
+				<div class="yousel">
+					<h3 class="goodstui">推荐店铺</h3>
+					<ul class="contenta khfxPane" id="popular">
+						
+					</ul>
+				</div>
+			</div>-->
+		<!--搜索无商品-- 结束----->
+		<div class="clear"></div>
+	</div>
+	<div id="allmap"></div>
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<!--<script type="text/javascript" src="../js/common/iscroll.js"></script>-->
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KN9omYs9VP6sdG4c2kuem8PBDjCGqgfL"></script>
+	<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+	<!--<script type="text/javascript" src="../js/common/dropload.js"></script>-->
+	<!--<script type="text/javascript" src="../js/common/holmes.js" ></script>
+		<script type="text/javascript" src="../js/common/convertor.js" ></script>-->
+	<script type="text/javascript" src="../js/alljs/search_goods.js?v1.2" ></script>
+	<script>
+		
+	</script>
+
+</body>
+
+</html>

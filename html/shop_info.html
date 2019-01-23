@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>店铺主页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<!-- <meta http-equiv="refresh" content="1" id="reload"> -->
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/header.css" />
+	<link rel="stylesheet" href="../css/common/layui.css">
+	<link rel="stylesheet" href="../css/common/layer.css">
+	<link rel="stylesheet" href="../css/common/iconfont1.css">
+	<link rel="stylesheet" href="../css/shop_detail.css?v1.0.2" />
+
+	<style>
+		.edit-info,
+			.delete-info {
+				position: absolute;
+				top: 0;
+				right: .2rem;
+				font-size: 12px;
+				color: skyblue;
+			}
+			
+			.delete-info {
+				right: 1.5rem;
+			}
+			
+			.content_top li {
+				font-weight: 700;
+			}
+			
+			.active {
+				color: #1f9ef5;
+			}
+		</style>
+</head>
+
+<body>
+	<!--<header>
+			<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
+			<p class="title">
+				<span style="text-align:center;">门店详情(店家)</span>
+				<a href="javascript:;" class="delete-info">注销</a>
+				<a href="../html/shop_enter.html?edit=2" class="edit-info">修改资料</a>
+			</p>
+		</header>-->
+
+	<div id="container">
+		<!--<div class="toptop">
+			<div class="topbox">
+				
+			</div>
+		</div>-->
+		<!--门店详情-->
+		<div class="imgbox">
+			<img src="../e可平台/resources/chrome/axure_logo.gif" class="user" alt="门店照片" />
+			<a href="message_list.html" class="news-info">
+				<!--<span class="newsNum"></span>-->
+			</a>
+			<!--<a href="javascript:;" class="delete-info"></a>
+			<a href="../html/shop_enter.html?edit=2" class="edit-info"></a>
+			<!--<img src="../images/edit.png" class="edit"/>
+				<img src="../images/close.png" class="close"/>-->
+		</div>
+		<div id="wrapper">
+			<div id="scroller">
+				<div class="conbox">
+					<ul class="content" id="popular">
+						<li>
+							<span class="shop_one">
+								<a href="javascript:;" class="style1" style="display:block;width:0.96rem;height:0.96rem;border-radius: 0.1rem;margin:0.22rem 0 0.2rem 0.17rem;float:left;"></a>
+								<span class="infobox">
+									<p class="name" id="shopname">
+									</p>
+									<p class="star">
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+									</p>
+									<p class="times" id="shoptime"> <i>营业时间：</i><span>(周一-周日)</p>
+									<!--<b class="fr right">-->
+								</span>
+							</span>
+							<span class="shop_two">
+								<p class="phone" tel="" id="shoptel">
+									<!--<a href="tel: " class="telephone">电话: </a>-->
+								</p>
+								<p class="address">
+									<span class="" style="">地址：</span>
+								</p>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="con" id="container">
+				<!--切换按钮-->
+				<ul class="content_top" id="">
+					<li class="active" id="product-display">商品展示</li>
+					<li id="shop-details">店铺介绍</li>
+				</ul>
+				<!-- 商品展示开始 -->
+				<div id="products">
+					<ul class="left-tab fl" style="position:absolute;top:9.2rem;">
+						<a href="#mirror" class="actives">
+							<!--<i class="iconfont icon-yanjing"></i>-->
+							<li>镜架</li>
+						</a>
+						<a href="#lens">
+							<!--<i class="iconfont icon-jingpian"></i>-->
+							<li>镜片</li>
+						</a>
+						<a href="#hot">
+							<!--<i class="iconfont icon-rexiaochanpin"></i>-->
+							<li>配镜套餐</li>
+						</a>
+						<a href="#contact-lenses">
+							<!--<i class="iconfont icon-gehu-yinxingyanjing"></i>-->
+							<li>隐形眼镜</li>
+						</a>
+
+						<a href="#sun-glasses">
+							<!--<i class="iconfont icon-icon-test"></i>-->
+							<li>太阳镜</li>
+						</a>
+						<a href="#presbyopic-glasses">
+							<!--<i class="iconfont icon-yanjing1"></i>-->
+							<li>老花镜<li>
+						</a>
+						<a href="#nice-glasses" style="line-height:1rem;text-align: center;">
+							<!--<i class="iconfont icon-yanjing1"></i>-->
+							<li style="line-height:1rem;text-align: center;">护理产品<li>
+						</a>
+					</ul>
+					<div class="shop-goods fr">
+						<!-- <button class="add-products"><i class="iconfont icon-jia" style="display:inline"></i> <i>新增商品</i></button> -->
+						<!--优惠折扣-->
+						<!--<aside class="introduces" id="preferential">优惠折扣:</aside>
+							<ul id="preferentialList">
+							</ul>
+							<script type="text/html" id="preferentialTpl">
+								<% for(var i = 0; i < data.length; i++) { %>
+								<% if (data[i].type == '1') { %>
+								<li class="textttt" data-id="<%:=data[i].id%>">
+									<img src="<%:=data[i].image%>" alt="假装有图">
+									<p class="product-text1">
+										<%:=data[i].title%>
+									</p>
+									<p class="product-text">
+										<del>原价:¥<span><%:=data[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
+										<span class="now-price">现价:¥<b><%:=data[i].nowPrice.toFixed(2)%></b></span>
+									</p>
+								</li>
+								<% } %>
+								<% } %>
+							</script>-->
+						<!--镜架-->
+						<aside class="introduces" id="mirror">镜架:</aside>
+						<ul id="mirrorList">
+						</ul>
+						<script type="text/html" id="mirrorTpl">
+							<% for(var i = 0; i < data.records.length; i++) { %>
+								<% if (data.records[i].type == '2') { %>
+								<li class="textttt" data-id="<%:=data.records[i].id%>">
+									<img src="<%:=data.records[i].url%>" alt="假装有图">
+									<p class="product-text1">
+										<%:=data.records[i].productName%>
+									</p>
+									<p class="product-text">
+										<del>原价:¥<span><%:=data.records[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
+										<span class="now-price">现价:¥<b><%:=data.records[i].nowPrice.toFixed(2)%></b></span>
+									</p>
+								</li>
+								<% } %>
+								<% } %>
+							</script>
+						<!--镜片-->
+						<aside class="introduces" id="lens">镜片:</aside>
+						<ul id="lensList">
+						</ul>
+						<script type="text/html" id="lensTpl">
+							<% for(var i = 0; i < data.records.length; i++) { %>
+								<% if (data.records[i].type == '3') { %>
+								<li class="textttt" data-id="<%:=data.records[i].id%>">
+									<img src="<%:=data.records[i].url%>" alt="假装有图">
+									<p class="product-text1">
+										<%:=data.records[i].productName%>
+									</p>
+									<p class="product-text">
+										<del>原价:¥<span><%:=data.records[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
+										<span class="now-price">现价:¥<b><%:=data.records[i].nowPrice.toFixed(2)%></b></span>
+									</p>
+								</li>
+								<% } %>
+								<% } %>
+							</script>
+						<!--配镜套餐-->
+						<aside class="introduces" id="hot">配镜套餐:</aside>
+						<ul id="hotList">
+						</ul>
+						<!--<script type="text/html" id="hotTpl">
+							<% for(var i = 0; i < data.length; i++) { %>
+								<% if (data[i].type == '1') { %>
+								<li class="textttt" data-id="<%:=data[i].id%>">
+									<img src="<%:=data[i].image%>" alt="假装有图">
+									<p class="product-text1">
+										<%:=data[i].title%>
+									</p>
+									<p class="product-text">
+										<% if ( !data[i].beginPrice ) { %>
+
+										<% } %>
+										<del>原价:¥<span><%:=data[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
+										<span class="now-price">现价:¥<b><%:=data[i].nowPrice.toFixed(2)%></b></span>
+									</p>
+								</li>
+								<% } %>
+								<% } %>
+							</script>-->
+						<!--隐形眼镜-->
+						<aside class="introduces" id="contact-lenses">隐形眼镜:</aside>
+						<ul id="contactLensesList">
+						</ul>
+						<script type="text/html" id="contactLensesTpl">
+							<% for(var i = 0; i < data.records.length; i++) { %>
+								<% if (data.records[i].type == '6') { %>
+								<li class="textttt" data-id="<%:=data.records[i].id%>">
+									<img src="<%:=data.records[i].url%>" alt="假装有图">
+									<p class="product-text1">
+										<%:=data.records[i].productName%>
+									</p>
+									<p class="product-text">
+										<del>原价:¥<span><%:=data.records[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
+										<span class="now-price">现价:¥<b><%:=data.records[i].nowPrice.toFixed(2)%></b></span>
+									</p>
+								</li>
+								<% } %>
+								<% } %>
+							</script>
+						<!--太阳镜-->
+						<aside class="introduces" id="sun-glasses">太阳镜:</aside>
+						<ul id="sunGlassesList">
+						</ul>
+						<script type="text/html" id="sunGlassesTpl">
+							<% for(var i = 0; i < data.records.length; i++) { %>
+								<% if (data.records[i].type == '5') { %>
+								<li class="textttt" data-id="<%:=data.records[i].id%>">
+									<img src="<%:=data.records[i].url%>" alt="假装有图">
+									<p class="product-text1">
+										<%:=data.records[i].productName%>
+									</p>
+									<p class="product-text">
+										<del>原价:¥<span><%:=data.records[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
+										<span class="now-price">现价:¥<b><%:=data.records[i].nowPrice.toFixed(2)%></b></span>
+									</p>
+								</li>
+								<% } %>
+								<% } %>
+							</script>
+						<!--老花镜-->
+						<aside class="introduces" id="presbyopic-glasses">老花镜:</aside>
+						<ul id="presbyopicGlassesList">
+						</ul>
+						<script type="text/html" id="presbyopicGlassesTpl">
+							<% for(var i = 0; i < data.records.length; i++) { %>
+								<% if (data.records[i].type == '7') { %>
+								<li class="textttt" data-id="<%:=data.records[i].id%>">
+									<img src="<%:=data.records[i].url%>" alt="假装有图">
+									<p class="product-text1">
+										<%:=data.records[i].productName%>
+									</p>
+									<p class="product-text">
+										<del>原价:¥<span><%:=data.records[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
+										<span class="now-price">现价:¥<b><%:=data.records[i].nowPrice.toFixed(2)%></b></span>
+									</p>
+								</li>
+								<% } %>
+								<% } %>
+							</script>
+							<!--老花镜-->
+							<aside class="introduces" id="nice-glasses">护理产品:</aside>
+							<ul id="niceGlassesList">
+							</ul>
+							<script type="text/html" id="niceGlassesTpl">
+								<% for(var i = 0; i < data.records.length; i++) { %>
+									<% if (data.records[i].type == '8') { %>
+									<li class="textttt" data-id="<%:=data.records[i].id%>">
+										<img src="<%:=data.records[i].url%>" alt="假装有图">
+										<p class="product-text1">
+											<%:=data.records[i].productName%>
+										</p>
+										<p class="product-text">
+											<del>原价:¥<span><%:=data.records[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
+											<span class="now-price">现价:¥<b><%:=data.records[i].nowPrice.toFixed(2)%></b></span>
+										</p>
+									</li>
+									<% } %>
+									<% } %>
+								</script>
+					</div>
+					<div class="clearboth"></div>
+				</div>
+				<!-- 商品展示结束 -->
+				<!-- 店铺介绍开始 -->
+				<article class="showbox" id="shopdel">
+					<div class="showdiv" style="border-bottom:0.2rem solid #f0f4f3;padding:0.1rem 0.24rem;">
+						<h4 style="line-height: 1rem;position:relative;font-size: 0.3rem;">店内人员
+							<!-- <a href="javascript:;" class="add-optometrist fr">
+								<i class="iconfont icon-jia" style="display:inline"></i> <i>添加验光师</i>
+							</a> -->
+						</h4>
+						<div class="comment_list">
+
+						</div>
+					</div>
+
+					<h4 class="shopshow">店铺设施介绍</h4>
+					<p class="shop"></p>
+					<div class="shopdel">
+
+					</div>
+
+					<!--服务项目-->
+					<span class="boxone">
+						<h4 class="pro">可提供服务项目：</h4>
+						<ul class="proList">
+							<!--<li>标准验光</li>
+							<li>青少年视觉动力检查</li>
+							<li>成年人视觉动力检查</li>
+							<li>45岁以上人群视觉动力检查</li>
+							<li>角膜接触镜标准验光</li>
+							<li>完全视功能检查</li>-->
+						</ul>
+					</span>
+					<!--服务项目结束-->
+					<!-- <img src="" class="shopdel1" />
+					<img src="" class="shopdel2" />
+					<img src="" class="shopdel3" /> -->
+
+					<!--<div class="comment_list">
+
+						</div>-->
+				</article>
+				<!-- 店铺介绍结束 -->
+			</div>
+
+			<div class="bottom">
+				<ul id="addCar" class="btn fl view-notice" style="width: 100%;background: #fff;">
+					<li class="fl active" onclick="location.href='shop_info.html'">
+						<i class="iconfont shop_info">&#xe625;</i>
+						<p class="bottom_text">主页</p>
+					</li>
+					<li class="fl" onclick="location.href='goods_order_list_B.html'">
+						<i class="iconfont icon-weibiaoti-"></i>
+						<p class="bottom_text">订单</p>
+					</li>
+					<li class="fl" onclick="location.href='manual_input.html'">
+						<i class="iconfont icon-saoma"></i>
+						<p class="bottom_text">兑换</p>
+					</li>
+					<li class="fl" onclick="location.href='mineB.html'">
+						<i class="iconfont mine">&#xe62e;</i>
+						<p class="bottom_text">我的</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- <div class="bottom">
+				<div id="addCar" class="btn fl">写评价</div>
+				<div id="payNow" class="btn fr">立即咨询</div>
+			</div> -->
+		<!-- <a href="#evaluation">跳转到用户评价</a>
+				<a href="#shopdel">跳转到店铺介绍</a> -->
+	</div>
+	</div>
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/common.js?v1.3"></script>
+	<script type="text/javascript" src="../js/common/template.js?v1.2"></script>
+	<script src="../js/common/layui.js"></script>
+	<script src="../js/common/layer.js"></script>
+	<script src="../js/alljs/shop_info.js?v1.4"></script>
+	<script>
+		// 自动刷新一次页面
+		setTimeout(function () {
+			$(document).ready(function () {
+				if (location.href.indexOf("#reloaded") == -1) {
+					location.href = location.href + "#reloaded";
+					location.reload();
+				}
+			})
+		}, 80)
+		//底部切换
+		$('#addCar li').click(function () {
+			$(this).addClass('active').removeClass('active');
+		})
+	</script>
+</body>
+
+</html>

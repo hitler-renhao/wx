@@ -1,0 +1,76 @@
+	* {
+		color: #333;
+	}
+	
+	.header {
+		display: block;
+		font-size: 0.36rem;
+		line-height: 0.88rem;
+		border-bottom: 1px solid #e4e4e4;
+		-border-bottom: 0.18rem solid #faf9fe;
+		text-indent: 0.24rem;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background: #fff;
+	}
+	
+	.content {
+		width: 100%;
+		overflow-y: scroll;
+		background: #fff;
+		border-top: 0.18rem solid #faf9fe;
+		margin-bottom: 1rem;
+	}
+	
+	.content li {
+		float: left;
+		width: 100%;
+		border-top: 1px solid #e4e4e4;
+	}
+	
+	.content li img {
+		display: inline-block;
+		float: left;
+		width: 1rem;
+		height: 1rem;
+		margin: 0.16rem 0.3rem 0.16rem 0.24rem;
+		border-radius: 0.05rem;
+		;
+	}
+	
+	.optometrist {
+		display: inline-block;
+		float: left;
+		width: 5.6rem;
+		padding-top: 0.16rem;
+	}
+	
+	.optometrist h3 {
+		font-size: 0.28rem;
+		line-height: 0.44rem
+	}
+	
+	.optometrist p {
+		font-size: 0.24rem;
+		color: #999;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		line-height: 0.28rem;
+	}
+	
+	.addOptometrist {
+		display: inline-block;
+		line-height: 0.98rem;
+		text-align: center;
+		font-size: 0.36rem;
+		color: #1f9ef5;
+		font-weight: bold;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background: #fff;
+		box-shadow: 0px -2px 5px #f3f3f3;
+	}

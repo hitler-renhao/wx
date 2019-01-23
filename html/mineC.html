@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>个人中心</title>
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/iconfont1.css">
+	<link rel="stylesheet" href="../css/common/layer.css" />
+	<link rel="stylesheet" href="../css/maina.css" />
+</head>
+
+<body>
+	<div class="container">
+		<!--顶部-->
+		<div class="header">
+			<img src="../images/ek.png" />
+			<p><b></b>&nbsp;
+				<!--<i class="iconfont"></i>-->
+			</p>
+			<span class="force">
+				<b>可使用积分<i></i></b>
+				<a href="goods_list_points.html">兑换</a>
+			</span>
+		</div>
+		<!--内容-->
+		<ul class="mainList">
+			<li onclick="location.href='My_mealCoupon.html'">
+				<img src="../images/my_one.png" alt="" />
+				<p>我的套餐</p>
+			</li>
+			<li onclick="location.href='fill_order_list_C.html'">
+				<img src="../images/my_two.png" alt="" />
+				<p>我的订单</p>
+			</li>
+			<li onclick="location.href='car.html'">
+				<img src="../images/my_five.png" alt="" />
+				<p>购物车</p>
+			</li>
+			<li onclick="location.href='point_list.html'">
+				<img src="../images/my_four.png" alt="" />
+				<p>积分明细</p>
+			</li>
+			<li onclick="location.href='address.html'">
+				<img src="../images/my_six.png" alt="" />
+				<p>地址管理</p>
+			</li>
+			<li onclick="location.href='about_Us.html'">
+				<img src="../images/my_three.png" alt="" />
+				<p>关于我们</p>
+			</li>
+			<li onclick="location.href='order_list.html'">
+				<img src="../images/my_seven.png" alt="" />
+				<p>积分订单</p>
+			</li>
+			<span class="leftbox1"></span>
+			<span class="leftbox2"></span>
+			<span class="rightbox1"></span>
+			<span class="rightbox2"></span>
+		</ul>
+	</div>
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/lay/modules/layer.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script>
+		$(function () {
+			// 获取openId
+			var tokenKey = localStorage.getItem('tokenKey')
+			if (!!tokenKey) {
+				getOpenid(1, tokenKey);
+				console.log(localStorage.getItem('openId'));
+			}
+			//判断是否登录	
+			var userId = localStorage.getItem('userId');
+			if (tokenKey == null || tokenKey == "") {
+				//alert(2);
+				layer.alert('您还未登录，请先登录', function () {
+					localStorage.setItem('typeId', '9');
+					location.href = 'login.html';
+				})
+			}
+			var phone = localStorage.getItem('iphone');
+			$('.header p b').text(phone);
+			//获取积分
+			$.ajax({
+				type: "post",
+				url: global + "/ekIntegral/list",
+				async: true,
+				data: {
+					"tokenKey": tokenKey,
+					"pageNum": 1,
+					"pageSize": 100
+				},
+				success: function (data) {
+					integral = data.data.integral;
+					$('.force b i').text(integral);
+					localStorage.setItem('integral', integral);
+				}
+			})
+		})
+	</script>
+</body>
+
+</html>

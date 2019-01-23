@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>套餐列表</title>
+  <link rel="stylesheet" href="../css/common/common.css" />
+  <link rel="stylesheet" href="../css/common/header.css" />
+  <link rel="stylesheet" href="../css/common/layui.css">
+  <link rel="stylesheet" href="../css/common/layer.css">
+  <link rel="stylesheet" href="../css/combo_list.css?a" />
+  <style>
+    #container {
+			margin-top: 0.88rem;
+			height: 80vh;
+		}
+		.loading {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -23px;
+			margin-left: -23px;
+			animation: rotate infinite linear 2s;
+		}
+		@keyframes
+ 		rotate{ 
+			from { 
+					transform:rotate(0deg);
+					} 
+			to{
+				transform:rotate(360deg);
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+
+
+  <div id="container">
+    <div class="content-tab">
+      <ul class="content_top" id="aBtn">
+        <li class="active" id="putaway">已上架</li>
+        <li id="soldout">已下架</li>
+      </ul>
+    </div>
+    <!--消息列表-->
+    <div class="putaway-list">
+      <ul class="khfxPane evalist" style="display:block">
+      </ul>
+    </div>
+    <div class="soldout-list">
+      <ul class="khfxPane evalists" style="display:block">
+      </ul>
+    </div>
+    <div class="bottom">
+      <a href="javascript:;" class="add_combo">新增套餐</a>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/common/template.js"></script>
+  <script type="text/javascript" src="../js/common/common.js"></script>
+  <script src="../js/common/dropload.js"></script>
+  <script src="../js/common/layui.js"></script>
+  <script src="../js/common/layer.js"></script>
+  <script src="../js/alljs/combo_list.js?v1.0"></script>
+</body>
+
+</html>

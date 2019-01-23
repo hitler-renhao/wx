@@ -1,0 +1,112 @@
+body {
+  background-color: #f5f5f5;
+}
+
+header,
+.shop_header {
+  height: 3.5rem;
+}
+header img {
+  display: block;
+  height: 3.5rem;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.first-point {
+  width: 100%;
+  height: .75rem;
+  color: #fff;
+}
+
+.has-point,
+.record {
+  display: inline-block;
+}
+
+.has-point {
+  width: 7rem;
+  height: .75rem;
+  background: linear-gradient(to right, #EF4919, #F01410);
+  vertical-align: bottom;
+  padding-left: .5rem;
+  font-size: .36rem;
+  line-height: .75rem;
+}
+
+/* detail */
+.detail {
+  background: #fff;
+  line-height: .5rem;
+  padding: .2rem 0;
+}
+
+.need-point {
+  height: 1.35rem;
+  padding: .2rem .3rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.need-point strong {
+  font-size: .3rem;
+}
+
+.need-point p {
+  font-size: .28rem;
+  color: #ccc;
+}
+
+.need-point p span {
+  color: #f01610;
+}
+
+.goods-detail {
+  padding: .2rem .3rem;
+  background-color: #fff;
+}
+
+.goods-detail aside {
+  color: #ccc;
+  font-size: .3rem;
+}
+
+/* form */
+#form {
+  padding: .2rem;
+  background-color: #fff;
+  margin-top: .2rem;
+  margin-bottom: 1rem;
+}
+
+#form div {
+  height: .7rem;
+  border-bottom: #fc7c2f 1px solid;
+}
+
+#form span {
+  font-size: .28rem;
+  color: #fc7c2f;
+  font-weight: 700;
+}
+
+#form input {
+  width: 80%;
+  height: .6rem;
+  border: none;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  height: 1rem;
+  position: fixed;
+  bottom: 0;
+  background-color: #fc7c2f;
+  font-size: .36rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1rem;
+}

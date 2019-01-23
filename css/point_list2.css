@@ -1,0 +1,105 @@
+body {
+  background-color: #FAF9FE;
+}
+header {
+  position: relative;
+  width: 7.5rem;
+  height: 3.62rem;
+  background: url(../images/bg.png);
+  background-size: 7.5rem 3.62rem;
+}
+header img,
+header h3,
+header input {
+  position: absolute;
+}
+header img {
+  top: 1.81rem;
+  left: 2.4rem;
+}
+header h3 {
+  top: 1.6rem;
+  left: 2.8rem;
+  color: #fff;
+}
+header h3 span {
+  font-size: .48rem;
+}
+header input {
+  top: 2.4rem;
+  left: 2.8rem;
+  width: 2rem;
+  height: .6rem;
+  border-radius: .3rem;
+  background-color: #5ED9FB;
+  border: none;
+  color: #fff;
+}
+/* nav */
+nav {
+  height: 1rem;
+  padding: 0 .2rem;
+  font-size: .28rem;
+  line-height: 1rem;
+}
+/* list */
+.date {
+  padding: .2rem;
+  margin-top: .2rem;
+  font-size: .24rem;
+}
+.evalist {
+  background-color: #fff;
+}
+.evalist li {
+  border-top: 1px solid #ccc;
+}
+.first {
+  position: relative;
+}
+.first,
+.second {
+  padding: 0 .2rem;
+}
+.to-bank,
+.timer,
+.get-point,
+.use-point,
+.state {
+  line-height: .8rem;
+}
+.to-bank,
+.timer {
+  float: left;
+}
+.get-point,
+.use-point,
+.state {
+  float: right;
+}
+
+.to-bank {
+  font-size: .26rem;
+}
+.timer {
+  font-size: .22rem;
+  color: #ccc;
+}
+.get-point,
+.use-point {
+  position: absolute;
+  top: .3rem;
+  right: 0.25rem;
+  font-size: .32rem;
+  font-weight: 700;
+}
+.get-point {
+  color: #FB6A42;
+}
+.use-point {
+  color: #0C89F3
+}
+
+.state {
+  font-size: .3rem
+}

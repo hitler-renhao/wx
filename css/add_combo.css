@@ -1,0 +1,359 @@
+.submit {
+  display: block;
+  float: left;
+  width: 7.02rem;
+  height: 0.88rem;
+  background: #198fe0;
+  line-height: 0.88rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 0.2rem;
+  margin: 0.24rem 0 0.24rem 0.24rem;
+  font-size: 0.36rem;
+}
+.submit:link {
+  color: #fff;
+}
+
+/* 删除按钮 */
+
+.icon-tianjia  {
+  width: 0.6rem;
+  height: 0.6rem;
+  right: .4rem;
+}
+.icon-wrong {
+  font-size: .5rem;
+  color: red;
+}
+
+body {
+  background: #F0F0F0;
+}
+
+.release_up_pic {
+  width: 100%;
+  /* height: 3.15rem; */
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  margin-top: .2rem;
+}
+
+#chose_pic_btn {
+  width: 4.3rem;
+  height: 2.05rem;
+  margin: 0.2rem auto;
+  background: url(../images/upload.png) 0 0 no-repeat;
+  background-size: 100% 100%;
+  display: block;
+}
+
+#goods-pic {
+  width: 100%;
+  height: 100%;
+}
+
+
+.type {
+  display: inline-block;
+  height: auto;
+}
+
+
+.active {
+  background: #1f9ef5;
+  color: #fff;
+}
+
+.info {
+  padding: 0.3rem 0.24rem;
+  background-color: #fff;
+}
+
+.info li {
+  width: 100%;
+  height: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.info li label {
+  color: #333;
+  font-size: 0.3rem;
+  line-height: 0.6rem;
+}
+
+.info li label i {
+  color: red;
+}
+
+.info li input {
+  display: inline-block;
+  width: 4.68rem;
+  height: 0.58rem;
+  border: 1px solid #cfcfcf;
+  color: #666;
+  font-size: 0.24rem;
+  line-height: 0.58rem;
+  text-indent: 0.13rem;
+  border-radius: 0.1rem;
+  ;
+  margin-left: 0.1rem;
+}
+
+
+/* 套餐input框 */
+#shop_price,
+#platform_price {
+  margin-left: .4rem;
+}
+
+/* 套餐明细 */
+.combo_detail,
+.combo_know {
+  margin-top: .2rem;
+  background-color: #fff;
+}
+
+.add_combo {
+  border-bottom: 1px solid #ccc;
+  padding: .2rem 0;
+}
+
+.combo_title {
+  font-size: .35rem;
+  padding: 0.3rem 0.24rem;
+}
+
+.add_btn {
+  display: inline-block;
+  position: absolute;
+  right: .5rem;
+  width: 1.4rem;
+  height: .5rem;
+  font-size: .3rem;
+  line-height: .5rem;
+  background-color: #FC902C;
+  padding: 0 .3rem;
+  border-radius: .5rem;
+  color: #fff;
+}
+
+.layui-icon-add-circle-fine {
+  font-size: .3rem;
+  font-weight: 700;
+}
+
+.layui-row {
+  font-size: .3rem;
+  padding: .1rem .2rem;
+}
+
+.layui-icon-close-fill {
+  font-size: .6rem;
+  color: red;
+}
+
+/* 列表 */
+.combo_input {
+  padding: .2rem 0;
+}
+
+.name,
+.sum,
+.company,
+.price {
+  display: block;
+  width: 80%;
+  height: 0.58rem;
+  border: 1px solid #666;
+  color: #666;
+  font-size: 0.24rem;
+  line-height: 0.58rem;
+  text-indent: 0.13rem;
+  border-radius: 0.1rem;
+  margin: 0 auto;
+}
+
+/* 套餐有效期 */
+.month {
+  width: 1.5rem;
+  height: .5rem;
+  border: 1px solid #666;
+  border-radius: .056rem;
+  margin: .1rem .3rem;
+  font-size: .25rem;
+  line-height: .5rem;
+  text-align: center;
+  float: left;
+}
+
+/* 购买使用须知 */
+textarea {
+  width: 94%;
+  height: 2.5rem;
+  margin: .2rem;
+  font-size: .2rem;
+  background-color: #f0f0f0;
+}
+
+.combo_know .combo_input {
+  position: relative;
+}
+
+.buy_know {
+  position: absolute;
+  bottom: .4rem;
+  right: .3rem;
+  font-size: .25rem;
+  color: #aaa;
+}
+
+/* 详情图片上传 */
+table {
+  display: block;
+  padding: .2rem;
+}
+table tr:nth-child(2) td {
+  display: inline-block;
+  margin-left: .5rem;
+}
+table tr:nth-child(2) td:nth-child(1) {
+  margin-left: 0;
+}
+.release_up_pic,
+.up_pic,
+#chose_pic_btn {
+	width: 3.5rem;
+	height: 2rem;
+	border-radius: 0.1rem;
+  position: relative;
+  margin: .2rem auto;
+}
+
+.release_up_pi1,
+.release_up_pi2,
+.release_up_pi3,
+.up_pic1,
+.up_pic2,
+.up_pic3,
+#chose_pic_btn1,
+#chose_pic_btn2,
+#chose_pic_btn3 {
+	width: 2rem;
+	height: 100%;
+}
+
+div.release_up_pic div.up_pic1,
+div.release_up_pic div.up_pic2,
+div.release_up_pic div.up_pic3 {
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	margin: 0;
+}
+
+#chose_pic_btn0 {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3.5rem;
+	height: 2rem;
+	background: url(../images/person.png) 0 0 no-repeat;
+	background-size: 3.5rem 2.15rem;
+}
+
+#chose_pic_btn1,
+#chose_pic_btn2,
+#chose_pic_btn3 {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 1.5rem;
+	background: url(../images/person.png) 0 0 no-repeat;
+	background-size: 2rem 1.5rem;
+}
+
+#chose_pic_btns,
+#chose_pic_btns1,
+#chose_pic_btns2,
+#chose_pic_btns3 {
+	display: flex;
+	margin-top: 0;
+	width: 3.5rem;
+	height: 1.5rem;
+}
+
+#main_btn,
+#idCardUp,
+#idCardDown,
+#zige {
+	width: 2rem;
+	height: 1.5rem;
+	opacity: 0;
+	z-index: 9999;
+}
+#main_btn {
+  width: 3.5rem;
+  height: 2rem;
+}
+
+#main_btns,
+#idCardDoUps,
+#idCardDoDowns,
+#card {
+	width: 2rem;
+	height: 1.5rem;
+	border-radius: 0.1rem;
+}
+#main_btns {
+  width: 3.5rem;
+	height: 2rem;
+	border-radius: 0.1rem;
+}
+
+#goods-pic {
+	width: 3.5rem;
+	height: 2rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#chose_pic_btn1,
+#chose_pic_btn2,
+#chose_pic_btn3 {
+	position: relative;
+}
+
+#goods-pic1,
+#goods-pic2,
+#goods-pic3 {
+	position: absolute;
+  top: 0;
+  left: 0;
+	width: 2rem;
+	height: 1.5rem;
+}
+
+/* 商品发布规则 */
+.public_agreement {
+  margin-top: .2rem;
+  background-color: #fff;
+  padding: .25rem;
+  font-size: .3rem;
+}
+.public_agreement img {
+  width: .3rem;
+}
+.public_agreement a {
+  color: #198fe0;
+}

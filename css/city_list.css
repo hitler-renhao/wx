@@ -1,0 +1,67 @@
+.container {
+	padding: 0 0.24rem;
+}
+
+.citybox {
+	color: #333;
+	font-size: 0.28rem;
+	margin-top: 0.25rem;
+	display: inline-block;
+	width: 100%;
+}
+
+.cityname,
+.newbox a {
+	display: inline-block;
+	padding: 0.13rem 0.66rem;
+	border: 1px solid #dcdcdc;
+	border-radius: 0.05rem;
+	color: #999;
+	font-size: 0.28rem;
+	height: 0.28rem;
+	line-height: 0.28rem;
+	margin-top: 0.25rem;
+	margin-right:0.3rem;
+}
+
+.newbox {
+	width: 100%;
+	height: auto;
+	display: flex;
+	-justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.newbox .active,.active {
+	color: #ff5100;
+	border: 1px solid #ff5100;
+	background: #ffede5;
+} {
+	color: #ff5100;
+	border: 1px solid #ff5100;
+	background: #ffede5;
+}
+
+.cityList {
+	width: 100%;
+	height: auto;
+}
+
+.cityList li {
+	width: 100%;
+	float: left;
+	border-bottom: 1px solid #e9e9ef;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	color: #333;
+	font-size: 0.28rem;
+}
+
+.cityList .bingle {
+	background: url(../images/bingle.png) 6.15rem 0.35rem no-repeat;
+	background-size: 0.37rem 0.27rem;
+}
+
+.cityList li:last-child {
+	border-bottom: none;
+}

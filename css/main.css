@@ -1,0 +1,274 @@
+/*B端我的*/
+body {
+	background: #fff;
+	color: #333;
+}
+
+.header {
+	display: block;
+	font-size: 0.36rem;
+	line-height: 0.88rem;
+	-border-bottom: 1px solid #e4e4e4;
+	text-indent: 0.24rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	color: #333;
+	background: #fff;
+}
+
+.headbox p {
+	text-indent: 0.38rem;
+	color: #fff;
+	font-size: 0.26rem;
+}
+
+.headbox p:nth-child(2) {
+	font-size: 0.98rem;
+	line-height: 1.2rem;
+}
+
+.headbox {
+	background: #1a92e5;
+	width: 100%;
+	height: auto;
+	margin-top: 0.88rem;
+	padding: 0.3rem 0 0.3rem 0;
+}
+
+.title {
+	background: #64b4ea;
+	color: #fff;
+	font-size: 0.26rem;
+	line-height: 0.68rem;
+	text-indent: 0.38rem;
+}
+
+.list {
+	padding: 0 0.38rem;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.list li {
+	width: 100%;
+	border-bottom: 1px solid #e4e4e4;
+	line-height: 1rem;
+}
+
+.list li:last-child {
+	border-bottom: none;
+}
+
+.op {
+	background: url(../images/opman.png) left center no-repeat;
+	background-size: 0.44rem 0.44rem;
+	color: #333;
+	margin-left: 0.22rem;
+	text-indent: 0.8rem;
+	font-size: 0.28rem;
+	;
+}
+
+.line {
+	width: 100%;
+	height: 0.38rem;
+	background: #faf9fe;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.meal {
+	background: url(../images/meal.png) left center no-repeat;
+	background-size: 0.42rem 0.42rem;
+	color: #333;
+	margin-left: 0.22rem;
+	text-indent: 0.8rem;
+	font-size: 0.28rem;
+}
+
+.goods {
+	background: url(../images/goods.png) left center no-repeat;
+	background-size: 0.42rem 0.42rem;
+	color: #333;
+	margin-left: 0.22rem;
+	text-indent: 0.8rem;
+	font-size: 0.28rem;
+}
+
+.tixian {
+	background: url(../images/tixian.png) left center no-repeat;
+	background-size: 0.42rem 0.42rem;
+	color: #333;
+	margin-left: 0.22rem;
+	text-indent: 0.8rem;
+	font-size: 0.28rem;
+}
+
+.edit {
+	background: url(../images/write.png) left center no-repeat;
+	background-size: 0.39rem 0.44rem;
+	color: #333;
+	margin-left: 0.22rem;
+	text-indent: 0.8rem;
+	font-size: 0.28rem;
+}
+
+.cool {
+	background: url(../images/cool.png) left center no-repeat;
+	background-size: 0.41rem 0.44rem;
+	color: #333;
+	margin-left: 0.22rem;
+	text-indent: 0.8rem;
+	font-size: 0.28rem;
+}
+
+/*C端我的*/
+.headBox {
+	padding: 0.3rem 0.5rem;
+	border-bottom: 1px solid #e4e4e4;
+	margin-top: 0.88rem;
+	float: left;
+	width: 6.5rem;
+}
+
+.headBox img {
+	display: inline-block;
+	width: 1.35rem;
+	height: 1.35rem;
+	float: left;
+	margin-right: 0.5rem;
+	border-radius: 50%;
+}
+
+.headBox p {
+	display: inline-block;
+	line-height: 1.35rem;
+	font-size: 0.36rem;
+}
+
+.linea {
+	width: 100%;
+	height: 0.18rem;
+	background: #faf9fe;
+	border-bottom: 1px solid #e4e4e4;
+	float: left;
+}
+
+.mainList {
+	padding: 0 0.5rem;
+	float: left;
+}
+
+.mainList li {
+	float: left;
+	line-height: 1rem;
+	border-bottom: 1px solid #e4e4e4;
+	width: 6.5rem
+}
+
+.mainList li p {
+	background: url(../images/mymwal.png) left center no-repeat;
+	background-size: 0.36rem 0.32rem;
+	color: #333;
+	text-indent: 0.65rem;
+	font-size: 0.28rem;
+	float: left;
+}
+
+.mainList li:nth-child(2) p {
+	background: url(../images/kefu.png) left center no-repeat;
+	background-size: 0.36rem 0.32rem;
+	color: #333;
+	text-indent: 0.65rem;
+	font-size: 0.28rem;
+	float: left;
+}
+
+.mainList li:nth-child(3) p {
+	background: url(../images/email.png) left center no-repeat;
+	background-size: 0.36rem 0.38rem;
+	color: #333;
+	text-indent: 0.65rem;
+	font-size: 0.28rem;
+	float: left;
+}
+
+.mainList li:last-child p {
+	background: url(../images/me.png) left center no-repeat;
+	background-size: 0.37rem 0.37rem;
+	color: #333;
+	text-indent: 0.65rem;
+	font-size: 0.28rem;
+	float: left;
+}
+
+.mainList li input {
+	display: inline-block;
+	float: right;
+	width: 3rem;
+	padding: 0 0.2rem;
+	line-height: 1rem;
+	outline: none;
+	border: none;
+	text-align: right;
+	color: #666;
+	font-size: 0.2rem;
+	;
+}
+
+.mainList li i {
+	display: inline-block;
+	float: right;
+	width: 0.13rem;
+	height: 0.21rem;
+	background: url(../images/rightbox.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	margin: 0.38rem 0.2rem 0 0;
+}
+
+/*footer*/
+.bottom {
+	width: 100%;
+	height: 0.98rem;
+	position: fixed;
+	bottom: 0;
+	box-shadow: 0 -1px 1px #eee;
+}
+
+.bottom .btn {
+	float: left;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	font-size: 0.5rem;
+	color: #666;
+}
+
+.btn li {
+	width: 25%;
+	line-height: .45rem;
+	margin-top: .15rem;
+}
+
+.btn li i {
+	font-size: .5rem;
+}
+
+.bottom_text {
+	font-size: .24rem;
+}
+
+.bottom .fr {
+	background: #fe5900;
+}
+
+.headBox {
+	padding: 0.3rem 0.5rem;
+	border-bottom: 1px solid #e4e4e4;
+	margin-top: 0.88rem;
+	float: left;
+	width: 6.5rem;
+}
+
+.active {
+	color: #1f9ef5;
+}

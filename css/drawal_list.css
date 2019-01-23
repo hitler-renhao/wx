@@ -1,0 +1,40 @@
+body {
+  background-color: #FAF9FE;
+}
+#container {
+  margin-top: .2rem;
+  background-color: #fff;
+}
+.evalist li {
+  border-top: 1px solid #ccc;
+}
+.evalist li:last-child {
+  border-bottom: 1px solid #ccc;
+}
+.first,
+.second {
+  padding: 0 .2rem;
+}
+.to-bank,
+.timer,
+.much-money,
+.state {
+  line-height: .8rem;
+}
+.to-bank,
+.timer {
+  float: left;
+}
+.much-money,
+.state {
+  float: right;
+}
+
+.to-bank,
+.much-money {
+  font-size: .4rem;
+}
+
+.state {
+  font-size: .3rem
+}

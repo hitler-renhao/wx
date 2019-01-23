@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>手动输入优惠券</title>
+		<link rel="stylesheet" href="../css/common/common.css" />
+		<link rel="stylesheet" href="../css/common/layer.css" />
+		<link rel="stylesheet" href="../css/manual_input.css?1.2" />
+		<style>
+			.acacac,
+			.usedResult,
+			.resultError {
+				display: none;
+			}
+			#mealList li{color:#999;}
+		</style>
+	</head>
+
+	<body>
+		<!--手动输入及扫一扫-->
+		<div class="container usedresults">
+			<div class="box1">
+				<div class="promotionCode">
+					<img src="../images/input.png" class="input" />
+					<span class="manual" />
+					<input type="number" placeholder="请输入套餐券号码" value="" style="color: #000;" id="code" />
+					</span>
+					<input type="button" value="确认" class="sure" />					
+				</div>
+				
+			</div>
+			<p class="flicking" id="scanQRCode1">扫一扫</p>
+		</div>
+		<!--手动输入及扫一扫  --end-->
+		<!--扫描有套餐券未使用结果-->
+		<div class="container acacac">
+			<div class="box">
+				<div class="promotionCode">
+					<img src="../images/input.png" class="input" />
+					<p class="money">￥<i>699.00</i></p>
+					<span class="meal">
+						<h4>套餐</h4>						
+					</span>
+					<ul class="mealList">
+						<!--<li>
+							<p>摩根波士c13钛合金镜架</p>
+							<p>1份</p>
+							<p>1000元</p>
+						</li>
+						<li>
+							<p>摩根波士c13钛合金镜架</p>
+							<p>1份</p>
+							<p>1000元</p>
+						</li>-->
+					</ul>
+					<p class="all" id="allprice">总价：1999元</p>
+					<p class="all" id="nowprice">现价：699元</p>
+					<input type="butotn" value="确认已使用" class="sureUse" readonly=""/>
+				</div>
+			</div>
+		</div>
+		<!--扫描有套餐券未使用结果  end-->
+		<!--扫描有套餐券已使用结果-->
+		<div class="container usedResult">
+			<div class="box">
+				<div class="promotionCode">
+					<img src="../images/input.png" class="input" />
+					<p class="moneyused">￥<i>699.00</i></p>
+					<h5 class="mealinfo">此优惠券已经使用过了/过期，不可重复使用！</h5>
+					<span class="meal">
+						<h4>套餐</h4>						
+					</span>
+					<ul class="mealList" id="mealList">
+						<!--<li>
+							<p>摩根波士c13钛合金镜架</p>
+							<p>1份</p>
+							<p>1000元</p>
+						</li>
+						<li>
+							<p>摩根波士c13钛合金镜架</p>
+							<p>1份</p>
+							<p>1000元</p>
+						</li>-->
+					</ul>
+					<p class="allPrice" id="allP">总价：1999元</p>
+					<p class="allPrice" id="nowP">现价：699元</p>
+					<input type="butotn" value="回主页" class="sureUsed" style='background:#1a91e3;'/>
+				</div>
+			</div>
+		</div>
+		<!--扫描有套餐券已使用结果  end-->
+		<!--扫描识别失败或内容错误-->
+		<div class="container resultError">
+			<div class="resultBox">    
+				<div class="error">
+					<img src="../images/error.png" />
+					<p>识别失败或内容错误，您可请顾客确认 后再次扫描或手动输入！</p>
+					<a href="javascript:;" id="scanQRCode2">
+						<i></i><b>扫二维码</b>
+					</a>
+					<a href="manual_input.html" class="word">
+						<i class="write"></i><b>手动输入</b>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--扫描识别失败或内容错误结束-->
+		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+		<script src="../js/common/jweixin-1.0.0.js" tppabs="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script src="../js/common/zepto.min.js" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
+		<script src="../js/common/demo.js?v1.0" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
+		<script type="text/javascript" src="../js/common/lay/modules/layer.js" ></script>
+		<script type="text/javascript" src="../js/common/common.js"></script>
+		<script type="text/javascript" src="../js/alljs/manual_input.js?v1.3"></script>
+	</body>
+</html>

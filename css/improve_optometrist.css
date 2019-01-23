@@ -1,0 +1,21 @@
+html {
+  font-size: 100px;
+}
+
+#container span,
+#container i {
+  line-height: 1rem;
+}
+#container i {
+  color: red;
+}
+
+#container textarea {
+  width: 92%;
+  height: 2rem;
+  margin-left: .2rem;
+}
+
+.optometrist-next input {
+  margin-top: 2rem;
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>验光师详情</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/header.css" />
+	<link rel="stylesheet" href="../css/common/layer.css" />
+	<link rel="stylesheet" href="../css/optometrist_detailC.css" />
+	<style>		
+		.container .content{min-height:500px}
+		/***下拉刷新样式***/
+		.x-pullfresh-wrapper{position:fixed;left:0;top:-42px;width:100%;height:42px;margin:0 auto;z-index:10;opacity:0}
+		.x-pullfresh-wrapper .x-pullfresh-loading{position:relative;width:40px;height:40px;overflow:hidden;background-color:rgba(255,255,255,0.9);border:1px solid rgba(230,230,230,0.5);border-radius:36px;margin:0 auto;text-align: center;line-height: 40px;-webkit-transition: all 1s;-moz-transition:all 1s;-o-transition:all 1s;}
+		.x-pullfresh-wrapper .x-pullfresh-canvas{margin:4px 4px}
+		.x-pullfresh-wrapper .x-pullfresh-svg.x-on,.x-pullfresh-wrapper .x-pullfresh-canvas.x-on{-webkit-animation:loading 1s linear infinite;-webkit-transform:rotate(0);animation:loading 1s linear infinite;transform:rotate(0)}
+		.x-pullfresh-wrapper .x-pullfresh-svg{width:100%;height:100%}
+		.x-pullfresh-wrapper .x-pullfresh-path{stroke-linecap: round;stroke: rgb(52, 190, 51);fill: none;stroke-width: 1px;}
+		.x-pullfresh-wrapper #x-pullfresh-arrow path{fill: rgb(52, 190, 51);}
+		/***更多数据样式***/
+		.pullfresh-up{line-height:30px;overflow:hidden;text-align:center;transition-duration:600ms;margin-bottom:20px}
+		.pullfresh-up .loader{font-size:0px;padding:0px;display:none}
+		.pullfresh-up .loader span{vertical-align:middle;border-radius:100%;display:inline-block;width:10px;height:10px;margin:0 2px;-webkit-animation:pfloader 0.8s linear infinite alternate;animation:pfloader 0.8s linear infinite alternate}
+		.pullfresh-loading .loader{display:block}
+		.pullfresh-up .pullfresh-label{font-size:12px;color:#999;display:none}
+		.pullfresh-up.no-more .pullfresh-label{display:block}
+		.no-more .pullfresh-label{display:block}
+		.pullfresh-up .loader span:nth-child(1){-webkit-animation-delay:-1s;animation-delay:-1s;background:rgba(245,103,115,0.6)}
+		.pullfresh-up .loader span:nth-child(2){-webkit-animation-delay:-0.8s;animation-delay:-0.8s;background:rgba(245,103,115,0.8)}
+		.pullfresh-up .loader span:nth-child(3){-webkit-animation-delay:-0.26666s;animation-delay:-0.26666s;background:rgba(245,103,115,1)}
+		.pullfresh-up .loader span:nth-child(4){-webkit-animation-delay:-0.8s;animation-delay:-0.8s;background:rgba(245,103,115,0.8)}
+		.pullfresh-up .loader span:nth-child(5){-webkit-animation-delay:-1s;animation-delay:-1s;background:rgba(245,103,115,0.4)}
+		@keyframes pfloader{from{transform:scale(0,0)}
+		to{transform:scale(1,1)}
+		}@-webkit-keyframes pfloader{from{-webkit-transform:scale(0,0)}
+		to{-webkit-transform:scale(1,1)}
+		}
+		/*.pic-active {
+				height: 3.6rem;
+			}
+			.span-active {
+				font-size: 0;
+			}			*/
+		</style>
+</head>
+
+<body>
+	<div id="container">
+		<!--验光师列表-->
+		<!--<div>-->
+		<div class="scroller content" id="wrapper">
+			<ul id="popular">
+				<li>
+					<!--<img src="" class="user" />-->
+					<a href="javascript:;" class="style1"></a>
+					<!--style="background:url('+res[num].image+') 0 0 no-repeat;background-size:cover;background-position: center center;"-->
+					<span class="opbox">
+						<span class="namebox">
+							<p class="name"></p>
+							<!--<a href='javascript:;'>平台已认证</a>-->
+							<span class="star">
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+							</span>
+						</span>
+						<!--<span class="namebox">
+									<p class="title1">好评：</p>
+									<span class="star">
+										<i></i>
+										<i></i>
+										<i></i>
+										<i></i>
+									</span>
+								</span>-->
+						<p class="evaluate"></p>
+						<!--<p class="evaluatea">实名认证:<i>已实名备案</i>&nbsp;&nbsp;资质认证:<i>已认证</i></p>-->
+						<!--<p class="evaluate">7年资历，专注青少年近视防控，成年视疲劳、近视健康预防疾视健康预防疾</p>
+								<span class="renz">
+									<p>北京朝阳望京博泰大厦</p>
+									<p>12.66公里</p>
+								</span>-->
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="con" id="container">
+			<!--ek平台认证-->
+			<p class="ek">“e可”平台认证</p>
+			<p class="evaluatea">实名认证:<i>已实名备案</i></p>
+			<p class="evaluatea">资质认证:<i>已认证</i></p>
+			<!--切换按钮-->
+			<!--<ul class="content_top" id="aBtn">
+				<li class="active">验光师介绍</li>
+				<li>用户评价</li>
+			</ul>-->
+			<text class="showbox" id="shopdel" style="padding-bottom:0.98rem;">
+				<span class="boxone" style="position:relative;padding:0">
+					<!--<span class="close"><span class="span1 span-active">∧</span><span class="span2">∨</span><h4 class="all">收起</h4></span>-->
+					<img src="" alt="资格证书" class="book" style="display:block;height:3.6rem;"/>
+				</span>
+				<span class="boxone">
+					<h4 class="showa">个人介绍</h4>
+					<p name="textfield" cols="60" rows="6" id="mytext" class="begoodat"></p>
+				</span>
+				<span class="boxone">
+					<h4 class="te">特长介绍</h4>
+					<p name="textfield" cols="60" rows="6" id="mytext1" class="begoodat"></p>
+				</span>
+				<span class="boxone">
+					<h4 class="pro">可提供服务项目：</h4>
+					<!--展示服务项目-->
+					<ul class="proList">
+						<!--<li>标准验光</li>
+						<li>青少年视觉动力检查</li>
+						<li>成年人视觉动力检查</li>
+						<li>45岁以上人群视觉动力检查</li>
+						<li>角膜接触镜标准验光</li>
+						<li>完全视功能检查</li>-->
+					</ul>
+					
+				</span>
+				<span class="boxone" style="padding:0.25rem 0.24rem;width:auto">
+					<h4>用户评价：</h4>
+					<ul class="evalist">
+						<!--<li>
+							<span class="title">
+								<img src="../images/touxiang.png">
+								<h4>验光师达令~</h4>									
+								<i>&nbsp;2018-10-11</i>
+							</span>
+							<p class="estimate">楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！楼主说的有道理，点赞！！</p>															
+							<span class="tupian">
+								<img src="../images/book.png" />
+								<img src="../images/book.png" />
+								<img src="../images/book.png" />
+							</span>
+						</li>-->						
+					</ul>
+					<!--<p class="more">查看更多></p>-->
+				</span>
+				
+			</text>
+			<text id="evaluation" style="padding:0 0.24rem;display:none;">
+				<!--<div id="demo"><div style="text-align:center">正在加载中...</div></div>
+           				<div class="x-pullfresh-more">加载更多中样式</div>-->
+				<ul class="evalist" style="margin-bottom:1.2rem;">
+
+				</ul>
+			</text>
+		</div>
+		<!--</div>-->
+		<div class="bottom">
+			<div id="addCar" class="btn fl">写评价</div>
+			<div id="payNow" class="btn fr">立即咨询</div>
+		</div>
+		<div id="allmap"></div>
+	</div>
+
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script type="text/javascript" src="../js/common/lay/modules/layer.js"></script>
+	<script type="text/javascript" src="../js/common/require.min.js"></script>
+	<script type="text/javascript" src="../js/alljs/optometrist_detail.js?v1.1"></script>
+	<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nlqmwS4x5dr1H1Q1wnHfiQ6BSOHZU3j6"></script>-->
+	<!--<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>-->
+	<script type="text/javascript">
+		require = {
+			baseUrl: './js',
+			paths: {
+				'jquery': 'http://cdn.bootcss.com/jquery/3.2.1/jquery.min',
+				'h5': 'h5.js?modify=2170607#',
+			}
+		}
+	</script>
+	<script>
+		$('#payNow').click(function () {
+//			layer.alert('敬请期待哦！')
+		})
+	</script>
+	<script>
+		window.onload = function () {
+			var textarea = document.getElementById("mytext");
+			textarea.onkeyup = function () {
+				checkMax(textarea, 500);
+			}
+			var textarea1 = document.getElementById("mytext1");
+			textarea1.onkeyup = function () {
+				checkMax(textarea1, 500);
+			}
+			//切换tab
+			var abtn = document.getElementById('aBtn');
+			var aLi = abtn.getElementsByTagName('li');
+			var content = document.getElementById('container');
+			var aDiv = content.getElementsByTagName('text');
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].index = i;
+				aLi[i].onclick = function () {
+					for (var i = 0; i < aLi.length; i++) {
+						aLi[i].className = '';
+						aDiv[i].className = '';
+					}
+					this.className = 'active';
+					aDiv[this.index].className = 'showbox';
+				}
+			}
+		}
+
+		function checkMax(textarea, maxLength) {
+			var str = textarea.value;
+			var strlen = str.length;
+
+			if (strlen > maxLength) {
+				alert('字数超过限制');
+				eval(textarea.value = str.substr(0, maxLength));
+			}
+		}
+	</script>
+</body>
+
+</html>

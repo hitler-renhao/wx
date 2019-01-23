@@ -1,0 +1,132 @@
+body {
+  background-color: #f0f0f0;
+}
+
+header {
+  position: relative;
+  width: 7.5rem;
+  height: 3.62rem;
+  background: url(../images/bg.png);
+  background-size: 7.5rem 3.62rem;
+}
+
+.force {
+  display: block;
+  margin: 0 auto;
+  /* background: url() left bottom no-repeat; */
+  background-size: 0.14rem 0.16rem;
+  color: #fff;
+  font-size: 0.3rem;
+  min-width: 2.5rem;
+  text-indent: 0.25rem;
+  height: 0.5rem;
+  text-align: center;
+}
+
+.force i {
+  font-size: 0.48rem;
+}
+
+header img,
+header h3,
+header input {
+  position: absolute;
+}
+
+header img {
+  top: 1.51rem;
+  left: 2.4rem;
+}
+
+header h3 {
+  top: 1.3rem;
+  left: 2.8rem;
+  color: #fff;
+}
+
+header h3 span {
+  font-size: .48rem;
+}
+
+header input {
+  top: 2.1rem;
+  left: 2.8rem;
+  width: 2rem;
+  height: .6rem;
+  border-radius: .3rem;
+  background-color: #5ED9FB;
+  border: none;
+  color: #fff;
+}
+
+.all {
+  position: absolute;
+  top: 3rem;
+  left: .5rem;
+  width: 5.5rem;
+  height: 2.7rem;
+  background: #fff;
+  padding: 0 .5rem;
+  border-radius: .2rem;
+}
+
+.first {
+  width: .83rem;
+  height: 1.02rem;
+  float: left;
+  margin-top: .63rem;
+}
+
+.all ul {
+  width: 3.5rem;
+  float: left;
+  margin-top: .5rem;
+  margin-left: .5rem;
+}
+
+h3 {
+  font-size: .4rem;
+}
+
+.info {
+  font-size: .24rem;
+  color: #999;
+  /* line-height: .8rem; */
+  padding: .2rem;
+  padding-left: 0;
+}
+
+.award {
+  width: 3rem;
+  padding-left: .1rem;
+  font-size: .22rem;
+  color: #999;
+  border: 1px solid #eee;
+}
+
+.award span {
+  color: #fb6a42;
+}
+
+.second {
+  width: .5rem;
+  float: left;
+  margin-top: .8rem;
+}
+
+.invite {
+  top: 6.3rem;
+}
+
+.evolution {
+  top: 9.6rem;
+}
+
+.login {
+  top: 12.9rem;
+}
+
+.consume {
+  top: 16.2rem;
+  margin-bottom: .5rem;
+}

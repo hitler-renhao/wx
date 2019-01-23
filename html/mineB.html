@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>我的</title>
+	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../css/common/layui.css">
+	<link rel="stylesheet" href="../css/common/iconfont1.css">
+	<link rel="stylesheet" href="../css/main.css?v1.0" />
+	<style>
+		.headbox {
+			margin-top: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<!--顶部-->
+		<!-- <p class="header">我的</p> -->
+		<div class="headbox" onclick="location.href = 'drawal_list.html'">
+			<p>账户余额：</p>
+			<p class="money">0.00<span style="font-size: .5rem;"> 元</span></p>
+		</div>
+		<p class="title">余额可提现到自己银行卡上</p>
+		<ul class="list">
+			<li onclick="location.href='goods_order_list_B.html'">
+				<p class="goods">订单管理</p>
+			</li>
+			<li onclick="location.href='combo_list.html'">
+				<p class="meal">套餐管理</p>
+			</li>
+			<li onclick="location.href='goods_list.html'">
+				<p class="goods">商品管理</p>
+			</li>
+			<li onclick="location.href='optometrist_management.html'">
+				<p class="op">验光师管理</p>
+			</li>
+		</ul>
+		<p class="line"></p>
+		<ul class="list" onclick="location.href='drawal.html'">
+			<li>
+				<p class="tixian">发起提现</p>
+			</li>
+		</ul>
+		<p class="line"></p>
+		<ul class="list">
+			<li>
+				<p class="edit" onclick="location.href='shop_enter.html?edit=2'">修改店铺资料</p>
+			</li>
+			<!-- <li>
+				<p class="cool">
+					<a href="tel:18310215054">联系客服</a>
+				</p>
+			</li> -->
+		</ul>
+		<div class="bottom">
+			<ul id="addCar" class="btn fl view-notice" style="width: 100%;background: #fff;">
+				<li class="fl" data-id="shop_info.html">
+					<i class="iconfont shop_info">&#xe625;</i>
+					<p class="bottom_text">主页</p>
+				</li>
+				<li class="fl" data-id="goods_order_list_B.html">
+					<i class="iconfont icon-weibiaoti-"></i>
+					<p class="bottom_text">订单</p>
+				</li>
+				<li class="fl" data-id="manual_input.html">
+					<i class="iconfont icon-saoma"></i>
+					<p class="bottom_text">兑换</p>
+				</li>
+				<li class="fl active" data-id="mineB.html">
+					<i class="iconfont mine">&#xe62e;</i>
+					<p class="bottom_text">我的</p>
+				</li>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script>
+		// 自动刷新一次页面
+		setTimeout(function () {
+			$(document).ready(function () {
+				if (location.href.indexOf("#reloaded") == -1) {
+					location.href = location.href + "#reloaded";
+					location.reload();
+				}
+			})
+		}, 10)
+	</script>
+	<script>
+		var tokenKey = localStorage.getItem('tokenKey')
+		var userId = localStorage.getItem('userId')
+		$.ajax({
+			url: global + "/optometrist/userCapitalAccount",
+			type: "get",
+			data: {
+				'tokenKey': tokenKey,
+				'userId': userId,
+			},
+			success: function (data) {
+				console.log(data);
+				if (data == 4400) {
+					layer.alert('未登录', function () {
+						location.href = 'login.html';
+					})
+				} else if (data.code == 200) {
+					let money = data.data.money.toFixed(2) + '<span style="font-size: .5rem"> 元</span>'
+					$('.money').text('')
+					$('.money').append(money)
+				}
+			},
+		});
+		$('#addCar li').click(function () {
+			location.href = $(this).attr('data-id');
+		})
+	</script>
+</body>
+
+</html>
