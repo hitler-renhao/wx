@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="../css/common/layer.css" />
   <link rel="stylesheet" href="../css/fill_order.css?v1.1" />
   <style>
-
     #container {
           margin: 0;
-          /* padding: 0 .24rem; */
           margin-bottom: 1rem;
         }
 		</style>
@@ -22,55 +20,69 @@
 
 <body>
   <div id="container">
-    <!-- 倒计时 -->
-    <div id="count_down">
-      <span class="sheng red" id="sy">如果您选择结算的商品来自不同的商家，如您选择到店自提需要您分别到店取货！请确认之后再提交订单！</span>
-    </div>
-
-    <!-- 商品信息 -->
-    <ul id="goods_infor">
-      <h2>订单商品</h2>
-    </ul>
-    <!-- 订单信息 -->
-    <ul id="order_infor">
-      <li class="total">
-        <p>商品数量：<span class="fr order_info number">0件</span></p>
-        <p>商品总价：<span class="fr order_info totalMoney">¥0.00</span></p>
-        <p>运费<span class="fr order_info">¥0.00</span></p>
-        <p>优惠金额<span class="fr order_info">¥0.00</span></p>
-      </li>
-    </ul>
-    <!-- 收货方式 -->
-    <ul id="way">
-      <li>
-        <img src="../images/to_shop.jpg" alt="" class="way_pic">
-        <span>到店自提</span>
-        <img src="../images/before_select.jpg" alt="" class="select">
-      </li>
-      <li>
-        <img src="../images/express.jpg" alt="" class="way_pic">
-        <span>快递发货</span>
-        <img src="../images/selected.jpg" alt="" class="select">
-      </li>
-    </ul>
-    <img src="../images/color_border.png" alt="" class="color_border">
-    <!-- 收货人信息 -->
-    <ul id="infor">
-    </ul>
-    <div id="balance">
-      <div class="center">
-        <p>实付 :&nbsp;&nbsp;&nbsp;&nbsp;<i class="red totalMoney">¥0.00</i></p>
+      <div id="count_down">
+        <span class="sheng red" id="sy">如果您选择结算的商品来自不同的商家，如您选择到店自提需要您分别到店取货！请确认之后再提交订单！</span>
       </div>
-      <div class="right">
-        <p class="pay">去结算</p>
+      <ul id="goods_infor">
+        <h2>订单商品</h2>
+      </ul>
+      <ul id="coupon">
+        <li class="chooseCoupon">
+          <span class="gray">券</span>
+          <span>请选择优惠券:</span>
+          <span class="fr reds canUse"> 〉</span>
+        </li>
+        <li class="showCoupon">
+          <span class="blue">券</span>
+          <span>优惠券抵扣:</span>
+          <span class="orange">已选0张</span>
+          <span class="fr reds subNumber">- ¥0 〉</span>
+        </li>
+      </ul>
+      <ul id="order_infor">
+        <li class="total">
+          <p>商品数量：<span class="fr order_info number">0件</span></p>
+          <p>商品总价：<span class="fr order_info totalMoney">¥0.00</span></p>
+          <p>运费<span class="fr order_info">¥0.00</span></p>
+          <p>优惠金额<span class="fr order_info">¥0.00</span></p>
+        </li>
+      </ul>
+      <ul id="way">
+        <li>
+          <img src="../images/to_shop.jpg" alt="" class="way_pic">
+          <span>到店自提</span>
+          <img src="../images/before_select.jpg" alt="" class="select">
+        </li>
+        <li>
+          <img src="../images/express.jpg" alt="" class="way_pic">
+          <span>快递发货</span>
+          <img src="../images/selected.jpg" alt="" class="select">
+        </li>
+      </ul>
+      <img src="../images/color_border.png" alt="" class="color_border">
+      <ul id="infor">
+      </ul>
+      <div id="balance">
+        <div class="center">
+          <p>实付 :&nbsp;&nbsp;&nbsp;&nbsp;<i class="red totalMoney">¥0.00</i></p>
+        </div>
+        <div class="right">
+          <p class="pay">去结算</p>
+        </div>
       </div>
-    </div>
+      <div class="luck" id="luck">
+        <div class="luck-tit">恭喜您</div>
+        <div class="luck-word">此次消费已满足中奖条件，除了有机会得MAC口红外，您额外获得一次抽奖机会，100%中奖哦！快去试试自己的手气吧！</div>
+        <div class="luck-btn">
+          <div class="luck-btn-lef" id="delBtn">暂不抽奖</div>
+          <div class="luck-btn-rig" id="toLuck">立即去抽奖</div>
+        </div>
+      </div>
   </div>
-
   <script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="../js/common/common.js"></script>
   <script type="text/javascript" src="../js/common/lay/modules/layer.js"></script>
-  <script type="text/javascript" src="../js/alljs/fill_order.js?v1.0"></script>
+  <script type="text/javascript" src="../js/alljs/fill_order.js?v1.6"></script>
 </body>
 
 </html>

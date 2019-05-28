@@ -30,17 +30,12 @@
 	</head>
 
 	<body>
-		<!--顶部结束-->
 		<div id="container" style="margin-top: 0;padding:0;">
 			<div class="shop-pic">
-				<!--<i class="fl" style="line-height:.7rem;color: red;">*</i>-->
-
-				<!--<p class="introduce-text">店铺主图</p>-->
 				<ul style="margin-top:0.2rem;">
 					<li class="fl">
 						<div class="release_up_pic">
 							<div class="up_pic">
-								<!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
 								<span id="chose_pic_btn0">
 								<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="headPortraitUpload" /></button>
 								<img src="" alt="" id="goods-pic" />
@@ -60,10 +55,7 @@
 				<p class="introduce-text">店内设施介绍</p>
 				<textarea name="" id="shop-introduce" cols="48" rows="5" placeholder="您可以对店内的仪器进行介绍说明，也可以对店内商品进行介绍"></textarea>
 			</div>
-			<!-- 上传店内图片 -->
 			<div class="shop-pic">
-				<!--<i class="fl" style="line-height:.7rem;color: red;">*</i>-->
-				<!--<p class="introduce-text">店内设施图片</p>-->
 				<table>
 					<tbody>
 						<tr>
@@ -76,7 +68,6 @@
 							<td>
 								<div class="release_up_pic1">
 									<div class="up_pic1">
-										<!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
 										<span id="chose_pic_btn1" style="">
 										<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="idCardUp" /></button>
 										<img src="" alt="" id="goods-pic1" />
@@ -87,7 +78,6 @@
 							<td>
 								<div class="release_up_pic2">
 									<div class="up_pic2">
-										<!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
 										<span id="chose_pic_btn2" style="">
 										<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="idCardDown" /></button>
 										<img src="" alt="" id="goods-pic2" />
@@ -98,7 +88,6 @@
 							<td>
 								<div class="release_up_pic3">
 									<div class="up_pic3">
-										<!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
 										<span id="chose_pic_btn3" style="">
 										<button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="zige" /></button>
 										<img src="" alt="" id="goods-pic3" />
@@ -116,28 +105,6 @@
 				<p class="textinfo">店内可提供服务项目</p>
 				<input type="text" readonly="" value="" class="serivetype" id="serivetype" />
 			</div>
-
-			<!-- 上传店内图片完成 -->
-			<!-- 店内人员 -->
-			<!--<div class="shop-staff">
-				<ul id="shop-staff-list">
-					<h4 style="line-height: 0.5rem;position:relative;font-size: 0.3rem;">
-					<i class="fl" style="line-height:.6rem;color: red;">*&nbsp;</i>店内人员
-					<a href="javascript:;" class="add-optometrist fr">
-						<i class="iconfont icon-jia" style="display:inline"></i>
-						<i>新增验光师</i>
-					</a>
-				</h4>
-					<li class="straff-info">
-						<span class="head" style="background:url(../images/1.png) 0 0 no-repeat;background-size: cover;float:left;display:inline-block;width:1rem;height:1rem;"></span>
-						<div class="staff-introduce">
-							<p class="input-optometrist-name1">刘珂可</p>
-							<p class="input-optometrist-intro1">7年资历，专注青少年近视防控，成年视疲劳、近视健康预... 拷贝</p>							
-						</div>
-					</li>
-				</ul>
-			</div>-->
-			<!--结算银行卡-->
 			<div class="shop-staff" style="float:left;width:7.25rem;border-bottom:none" id="bankCard">
 				<p class="introduce-text" style="padding-left:0.1rem">结算银行卡</p>
 				<p class="ek">您在e可平台收入提现的银行卡信息</p>
@@ -153,7 +120,6 @@
 					<li>
 						<p>开户行名称：</p>
 						<input type="text" placeholder="请输入您的开户行名称" class="cardName" id="openingBank"/>
-						<!--<p id="openingBank"></p>-->
 					</li>
 				</ul>
 			</div>
@@ -163,38 +129,12 @@
 				</a>
 			</div>
 		</div>
-		<!--服务类型弹框-->
 		<div class="bigbox">
 			<div class="serivebox">
 				<h4>服务项目
 					<i class="close">×</i>
 				</h4>
 				<ul class="seriveList">
-					<!--<input type="hidden" />-->
-					<!--<li>						
-						<input type="checkbox" />
-						<p>标准验光</p>
-					</li>-->
-					<!--<li>						
-						<input type="checkbox" />
-						<p>青少年视觉动力检查</p>
-					</li>
-					<li>						
-						<input type="checkbox" />
-						<p>成年人视觉动力检查</p>
-					</li>
-					<li>						
-						<input type="checkbox" />
-						<p>45岁以上人群视觉动力检查</p>
-					</li>
-					<li>						
-						<input type="checkbox" />
-						<p>角膜接触镜标准验光</p>
-					</li>
-					<li>						
-						<input type="checkbox" />
-						<p>完全视功能检查</p>
-					</li>-->
 				</ul>
 				<input type="button" value="确认选择" class="sure" />
 			</div>
@@ -216,50 +156,16 @@
 		function upLoad() {
 			var fileInput = document.getElementById("upimg");
 			var file = fileInput.files[0];
-			//创建读取文件的对象
 			var reader = new FileReader();
-			//创建文件读取相关的变量
 			var imgFile;
-			//为文件读取成功设置事件
 			reader.onload = function(e) {
-				// alert('文件读取完成');
 				imgFile = e.target.result;
 				console.log(imgFile);
 				$("#img").attr('src', imgFile);
 			};
-
-			//正式读取文件
 			reader.readAsDataURL(file);
 		}
 	</script>
 	<script>
-//		window.onload = function(){
-//			var bank = document.getElementById('bankCard').value;
-//			console.log(bank);
-//		}
-		
-//		$('#bankCard').blur(function(){
-//			alert(1);
-//		})
-		
 	</script>
-	<!--<script>
-		var oBtn = document.getElementById('bankCard');
-        var oTi = document.getElementById('openingBank');
-        if('oninput' in oBtn){ 
-        	console.log(1);
-                oBtn.addEventListener("input",getWord,true);                
-            }else{ 
-            	console.log(2);
-                oBtn.onpropertychange = getWord; 
-            }
-      
-        function getWord(){
-        	console.log(oBtn.value);
-        	console.log(oTi.innerText);
-            oTi.innerText = oBtn.value;
-        }
-	</script>-->
-
-	
 </html>

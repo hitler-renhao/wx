@@ -21,11 +21,17 @@ function getUserAccounts() {
     success: function (data) {
       // 获取登录账号密码成功
       if (data.code == 200) {
-        var res = data.data;
-        var account = [];
-        account.push(res.jgAccount);
-        account.push(res.jgPassword);
-        login(account);
+        if (!data.data) {
+          $('html').append('<p style="font-size: .3rem; text-align: center; line-height: 1rem;">- 当前没有聊天消息 -</p>');
+          $('.loading').remove();
+        } else {
+          var res = data.data;
+          var account = [];
+          account.push(res.jgAccount);
+          account.push(res.jgPassword);
+          login(account);
+        }
+
       } else if (data.code) {
         getUserAccount();
       }
@@ -146,7 +152,6 @@ function init(across_appkey, random_str, dateTime, signature) {
 }
 
 
-
 // 登录
 function login(accounts) {
   var logName = accounts[0];
@@ -180,16 +185,17 @@ function login(accounts) {
         console.log(res);
 
         var str = '',
-            nameAndHead = new Array();
+          nameAndHead = new Array();
         for (var i = 0; i < res.length; i++) {
           nameAndHead = getUserName(res[i].name);
           if (res[i].unread_msg_count != 0) {
             str =
               '<li user-name="' + res[i].name + '">' +
-              '<a href="' + res[i].avatar + '" class="unseImg">' +
+              // '<a href="' + res[i].avatar + '" class="unseImg">' +
+              '<p class="unseImg">' +
               '<img src="' + nameAndHead[1] + '" />' +
               '<span class="num">' + res[i].unread_msg_count + '</span>' +
-              '</a>' +
+              '</p>' +
               '<span class="userInfo">' +
               '<p class="name">' + nameAndHead[0] +
               '<b>' + format(res[i].mtime) + '</b>' +
@@ -202,9 +208,10 @@ function login(accounts) {
           } else {
             str =
               '<li user-name="' + res[i].name + '">' +
-              '<a href="' + res[i].avatar + '" class="unseImg">' +
+              // '<a href="' + res[i].avatar + '" class="unseImg">' +
+              '<p class="unseImg">' +
               '<img src="' + nameAndHead[1] + '" />' +
-              '</a>' +
+              '</p>' +
               '<span class="userInfo">' +
               '<p class="name">' + nameAndHead[0] +
               '<b>' + format(res[i].mtime) + '</b>' +
@@ -219,6 +226,7 @@ function login(accounts) {
           $('.loading').remove();
         }
       }).onFail(function (data) {
+
         //data.code 返回码
         //data.message 描述
       });

@@ -221,7 +221,7 @@ $(function() {
 						'<h3 class="goodstui">推荐搜索</h3>' +
 						'<span class="goodsname">' +
 						'<a href="javascript:;">太阳镜</a>' +
-						'<a href="javascript:;">隐形眼镜</a>' +
+						'<a href="javascript:;">其他</a>' +
 						'<a href="javascript:;">镜片</a>' +
 						'<a href="javascript:;">镜框</a>' +
 						'</span>' +

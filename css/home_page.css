@@ -2,6 +2,8 @@
 	padding-bottom: 1.7rem;
 }
 
+
+
 #banner {
 	width: 100%;
 	height: 3.5rem;
@@ -1077,4 +1079,123 @@
 	font-size: 0.24rem;
 	line-height: 0.6rem;
 	background: none;
+}
+
+/* //活动优惠券 */
+.activity-coupon{
+	width: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	background: #FFD8DA;
+	position: relative;
+	padding: 0.4rem 0.3rem 0.2rem 0.3rem;
+}
+.activity-coupon-info{
+	width: 100%;
+	height: 2rem;
+	border: 2px solid #D33535; 
+	border-radius: 0.3rem;
+	background: white;
+	text-align: center;
+}
+.activity-coupon .tit{
+   position: absolute;
+   width: 40%;
+   height: 0.4rem;
+   background: url("../images/index1.png");
+   background-size: 100% 100%;
+   line-height: 0.4rem;
+   text-align: center;
+   font-size: 0.25rem;
+   color: white;
+   left: 50%;
+   margin-left: -20%;
+   top: 0.2rem;
+}
+.activity-coupon-info .con{
+	width: 24.8%;
+	height: 100%;
+	float: left;
+   
+}
+.activity-coupon-info .con .price{
+	height: 0.7rem;
+    font-size: 0.4rem;
+    color: #D3353F;
+    margin-top: 0.2rem;
+    line-height: 0.7rem;
+}
+.activity-coupon-info .con .limit{
+   color: #5F2C29;
+   font-size: 0.16rem;
+   margin-top: 0.05rem;
+}
+.activity-coupon-info .con .btn{
+	background: #5F2C29;
+	font-size: 0.18rem;
+	width: 60%;
+	margin: 0 auto;
+	color: white;
+	border-radius: 0.3rem;
+	padding:0.05rem 0.05rem 0.08rem 0.08rem;
+	margin-top: 0.1rem;
+ }
+ .activity-coupon-info .line{
+	 width: 0.2%;
+	 height: 1.5rem;
+	 margin-top: 0.4rem;;
+	 background: #5F2C29;
+	 float: left;
+	 background:url("../images/line.png");
+	 background: 100% 100%;
+ }
+ .activity-coupon-info .line img{
+	 height: 1.2rem;
+ }
+ .activity-coupon-info .line:last-child{
+	 display: none;
+ }
+ .activity-coupon .more{
+   text-align: center;
+   font-size: 0.24rem;
+   color: #D33535;
+   margin-top: 0.2rem;
+ }
+
+ /* 活动浮层 */
+.loading{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	/* display: none; */
+}
+.loading .luck-btn{
+	width: 60%;
+    position: fixed;
+    left: 50%;
+    margin-left: -31%;
+    top: 37%;
+}
+.loading .luck-del{
+	width: 10%;
+    position: fixed;
+    left: 50%;
+    margin-left: -5%;
+    top: 35%;
+	margin-left: 20%;
+}
+.price{
+	position: relative;
+}
+.con .price img{
+	position: absolute;
+    width: 0.2rem;
+    left: 50%;
+    margin-left: -0.55rem;
+    /* top: 50%; */
+    margin-top: 0.05rem;
 }

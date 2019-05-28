@@ -737,25 +737,47 @@ $(function () {
 		},
 		//提交
 		submitForm: function () {
-			$('.submit').click(function () {
-				$.ajax({
-					type: "POST",
-					url: global + "/ekProduct/offProduct",
-					async: true,
-					data: {
-						"tokenKey": tokenKey,
-						"productId":goodsId,
-						"off": 'on'							
-					},
-					success: function(data) {
-						if(data.code == 200){
-							layer.msg('上架成功', function() {
+			$('.xiajia').click(function () {
+				$('.bigbox').show();
+				$('.word a:nth-child(2)').click(function() {					
+					$.ajax({
+						type: "POST",
+						url: global + "/ekProduct/offProduct",
+						async: true,
+						data: {
+							"tokenKey": tokenKey,
+							"productId": goodsId,
+							"off": 'off'
+						},
+						success: function(data) {
+							$('.bigbox').hide();
+							layer.msg('下架成功', function() {
 								location.href = 'goods_list.html';
 							})
 						}
-						
-					}
+					})
 				})
+				$('.word a:first-child').click(function() {
+					$('.bigbox').hide();
+				})
+//				$.ajax({
+//					type: "POST",
+//					url: global + "/ekProduct/offProduct",
+//					async: true,
+//					data: {
+//						"tokenKey": tokenKey,
+//						"productId":goodsId,
+//						"off": 'on'							
+//					},
+//					success: function(data) {
+//						if(data.code == 200){
+//							layer.msg('上架成功', function() {
+//								location.href = 'goods_list.html';
+//							})
+//						}
+//						
+//					}
+//				})
 //				var title = $('#title').val(); //商品名称
 //				var beginPrice = $('#beginPrice').val();
 //				var nowPrice = $('#nowPrice').val();

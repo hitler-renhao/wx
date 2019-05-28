@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../../css/common/common.css" />
+
+	<link rel="stylesheet" href="../../css/common/layui.css">
+	<link rel="stylesheet" href="../../css/common/layer.css" />
+
+	<link rel="stylesheet" href="../../css/common/swiper-4.2.2.min.css">
+
+	<link rel="stylesheet" href="../../css/common/LArea.min.css">
+	<link rel="stylesheet" href="../../css/Activity/kinerLottery.css?v1.0" />
+	<link rel="stylesheet" href="../../css/Activity/luck_draw.css?v1.0" />
+	<title>幸运大转盘</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+
+			</div>
+		</div>
+
+		<div class="luck-price">
+			<div class="box" id="box">
+				<div class="outer KinerLottery KinerLotteryContent">
+					<img src="../../images/luck1.png">
+				</div>
+				<!-- 大专盘分为三种状态：活动未开始（no-start）、活动进行中(start)、活动结束(completed),可通过切换class进行切换状态，js会根据这3个class进行匹配状态 -->
+				<div class="inner KinerLotteryBtn start" id="KinerLotteryBtn">立即<br> 抽奖</div>
+			</div>
+			<div class="shadow">
+				<img src="../../images/luck7.png" alt="">
+			</div>
+		</div>
+		<div class="num">剩余抽奖次数：0次</div>
+		<div class="luck-info"></div>
+	</div>
+	<div class="load1">
+		<div class="load-content">
+			<p class="load-content-tit">恭喜您</p>
+			<p class="load-content-info1">本次抽得了***奖品，请输入有效的收获地址，活动结束后由e可统一发放</p>
+			<div class="load-content-inp">
+				<span>姓名:</span> <input type="text" class="name">
+			</div>
+			<div class="load-content-inp">
+				<span>电话:</span> <input type="text" class="phone">
+			</div>
+			<div class="load-content-inp">
+				<span>地区:</span>
+				<input id="city" type="text" readonly="" placeholder="-请选择地区-" readonly="" value="" />
+				<img src="../../images/to_bottom.png" alt="" style="float: right; width: .3rem; margin-top: .25rem; margin-right: .24rem;">
+				<input id="value2" type="hidden" />
+			</div>
+			<div class="load-content-inp">
+				<span>地址:</span> <input type="text" class="city">
+			</div>
+			<div class="load-content-btn">
+				确定领取
+			</div>
+		</div>
+	</div>
+	<div class="load2">
+		<div class="load-content">
+			<p class="load-content-tit">恭喜您</p>
+			<p class="load-content-info2">本次抽得了***奖品，请输入有效的收获地址，活动结束后由e可统一发放</p>
+			<div class="load-content-inp">
+				<span>手机号:</span> <input type="text">
+			</div>
+			<div class="load-content-btn">
+				确定领取
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../js/common/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="../../js/common/common.js"></script>
+
+	<script type="text/javascript" src="../../js/common/layui.js"></script>
+	<script type="text/javascript" src="../../js/common/layer.js"></script>
+
+	<script src="../../js/common/swiper-4.2.2.min.js"></script>
+
+	<script type="text/javascript" src="../../js/common/LArea.min.js"></script>
+	<script type="text/javascript" src="../../js/common/LAreaData2.js"></script>
+	<script type="text/javascript" src="../../js/common/zeptomin.js"></script>
+	<script type="text/javascript" src="../../js/common/kinerLottery.js?v1.7"></script>
+	<script type="text/javascript" src="../../js/alljs/Activity/luck_draw.js?v1.4"></script>
+	<script>
+		/**
+		 * 根据转盘旋转角度判断获得什么奖品
+		 * @param deg
+		 * @returns {*}
+		 */
+
+		var KinerLottery = new KinerLottery({
+			rotateNum: 8,
+			body: "#box",
+			direction: 0,
+		});
+
+		var swiper = new Swiper('.swiper-container', {
+			direction: 'vertical',
+			loop: true, // 循环模式选项
+			speed: 800,
+			autoplay: {
+				delay: 3000
+			}, //等同于以下设置
+			height: 37.5, //你的slide高度
+		});
+	</script>
+	<script>
+		function cityChoice() {
+			var area2 = new LArea();
+			area2.init({
+				'trigger': '#city',
+				'valueTo': '#value',
+				'keys': {
+					id: 'value',
+					name: 'text'
+				},
+				'type': 2,
+				'data': [provs_data, citys_data, dists_data]
+			});
+		}
+		cityChoice();
+	</script>
+</body>
+
+</html>

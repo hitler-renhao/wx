@@ -906,9 +906,9 @@ form .ipt img {
 .main span {
 	position: absolute;
 	z-index: 999;
-	top: 0.2rem;
+	top: 0.08rem;
 	color: #999;
-	left: 4.5rem;
+	left: 4.3rem;
 }
 
 .shop-img {

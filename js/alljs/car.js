@@ -38,18 +38,21 @@ $(function () {
 							'<aside>' +
 							'<img src="../images/before_select.jpg" alt="" class="before_select">' +
 							'<img src="../images/house.jpg" alt="" class="house">' +
+							'<a href="shop_detail.html?shopId=' + shopIdNames[index].split(',')[0] + '">' +
 							'<article>' + shopIdNames[index].split(',')[1] + '</article>' +
 							'<img src="../images/8.png" alt="" class="to_right">' +
+							'</a>' +
 							'</aside>'
 						for (key in res[shopIdNames[index]]) { //  遍历店铺内部商品信息, 对象索引为字符串, 故使用数组解析方式		res['c38f7d91-463e-40b6-8cb0-e039e2003764,亿视界测试'[0]]
 							for (k in res[shopIdNames[index]][key]) {
 								console.log(key.split(',')[0]);
 
-
 								str += '<li prodId="' + key.split(',')[0] + '" specId="' + k + '" number="' + res[shopIdNames[index]][key][k].number + '" prodName="' + key.split(',')[1] + '" specName="' + res[shopIdNames[index]][key][k].specName + '" price="' + res[shopIdNames[index]][key][k].specPrice + '" totalPrice="' + res[shopIdNames[index]][key][k].totalPrice + '" imgUrl="' + res[shopIdNames[index]][key][k].specImage + '" class="num' + k + '">' +
 									'<div class="goods_check">' +
 									'<img src="../images/before_select.jpg" alt="" class="before_select1">' +
 									'</div>' +
+
+									'<a href="goods_detail.html?goodsId=' + key.split(',')[0] + '" class="goodsss">' +
 									'<div class="goodsImg">' +
 									'<img src="' + res[shopIdNames[index]][key][k].specImage + '">' +
 									'</div>' +
@@ -59,6 +62,8 @@ $(function () {
 									'<p class="price red">¥' + res[shopIdNames[index]][key][k].specPrice + '</p>' +
 									'<p class="sum_price" style="display: none;">' + res[shopIdNames[index]][key][k].totalPrice + '</p>' +
 									'</div>' +
+									'</a>' +
+
 									'<div class="change_num">' +
 									'<input class="reduce reSty" type="submit" value="-" />' +
 									'<input class="num" type="text" value="' + res[shopIdNames[index]][key][k].number + '" readonly>' +
@@ -97,7 +102,7 @@ $(function () {
 							prodName: $(this).attr('prodname'), // 商品名称
 							specName: $(this).attr('specname'), // 规格名称
 							prodImgUrl: $(this).attr('imgurl'), // 商品图片
-							number: $(this).children().find('.num').val(),	// 数量
+							number: $(this).children().find('.num').val(), // 数量
 							prodPrice: $(this).attr('price'), // 单价
 							totalPrice: $(this).attr('totalprice'), // 总价
 							shopId: $(this).parent().attr('shopid'), // 店铺id
@@ -119,34 +124,7 @@ $(function () {
 				if (count == 0) {
 					layer.msg('请勾选商品再结算')
 				} else { // 已勾选
-					var prodid = '',
-						specid = '';
-					$('li').each(function (i) {
-						console.log($(this));
-						if ($(this).children().find('.before_select1').attr('src') == '../images/selected.jpg') {
-							prodid += $(this).attr('prodid') + ','
-							specid += $(this).attr('specid') + ','
-						}
-					});
-					prodid = prodid.slice(0, prodid.length - 1);
-					specid = specid.slice(0, specid.length - 1);
-					// arrs.push(strs);
-
-					$.ajax({
-						url: global + '/cart/removeCartProduct',
-						type: 'post',
-						dataType: 'json',
-						data: {
-							'productId': prodid,
-							'specIds': specid,
-							'tokenKey': tokenKey,
-							'userId': userId
-						},
-						success: function (data) {
-							location.href = 'fill_order.html';
-						}
-					});
-					e.stopPropagation()
+					location.href = 'fill_order.html';
 				}
 			});
 		},
@@ -258,9 +236,10 @@ $(function () {
 				// 获取减一按钮
 				var obj = $(this).parents('.change_num').find('.reduce');
 				// 获取隐藏域, 用于计算总价
-				var priceTotalObj = $(this).parents('.change_num').siblings('.infor').find('.sum_price');
+				var priceTotalObj = $(this).parents('.change_num').siblings('.goodsss').find('.sum_price');
 				// 计算总价
-				var price = $(this).parents('.change_num').siblings('.infor').find('.price').html();
+				var price = $(this).parents('.change_num').siblings('.goodsss').find('.price').html();
+
 				var priceTotal = count * Number(price.substring(1));
 				// 商品id
 				var productId = $(this).parents('li').attr('prodid');
@@ -283,8 +262,8 @@ $(function () {
 			$('.change_num .reduce').click(function () {
 				var iptVal = $(this).next('input');
 				var count = Number(iptVal.val()) - 1;
-				var priceTotalObj = $(this).parents('.change_num').siblings('.infor').find('.sum_price');
-				var price = $(this).parents('.change_num').siblings('.infor').find('.price').html();
+				var priceTotalObj = $(this).parents('.change_num').siblings('.goodsss').find('.sum_price');
+				var price = $(this).parents('.change_num').siblings('.goodsss').find('.price').html();
 				var priceTotal = count * Number(price.substring(1));
 				if (iptVal.val() > 1) {
 					iptVal.val(count);

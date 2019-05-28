@@ -40,10 +40,10 @@ function getOpenid(index, tokenKey) {
 
 
 // 线上
-// var global = 'http://wx.bjysjglasses.com:8181';
+var global = 'http://wx.bjysjglasses.com:8181';
 
 // // 测试
-var global = ' http://test.bjysjglasses.com:8181';
+// var global = ' http://test.bjysjglasses.com:8181';
 
 // 万里
 // var global = 'http://192.168.1.8:8181';
@@ -146,3 +146,11 @@ $(function ($) {
 //                  奔驰宝马贵者趣，公交自行程序员。
 //                  别人笑我忒疯癫，我笑自己命太贱；
 //                  不见满街漂亮妹，哪个归得程序员？
+// 百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0c8624f5c92e98bf57a96e12bc2f7a68";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();

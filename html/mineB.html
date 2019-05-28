@@ -19,8 +19,6 @@
 
 <body>
 	<div class="container">
-		<!--顶部-->
-		<!-- <p class="header">我的</p> -->
 		<div class="headbox" onclick="location.href = 'drawal_list.html'">
 			<p>账户余额：</p>
 			<p class="money">0.00<span style="font-size: .5rem;"> 元</span></p>
@@ -51,11 +49,6 @@
 			<li>
 				<p class="edit" onclick="location.href='shop_enter.html?edit=2'">修改店铺资料</p>
 			</li>
-			<!-- <li>
-				<p class="cool">
-					<a href="tel:18310215054">联系客服</a>
-				</p>
-			</li> -->
 		</ul>
 		<div class="bottom">
 			<ul id="addCar" class="btn fl view-notice" style="width: 100%;background: #fff;">
@@ -80,7 +73,6 @@
 	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../js/common/common.js"></script>
 	<script>
-		// 自动刷新一次页面
 		setTimeout(function () {
 			$(document).ready(function () {
 				if (location.href.indexOf("#reloaded") == -1) {

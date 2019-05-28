@@ -92,8 +92,6 @@ $(function () {
 
               for (var j = 0; j < res[i].ekProductOrderList.length; j++) {
                 var productJson = JSON.parse(res[i].ekProductOrderList[j].productJson)
-                // console.log(res[i].ekProductOrderList[j].id);
-
                 str += '<div orderid="' + res[i].ekProductOrderList[j].id + '" class="order_id">'
                 str += '<div class="clicks" orderid="' + res[i].ekProductOrderList[j].id + '">' +
                   '<aside class="man-cloth">'
@@ -102,32 +100,35 @@ $(function () {
                 } else if (res[i].ekProductOrderList[j].obtainMode == '1') {
                   str += '<strong>' + res[i].ekProductOrderList[j].shopName + '<i class="self">自提订单</i></strong>'
                 }
-
-                countDown(res[i].ekProductPorder.created, "#demo" + i * 10 + j + " .minute", "#demo" + i * 10 + j + " .second");
-
-                str += '<div class="colockbox" id="demo' + i * 10 + j + '" style=" position: absolute; top: 0; left: 3rem;">剩余付款时间: ' +
-                  '<span class="minute">-</span> : ' +
-                  '<span class="second">-</span>' +
-                  '</div>' +
-
-
-                  '<span class="exchange">待付款 <i> ></i> </span>' +
+                if (j == 0) {
+                  countDown(res[i].ekProductPorder.created, "#demo" + i * 10 + j + " .minute", "#demo" + i * 10 + j + " .second");
+                  str += '<div class="colockbox" id="demo' + i * 10 + j + '" style=" position: absolute; top: 0; left: 3rem;">剩余付款时间: ' +
+                    '<span class="minute">-</span> : ' +
+                    '<span class="second">-</span>' +
+                    '</div>'
+                } else {
+                  str += '<div class="colockbox" id="demo' + i * 10 + j + '" style=" position: absolute; top: 0; left: 3rem;">' +
+                    '<span class="minute"></span>' +
+                    '<span class="second"></span>' +
+                    '</div>'
+                }
+                str += '<span class="exchange">待付款 <i> ></i> </span>' +
                   '</aside>'
                 for (var k = 0; k < productJson.length; k++) {
-                  str += '<div class="body_box" style="">' +
-                    '<div class="payment_center">' +
-                    '<a href="javascript:;" class="picture">' +
-                    '<img src="' + productJson[k].imgUrl + '" alt="" />' +
-                    '</a>' +
-                    '<div class="z_word">' +
-                    '<p>' + productJson[k].productName + '</p>' +
-                    '</div>' +
-                    '<div class="z_word">' +
-                    '<p>' + productJson[k].spectName + '</p>' +
-                    '</div>' +
-                    '<div class="num">x' + productJson[k].count + '</div>' +
-                    '</div>' +
-                    '</div>'
+                  str +=  '<div class="body_box" style="">' +
+                          '<div class="payment_center">' +
+                          '<a href="javascript:;" class="picture">' +
+                          '<img src="' + productJson[k].imgUrl + '" alt="" />' +
+                          '</a>' +
+                          '<div class="z_word">' +
+                          '<p>' + productJson[k].productName + '</p>' +
+                          '</div>' +
+                          '<div class="z_word">' +
+                          '<p>' + productJson[k].spectName + '</p>' +
+                          '</div>' +
+                          '<div class="num">x' + productJson[k].count + '</div>' +
+                          '</div>' +
+                          '</div>'
                 }
                 str += '</div>'
                 str += '</div>'

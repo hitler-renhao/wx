@@ -82,7 +82,8 @@ $(function () {
 			url: global + '/ekIntegralOrder/list',
 			async: true,
 			data: {
-				"tokenKey": tokenKey, //_out_153751688979716693
+				"tokenKey": tokenKey, 
+				// "tokenKey": '_out_153751688979716693', //_out_153751688979716693
 				"pageNum": 1,
 				"pageSize": 100,
 				"state": userType

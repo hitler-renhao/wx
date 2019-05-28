@@ -70,7 +70,7 @@ $(function () {
 									localStorage.setItem('tokenKey', res.tokenKey);
 									localStorage.setItem('shopId', shopId);
 									localStorage.setItem('userId', res.id);
-									url = wx + '/shop_info.html?typeid=' + typeId + '&openid' + openId;
+									url = wx + '/shop_info.html?typeid=' + typeId + '&openid=' + openId +'&shopId=' + shopId;
 									jumpToBack(url)
 									// location.href = './shop_info.html?typeid=' + typeId + '&openid' + openId;
 									break;

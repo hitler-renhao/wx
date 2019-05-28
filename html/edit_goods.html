@@ -6,13 +6,10 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<title>修改商品</title>
 		<link rel="stylesheet" href="../css/common/common.css" />
-		<!--<link rel="stylesheet" href="../css/common/header.css" />-->
-		<!--<link rel="stylesheet" href="../css/common/mui.css" />-->
-		<!--<link rel="stylesheet" href="../css/common/news.css" />-->
 		<link rel="stylesheet" href="../css/common/iconfont1.css">
 		<link rel="stylesheet" href="../css/common/layui.css?1.1" />
 		<link rel="stylesheet" href="../css/common/layer.css" />
-		<link rel="stylesheet" href="../css/add_goods.css?v1.3" />
+		<link rel="stylesheet" href="../css/add_goods.css?v1.4" />
 		<style>
 			#chose_pic_btn button {
 				position: absolute;
@@ -24,7 +21,7 @@
 			}
 			header{background:#fff;color:#333;font-size: 0.36rem;position:fixed;top:0;left:0;line-height:0.8rem;padding:0 0.24rem;width:7.02rem;z-index: 101;}
 			.title{float:left;}
-			.xiajia{float:right;font-size: 0.32rem;}
+			.xiajia{float:right;font-size: 0.28rem;}
 		</style>
 	</head>
 
@@ -32,11 +29,10 @@
 		<div id="container">
 			<header>				
 				<p class="title">修改商品</p>	
-				<p class="xiajia">下架此商品</p>
+				<p class="xiajia">上架此商品</p>
 			</header>
 			<div class="line"></div>
-			<!-- 商品信息开始 -->
-			<ul class="info" style="margin-top:0.8rem;">
+			<ul class="info" style="margin-top:0.88rem;">				
 				<li>
 					<label><i>*</i>&nbsp;商品类别:</label>
 					<select name="" class="selt" id='goodsType'>	
@@ -47,7 +43,6 @@
 						<option>老花镜</option>
 						<option>护理产品</option>
 					</select>
-					<!--<input type="text" placeholder="如:镜架、镜片" id='goodsType' />-->
 				</li>
 				<li>
 					<label><i>*</i>&nbsp;商品名称:</label>
@@ -62,46 +57,19 @@
 					<input type="number" placeholder="请输入商品平台价" id="nowPrice" />
 				</li>
 			</ul>
-			<!-- 商品信息结束 -->
 			<div class="line"></div>
-			<!--设置规格-->
 			<div class="setting">
 				<div class="settitle">
 					<h3>设置规格</h3>
 					<p onclick="location.href='fillIn_sample.html'">填写示例</p>
 				</div>
 				<ul class="setlist">
-					<!--<li>
-						<h3>规格1</h3>
-						<span class="libox">
-							<label>商品名称:</label>
-							<input type="text" placeholder="例如：明月折射率1.56防蓝光镜片" class="goodsname1" />
-						</span>
-						<span class="liboxa">
-							<span class="spanBox">
-								<label>价格:</label>
-								<input type="text" placeholder="399" class="goodsprice" />
-							</span>
-						<span class="spanBoxa">
-								<label>库存:</label>
-								<input type="text" placeholder="500" class="goodscount" />
-							</span>
-						</span>
-						<i class="goodsDel">×</i>
-					</li>-->					
 				</ul>
 				<span class="addtype"><i>+</i>&nbsp;<p>新增规格项</p></span>
 			</div>
-			<!--设置规格 ---end-->
-			<!--设置参数-->
 			<div class="agu">
 				<p class="set">设置参数</p>
 				<span class="type">
-					<!--<a href="javascript:;">商品编号</a>
-					<a href="javascript:;">材质</a>					
-					<a href="javascript:;">适用人群</a>
-					<a href="javascript:;">颜色</a>
-					<a href="javascript:;">品牌</a>-->
 					<button>商品编号</button>
 					<button>材质</button>
 					<button>适用人群</button>
@@ -113,24 +81,10 @@
 						<div class="layui-col-xs5 layui-col-sm5 layui-col-md5 centers layui-col-xs-offset1" style="text-align: center;line-height:0.6rem;">参数名称</div>
 						<div class="layui-col-xs5 layui-col-sm5 layui-col-md5 centers" style="text-align: center;line-height:0.6rem;">参数值</div>
 					</div>
-					<!--<div class="layui-row layui-col-space1" id="pram">
-						<div class="layui-col-xs1 layui-col-sm1 layui-col-md1 del">
-							<i class="iconfont icon-wrong"></i>
-						</div>
-						<div class="layui-col-xs5 layui-col-sm5 layui-col-md5">
-							<input type="text" placeholder="请输入参数名称" class="name">
-						</div>
-						<div class="layui-col-xs5 layui-col-sm5 layui-col-md5">
-							<input type="text" placeholder="请输入参数值" class="sum">
-						</div>
-					</div>-->
 				</div>
 				<span class="addagu"><i>+</i>&nbsp;<p>新增参数项</p></span>
 			</div>
-			<!--设置参数--end-->
 			<div class="line"></div>
-
-			<!--上传商品图片-->
 			<div class="release_up_pic">
 				<div class="up_pic">
 					<span id="chose_pic_btn">
@@ -139,10 +93,6 @@
 					</span>
 				</div>
 			</div>
-			
-			
-			
-			<!--添加商品详情图-->
 			<p class="goodsImg">请添加商品详情图</p>
 			<div class="release_up_pic2">
 				<div class="up_pic2">
@@ -153,7 +103,6 @@
 					</span>
 				</div>
 			</div>
-			<!--添加商品介绍图-->
 			<p class="goodsImg">请添加商品介绍图</p>
 			<div class="release_up_pic1">
 				<div class="up_pic1">					
@@ -167,7 +116,6 @@
 		</div>
 
 		<a href="javascript:;" class="submit">保存</a>
-		<!--弹框-->
 		<div class="bigbox">
 			<div class="big_box">
 				<h4>提示</h4>
@@ -181,17 +129,12 @@
 		</div>
 		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="../js/common/common.js"></script>
-		<!-- <script type="text/javascript" src="../js/common/lay/mobileBUGFix.mini.js"></script>
-		<script type="text/javascript" src="../js/common/LocalResizeIMG.js"></script> -->
 		<script type="text/javascript" src="../js/common/lay/modules/layer.js"></script>
 		<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 		<script src="../js/common/jweixin-1.0.0.js" tppabs="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 		<script src="../js/common/zepto.min.js" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
 		<script src="../js/common/demo.js" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
-		<!--<script type="text/javascript" src="../js/common/LocalResizeIMG.js" ></script>-->
-		<!--<script type="text/javascript" src="../js/common/mobileBUGFix.mini.js" ></script>-->
-		
-		<script type="text/javascript" src="../js/alljs/edit_goods.js?v1.3"></script>
+		<script type="text/javascript" src="../js/alljs/edit_goods.js?v1.5"></script>
 		<script>
 			$('.type a').click(function() {
 				$(this).addClass('active').siblings().removeClass('active');

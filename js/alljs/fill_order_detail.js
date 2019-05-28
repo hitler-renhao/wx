@@ -29,6 +29,7 @@ $(function () {
         success: function (data) {
           console.log(data);
           var res = data.data;
+
           /* header */
           var header = '';
           // if (res.order.orderStatus == '0')
@@ -50,7 +51,7 @@ $(function () {
             case '2':
               countDown(res.order.createTime, ".timer .minute", ".timer .second")
               header += '<text>' +
-                '<h2>待付款</h2>' +
+                '<h2 class="porderId" porderId="' + res.order.porderId + '">待付款</h2>' +
                 '<p><i class="timer">剩' +
                 '<span class="minute">-</span> : ' +
                 '<span class="second">-</span>' +
@@ -131,19 +132,22 @@ $(function () {
               '</li>'
           }
 
-
+          if(res.order.orderPayPrice===null){
+             res.order.orderPayPrice='0.00';       
+          }
           str += '</ul>' +
             '<!-- 订单信息 -->' +
             '<ul id="order_infor">' +
             '<li class="total">' +
-            '<p>优惠券优惠金额 <span class="fr order_info">￥0.00</span></p>' +
-            '<p>满减金额 <span class="fr order_info">¥0.00</span></p>' +
+            '<p>优惠券优惠金额 <span class="fr order_info">￥'+(Number(res.order.orderTotalPrice) - Number(res.order.orderPayPrice)).toFixed(2)+'</span></p>' +
+            // '<p>满减金额 <span class="fr order_info">¥0.00</span></p>' +
             '<p>运费 <span class="fr order_info">¥0.00</span></p>' +
             '<p>订单总金额 <span class="fr order_info">¥' + res.order.orderTotalPrice.toFixed(2) + '</span></p>' +
             '</li>' +
             '<li>' +
             '<span class="payable">应付金额：</span>' +
-            '<span class="money fr">¥' + res.order.orderTotalPrice.toFixed(2) + '</span>' +
+            '<span class="money fr">¥' + res.order.orderPayPrice.toFixed(2) + '</span>' +
+            										//
             '</li>' +
 
             '</ul>' +
@@ -219,16 +223,16 @@ $(function () {
           }
 
           switch (res.order.orderStatus) {
-            case '2':
-              str += '<ul id="balance">' +
-                '<li class="fr pay payNow">' +
-                '<p>立即支付</p>' +
-                '</li>' +
-                '<li class="fr cancel">' +
-                '<p>取消订单</p>' +
-                '</li>' +
-                '</ul>'
-              break;
+            // case '2':
+            //   str += '<ul id="balance">' +
+            //     '<li class="fr pay payNow">' +
+            //     '<p>立即支付</p>' +
+            //     '</li>' +
+            //     '<li class="fr cancel">' +
+            //     '<p>取消订单</p>' +
+            //     '</li>' +
+            //     '</ul>'
+            //   break;
             case '3':
               str += '<ul id="balance">' +
                 '<li class="fr cancel">' +
@@ -264,22 +268,28 @@ $(function () {
       /* 支付订单 */
       $('.pay').click(function () {
         // alert('立即支付')
-        var orderNum = $(this).parents('#price').siblings('#order_infor').find('.orderNum p:first-child b').html();
-        var goodName = $(this).parents('#price').siblings('#goods_infor').find('.name').html();
+        var productOrderId = $('.porderId').attr('porderId')
+        var openid = localStorage.getItem('openId');
         $.ajax({
           type: "post",
-          url: global + "/v1.0/WXPayController/H5Pay",
+          url: global + "/wechatpay/weChatH5Pay",
           dataType: "json",
           async: 'true',
           data: {
-            "vo_body": "商品订单-" + orderNum, //名称
-            "vo_openid": openid,
-            "vo_out_trade_no": orderNum, //订单号
-            "vo_total_fee": 0
+            "body": "商品订单-" + productOrderId,
+            "openId": openid,
+            'outTradeNo': productOrderId,
+            'tokenKey': tokenKey
           },
           success: function (data) {
-            var res = data.data;
-            onBridgeReady(res);
+            if (data.code == 200) {
+              var res = data.data;
+              setTimeout(function () {
+                onBridgeReady(res);
+              }, 500)
+            } else {
+              layer.msg('您所处的网络环境不佳!')
+            }
           }
         });
 
@@ -290,15 +300,14 @@ $(function () {
               "timeStamp": res.timeStamp,
               "nonceStr": res.nonceStr,
               "package": res.package,
-              "signType": "MD5",
+              "signType": 'MD5',
               "paySign": res.paySign
             },
             function (res) {
               if (res.err_msg == "get_brand_wcpay_request:ok") {
-                alert('支付成功!')
+                location.href = 'My_mealCoupon.html'
               } else if (res.err_msg == "total_fee") {
-                alert('支付会话标识prepay_id已失效!')
-                //window.location.href="Mall_orders.html"
+                alert('付款失败!')
               }
             }
           );
@@ -311,7 +320,7 @@ $(function () {
             document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
           }
         } else {
-          onBridgeReady();
+          // onBridgeReady();
         }
       })
     }

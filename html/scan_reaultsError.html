@@ -17,8 +17,6 @@
 
 	<body>
 		<div class="container">
-			<!--顶部-->
-			<!--<p class="headerScan">扫码结果</p>-->
 			<div class="resultBox">
 				<div class="error">
 					<img src="../images/error.png" />
@@ -31,30 +29,6 @@
 					</a>
 				</div>
 			</div>
-			<!--<div class="box">
-				<div class="promotionCode">
-					<img src="../images/input.png" class="input"/>
-					<p class="money">￥<i>699.00</i></p>
-					<span class="meal">
-						<h4>套餐</h4>						
-					</span>
-					<ul class="mealList">
-						<li>
-							<p>摩根波士c13钛合金镜架</p>
-							<p>1份</p>
-							<p>1000元</p>
-						</li>
-						<li>
-							<p>摩根波士c13钛合金镜架</p>
-							<p>1份</p>
-							<p>1000元</p>
-						</li>
-					</ul>						
-					<p class="all">总价：1999元</p>							
-					<p class="all">现价：699元</p>													
-					<input type="butotn" value="确认已使用" class="sureUse"/>					
-				</div>
-			</div>-->
 		</div>
 		<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
 		<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
@@ -66,16 +40,12 @@
 			var tokenKey = localStorage.getItem('tokenKey');
 			
 			wx.ready(function() {
-				// 9 微信原生接口
-				// 9.1.2 扫描二维码并返回结果
 				document.querySelector('#scanQRCode1').onclick = function() {
 					wx.scanQRCode({
 						needResult: 1,
 						desc: 'scanQRCode desc',
 						success: function(res) {
-							// alert(JSON.stringify(res.resultStr));
 							var result = res.resultStr;
-							//搜索套餐券
 							$.ajax({
 								type: "POST",
 								url: global + "/ekSetMealOrder/verificationSetMeal",
@@ -92,15 +62,12 @@
 								}
 							});
 						},
-						//识别失败
 						fail: function(res) {
-							//alert(JSON.stringify(res));
 							location.href = 'scan_reaultsError.html'
 						}
 					});
 				};
 				wx.error(function(res) {
-					//alert(res.errMsg);
 				});
 			});
 		</script>

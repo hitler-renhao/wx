@@ -2,7 +2,7 @@ $(function () {
 
 	var flag = location.search.substring(1);
 	var cityname = localStorage.getItem('cityname')
-
+	sendShopInfo("", "", "", 'desc', "", $('#tab11'));
 	wx.ready(function () {
 		// 获取用户自己位置
 		wx.getLocation({
@@ -35,7 +35,7 @@ $(function () {
 		});
 	});
 	wx.error(function (res) {
-		alert(res.errMsg);
+		// alert(res.errMsg);
 	});
 
 	// function bMapTransWXMap(lon, lat) {
@@ -237,7 +237,7 @@ $(function () {
 					libox.append(result);
 					libox.on('click', 'li', function () {
 						var shopId = $(this).attr('shopId');
-						localStorage.setItem('shopId', shopId);
+						//localStorage.setItem('shopId', shopId);
 						location.href = '../html/shop_detail.html?shopId=' + shopId;
 					})
 				}

@@ -33,12 +33,12 @@ $(function () {
   // 点击进入下架商品页面
   $('.evalist').on('click', 'li', function () {
     var comboId = $(this).attr('combo-id');
-    location.href = 'edit_goods.html?goodsId=' + comboId+'&q2';
+    location.href = 'del_goods.html?goodsId=' + comboId;
   })
   // 点击进入重新上架商品页面
   $('.evalists').on('click', 'li', function () {
     var comboId = $(this).attr('combo-id');
-    location.href = 'del_goods.html?goodsId=' + comboId;
+    location.href = 'edit_goods.html?goodsId=' + comboId+'&q2';
   })
 
   // 获取已上架套餐

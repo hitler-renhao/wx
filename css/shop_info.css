@@ -298,29 +298,67 @@ nav {
   margin: 0.1rem auto;
 }
 
-.bottom {
+.footer {
   width: 100%;
   height: 0.98rem;
   position: fixed;
   bottom: 0;
+  box-shadow: 0 -1px 1px #eee;color:#333;
+  background: white;
+  z-index: 11;
 }
-
-.bottom .fl {
-  background: #fcb501;
+.footer .fl{
+   width: 1.5rem;
+   height: 100%;
+   text-align: center;
+   padding-top: 0.2rem;
+   float: left;
+}
+.footer .fl img{
+  widows: 0.44rem;
+  height: 0.38rem;
+}
+.footer .line{
+  height: 100%;
+  font-size: 0.4rem;
+  color: #dcdcdc;
+  line-height: 0.98rem;
+  float: left;
+}
+.footer .fr{
+  width: 2rem;
+  float: left;
+}
+.footer .buy {
+  float: right;
+  width: 3.76rem;
+  height: 100%;
+  background: pink;
+  background: url("../images/goumai-bg.png");
+  background-size: 100% 100%;
+  font-size: 0.34rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.98rem;
+  z-index: 11;
 }
 
 .bottom .btn {
-  float: left;
+  /* float: left;
   width: 50%;
   height: 100%;
   text-align: center;
   line-height: 0.98rem;
   font-size: 0.32rem;
-  color: #fff;
+  color: #fff; */
 }
 
 .bottom .fr {
-  background: #fe5900;
+  /* background: #fe5900; */
+}
+.bottom .buy{
+  width: 50%;
+  background: pink;
 }
 
 .eve {
@@ -636,3 +674,70 @@ footer {
 .swiper-wrapper{
 	flex-wrap: wrap;
 }
+/* 店铺详情也买添加用户可领取优惠券 */
+.receive-coupon{
+  width: 100%;
+  display: -webkit-box;
+	padding:0 0.24rem 0.24rem 0;
+	height: 1.56rem;
+  background: #f2f5fc;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y:hidden;
+}
+.couponbg{
+  width: 2.69rem;
+  height: 1.32rem;
+  background:url("../images/youhuiquanbg.png");
+  background-size: 100% 100%;
+  float:none;
+  margin-left: 0.24rem;
+}
+.couponbg .price,.couponbg-lingqu .price{
+  width: 100%;
+  font-size: 0.3rem;
+  color: white;
+  font-weight: bold;
+  height: 0.7rem;
+  line-height: 1.1rem;
+  text-align:center;
+}
+.couponbg .scope{
+  position: relative;
+  /* background: red; */
+}
+.couponbg .scope span {
+  color: #FC8800;
+  font-size: 0.2rem;
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+}
+.couponbg .scope span:nth-child(1){
+  width: 1.5rem;
+  height: 0.4rem;
+  background: url(../images/youhuiquan_left.png);
+  background-size: 100% 100%;
+  left: 0.32rem;
+  top: 0.04rem;
+  line-height: 0.4rem;
+}
+.couponbg .scope span:nth-child(2){
+  width: 0.57rem;
+  height: 0.35rem;
+  background: url(../images/youhuiquan_rig.png);
+  background-size: 100% 100%;
+  right: 0.35rem;
+  top: 0.04rem;
+  line-height: 0.4rem;
+}
+.couponbg-lingqu{
+  width: 2.69rem;
+  height: 1.32rem;
+  background:url("../images/lingqucoupon.png");
+  background-size: 100% 100%;
+  float:none;
+  margin-left: 0.24rem;
+}
+
+

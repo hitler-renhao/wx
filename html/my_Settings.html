@@ -13,15 +13,13 @@
 
 <body>
 	<div class="container">
-		<!--顶部-->
-		<!-- <p class="header">设置</p> -->
 		<ul class="content">
 			<a href="../html/change_password.html">
 				<li>
 					<p>修改密码</p>
 				</li>
 			</a>
-			<a href="change_oldNumber.html">
+			<a href="change_newNumber.html">
 				<li>
 					<p>更改手机号</p>
 				</li>
@@ -32,7 +30,6 @@
 				<p>关于我们</p>
 			</li>
 			<li>
-				<!-- <p>意见反馈</p> -->
 			</li>
 		</ul>
 		<a href="javascript:;" class="quit">退出登录</a>
@@ -42,29 +39,22 @@
 	<script type="text/javascript" src="../js/common/common.js"></script>
 	<script>
 		$(function () {
-			// 获取openId
 			var tokenKey = localStorage.getItem('tokenKey')
 			if (!!tokenKey) {
 				getOpenid(1, tokenKey);
 				console.log(localStorage.getItem('openId'));
 			}
-			
-			//退出登录
 			$('.quit').click(function () {
-				//alert(1);
 				localStorage.clear();
 				window.location.reload();
 			})
-			//判断是否登录	
 			var tokenKey = localStorage.getItem('tokenKey'); // 登录凭证
 			if (tokenKey == null || tokenKey == "") {
-				//alert(2);
 				layer.alert('您还未登录，请先登录', function () {
 					localStorage.setItem('typeId', '8')
 					location.href = 'login.html';
 				})
 			}
-
 		})
 	</script>
 </body>

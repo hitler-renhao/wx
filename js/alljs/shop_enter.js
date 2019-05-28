@@ -296,13 +296,11 @@ $(function () {
 					// 5 图片接口
 					// 5.1 拍照、本地选图
 					headPic.on("click", function () {
-
 						wx.chooseImage({
 							count: 1, // 默认9
 							sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
 							sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
 							success: function (res) {
-
 								for (var i = 0; i < res.localIds.length; i++) {
 									//全局图片id，绑定微信选择图片产生的localId，将用户选择图片追加到已选择图片
 									var id = '' + images.index++;
@@ -314,6 +312,15 @@ $(function () {
 								for (var id in images.selectIds) {
 									selectIds.push(id);
 								}
+
+
+
+
+								
+
+
+
+
 
 								// 图片上传微信服务器
 								wx.uploadImage({

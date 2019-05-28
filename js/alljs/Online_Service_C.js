@@ -29,7 +29,6 @@ $.ajax({
 function getUserAccount() {
   $.ajax({
     url: global + "/jiguang/registerUsers",
-    // url: global + "/jiguang/registerUsers",
     type: "get",
     data: {
       "tokenKey": tokenKey,

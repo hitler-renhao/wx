@@ -1,24 +1,142 @@
-$(function() {
+$(function () {
 	// 获取openId
-	var tokenKey = localStorage.getItem('tokenKey')
+	var tokenKey = localStorage.getItem('tokenKey');
+	//获取用户id
+	var userId = localStorage.getItem('userId');
 	if (!!tokenKey) {
 		getOpenid(1, tokenKey);
 		console.log(localStorage.getItem('openId'));
 	}
-	
+
 	$('.goodsNone').css({
 		'display': 'none'
 	})
+
+
+
 	localStorage.setItem('typeId', 6);
 	//新加   写评价判断是否登录
-	var shopId = localStorage.getItem('shopId');
-	var leftId = localStorage.getItem('shopId');
-	var infoId = $(this).attr('data-id');
-	
-	var tokenKey = localStorage.getItem('tokenKey'); // 登录凭证
-	$('#evaluate').click(function() {
+	var shopId = location.search.substring(1).split('=')[1];
+	var leftId = location.search.substring(1).split('=')[1];
+	console.log(shopId);
+	console.log(leftId);
+
+
+	// 根据店铺id查询优惠券列表
+	// /coupon/pu/queryCouponListByShopId
+	function getCouponlist() {
+		$.ajax({
+			type: 'get',
+			url: global + '/coupon/pu/queryCouponListByShopId',
+			async: true,
+			data: {
+				'shopId': shopId,
+				'userId': userId
+				// 'userId': '3b49a49011cb43db9f63f7519f03f8a4'
+			},
+			success: function (data) {
+				console.log("优惠券列表",data);
+				var productType = "";
+				if (data.code === 200) {
+					var str = "";
+					if(data.data.length===0){
+						$("#receive-coupon").css({"height":"0"});
+					}
+					for (var i = 0; i < data.data.length; i++) {
+						var oData = data.data[i];
+						if (oData.productLimit == "1") {
+							productType = "全场通用";
+						} else if (oData.productLimit == "2") {
+							productType = "新品专享";
+						} else if (oData.productLimit == "3") {
+							if (oData.productId == "2") {
+								productType = "镜架专用";
+							} else if (oData.productId == "3") {
+								productType = "镜片专用";
+							} else if (oData.productId == "5") {
+								productType = "太阳镜专用";
+							} else if (oData.productId == "6") {
+								productType = "隐形眼镜专用";
+							} else if (oData.productId == "7") {
+								productType = "老花镜专用";
+							}
+						}
+						if (oData.usereceive == "领取过") {
+							str += '<div class="couponbg-lingqu">' +
+								'<div class="price">￥' + oData.faceValue + '</div>' +
+								'</div>';
+						}else{
+							str += '<div class="couponbg" couponId="' + oData.id + '">' +
+							'<div class="price">' + oData.faceValue + '￥</div>' +
+							'<div class="scope">' +
+							'<span>' + productType + '</span>' +
+							'<span>领取</span>' +
+							'</div>' +
+							'</div>'
+						}
+					}
+				}
+				$("#receive-coupon").html(str);
+				console.log($("#receive-coupon"))
+			}
+		})
+	}
+	getCouponlist();
+    
+	$("#receive-coupon").on("click",".couponbg",function(){
 		if(tokenKey == null || tokenKey == "") {
-			layer.alert('您还未登录，请先登录', function() {
+			layer.alert('您还未登录，请先登录！', function() {
+				localStorage.removeItem('tokenKey');
+				location.href = 'login.html';
+			})
+			return;
+		}
+		var oAttr=$(this).attr("couponId");
+		$.ajax({
+			type: 'post',
+			url: global + '/coupon/saveCouponByUserId',
+			async: true,
+			data: {
+				// 'tokenKey': "3b49a49011cb43db9f63f7519f03f8a41551939572999",
+				'tokenKey': tokenKey,
+				'couponId': oAttr,
+			},
+			success: function (data) {
+				console.log(data)
+				if (data.code === 200) {
+					layui.use('layer', function () {
+						var layer = layui.layer;
+						layer.msg(data.msg);
+					});
+					getCouponlist();
+				} else {
+					if (data == 4400) {
+						layer.alert('您还未登录，请先登录！', function () {
+							location.href = 'login.html'
+						})
+					} else {
+						layui.use('layer', function () {
+							var layer = layui.layer;
+							layer.msg(data.msg);
+						});
+					}
+				}
+			},
+			error:function(error){
+				console.log(error);
+			}
+		})
+	})
+
+
+	//	var shopId = localStorage.getItem('shopId');
+	//	var leftId = localStorage.getItem('shopId');
+	var infoId = $(this).attr('data-id');
+
+	var tokenKey = localStorage.getItem('tokenKey'); // 登录凭证
+	$('#evaluate').click(function () {
+		if (tokenKey == null || tokenKey == "") {
+			layer.alert('您还未登录，请先登录', function () {
 				localStorage.setItem('typeId', '5')
 				location.href = 'login.html?shopId=' + shopId;
 			})
@@ -27,10 +145,10 @@ $(function() {
 			location.href = 'shop_evaluation.html?shopId=' + shopId + '&infoId=' + infoId;
 		}
 	})
-	$('#consult').click(function() {
+	$('#consult').click(function () {
 		localStorage.getItem('tokenKey')
-		if(!tokenKey) {
-			layer.alert('登录之后才能进行咨询', function() {
+		if (!tokenKey) {
+			layer.alert('登录之后才能进行咨询', function () {
 				location.href = 'login.html';
 			})
 		} else {
@@ -39,8 +157,20 @@ $(function() {
 	})
 	//以上会会加
 
+	// 我要买单
+	$("#buy").on('click', function () {
+		if (tokenKey == null || tokenKey == "") {
+			layer.alert('您还未登录，请先登录！', function () {
+				location.href = 'login.html'
+			})
+		} else {
+			localStorage.setItem('b_shopId', shopId);
+			location.href = '../html/offlinePay.html?shopId=' + shopId;
+		}
+	})
+
 	// tab栏切换
-	$('#product-display').click(function() {
+	$('#product-display').click(function () {
 		$(this).addClass('active').siblings().removeClass('active');
 		$('#mall-detail').css({
 			'display': 'none'
@@ -49,7 +179,7 @@ $(function() {
 			'display': 'block'
 		})
 	})
-	$('#shop-details').click(function() {
+	$('#shop-details').click(function () {
 		$(this).addClass('active').siblings().removeClass('active');
 		$('#products').css({
 			'display': 'none'
@@ -58,13 +188,13 @@ $(function() {
 			'display': 'block'
 		})
 	})
-	$('#shopStaffList').on('click', '.shop-staff-detail', function() {
+	$('#shopStaffList').on('click', '.shop-staff-detail', function () {
 		var infoId = $(this).attr('data-id');
 		location.href = 'optometrist_detail.html?shopId=' + shopId + '&infoId=' + infoId;
 	})
 	// 左侧tab栏定位
-	$(function() {
-		$(window).scroll(function() {
+	$(function () {
+		$(window).scroll(function () {
 			// console.log($(window).scrollTop());
 			//			if($(window).scrollTop() >= 500) {
 			//				$('.swiList').css({
@@ -82,7 +212,7 @@ $(function() {
 		});
 	});
 	// 商品展示
-	$('.left-tab > a').click(function() {
+	$('.left-tab > a').click(function () {
 		$(this).addClass('actives').siblings().removeClass('actives');
 	})
 
@@ -130,7 +260,7 @@ $(function() {
 	publicAjax('post', ordersTpl7, ordersList7, url7, '', '', 1, 3, leftId);
 
 	// 用户评价分页展示
-	$('.evalist').on('click', '.more', function() {
+	$('.evalist').on('click', '.more', function () {
 		publicAjax('post', ordersTpl7, ordersList7, url7, '', '', 1, ++index * 3, leftId);
 		location.href = 'evaluation_list.html';
 	})
@@ -138,28 +268,29 @@ $(function() {
 	// 商品展示
 	// 店内设商品列表
 	var urls = global + "/ekProduct/pu/productList";
-	var urlss = global + "/ekSetMeal/pu/list"; 
-//	getIds('preferentialTpl', '#preferentialList');
+	var urlss = global + "/ekSetMeal/pu/list";
+	//	getIds('preferentialTpl', '#preferentialList');
 	getIds('mirrorTpl', '#mirrorList');
 	getIds('contactLensesTpl', '#contactLensesList');
 	getIds('lensTpl', '#lensList');
 	getIds('sunGlassesTpl', '#sunGlassesList');
 	getIds('presbyopicGlassesTpl', '#presbyopicGlassesList');
 	getIds('niceGlassesTpl', '#niceGlassesList');
+
 	function getIds(Tpl, List) {
 		var ordersTpl = document.getElementById(Tpl).innerHTML;
 		var ordersList = $(List);
-		publicAjax('post', ordersTpl, ordersList, urls, shopId, tokenKey,1,100);
+		publicAjax('post', ordersTpl, ordersList, urls, shopId, tokenKey, 1, 100);
 	}
 
 	//配镜套餐
-//	var shopId = '020208ac-866b-4bb7-9d30-10a01aed7591';
+	//	var shopId = '020208ac-866b-4bb7-9d30-10a01aed7591';
 	getIdss('hotTpl', '#hotList');
 
 	function getIdss(Tpl, List) {
 		var sTpla = document.getElementById(Tpl).innerHTML;
 		var orderLista = $(List);
-		combo('post', sTpla, orderLista, urlss, shopId,1,100);
+		combo('post', sTpla, orderLista, urlss, shopId, 1, 100);
 	}
 
 	function combo(type, tpl, list, url, shopId, pageNum, pageSize) {
@@ -173,19 +304,19 @@ $(function() {
 				'shopId': shopId, //shopId,// // 店铺ID
 				'off': 1 //上架
 			},
-			success: function(data) {
+			success: function (data) {
 				console.log(data);
-				if(data.code == 200) {
-					if(!data.data) {
+				if (data.code == 200) {
+					if (!data.data) {
 						$('.goodsNone').show();
 						$('.swiList').hide();
 					} else {
 						var html = template(tpl, data);
 						list.html(html);
 					}
-					
+
 				}
-				
+
 			}
 		})
 	}
@@ -209,19 +340,19 @@ $(function() {
 				'leftId': leftId,
 				'off': 'on'
 			},
-			success: function(data) {
+			success: function (data) {
 				console.log(data);
-				if(data.code == 200) {
-					if(!data.data) {
+				if (data.code == 200) {
+					if (!data.data) {
 						$('.goodsNone').show();
 						$('.swiList').hide();
-						$('#product-display').click(function() {
+						$('#product-display').click(function () {
 							$(this).addClass('active').siblings().removeClass('active');
 							$('.goodsNone').css({
 								'display': 'block'
 							})
 						})
-						$('#shop-details').click(function() {
+						$('#shop-details').click(function () {
 							$(this).addClass('active').siblings().removeClass('active');
 							$('.goodsNone').css({
 								'display': 'none'
@@ -245,16 +376,19 @@ $(function() {
 		data: {
 			'shopId': shopId
 		},
-		success: function(data) {
+		success: function (data) {
 			console.log(data);
-			if(data.code == 200) {
+			if (data.code == 200) {
 				var str = '';
 				var res = JSON.parse(data.data.shop.shopSkills);
 				console.log(res);
-				for(var i = 0; i < res.length; i++) {
-					str += '<li>' + res[i].title + '</li>'
+				if (res != "" || res != null) {
+					for (var i = 0; i < res.length; i++) {
+						str += '<li>' + res[i].title + '</li>'
+					}
+					$('.proList').append(str);
 				}
-				$('.proList').append(str);
+
 			}
 
 		}
@@ -309,4 +443,7 @@ $(function() {
 			alert(res.errMsg);
 		});
 	})
+
+
+
 })

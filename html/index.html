@@ -12,7 +12,6 @@
 	<body>
 		<div id="container">
 			<div class="toptop">
-				<!-- 头部 -->
 				<header hidden="true" id="header_">
 					<a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
 					<p class="title">欢迎您1</p>
@@ -48,19 +47,14 @@
 		<script type="text/javascript" src="../js/common/common.js"></script>
 		<script type="text/javascript" src="../jsweixin.js"></script>
 		<script type="text/javascript">
-			// alert(2);
 			var href = window.location.href;
 			console.info(href + "1");
 			var type;
 			try {
-
 				type = href.split('?')[1].split('&')[0].split('=')[1]; // 用户类型
-			// var openId = href.split('?')[1].split('&')[1].split('=')[1]; //openid
-			
 				if (type == '1' || type == 1) {
 					button1();
 				} else if (type == '2' || type == 2) {
-					// alert("跳转 店铺");
 					button2();
 				} else if (type == '3' || type == 3) {
 					button3();
@@ -82,24 +76,18 @@
 				$("#header_").toggle();
 				console.info(err);
 			}
-
-
 			function button1() {
 				location.href = "home_page.html";
 			}
-
 			function button2() {
 				location.href = "goods_list_points.html";
 			}
-
 			function button3() {
 				location.href = "message_list.html";
 			}
-
 			function button4() {
 				location.href = "shop_info.html";
 			}
-
 			function button5() {
 				location.href = "optometrist_info_staff.html";
 			}

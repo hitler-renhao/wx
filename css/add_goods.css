@@ -702,3 +702,11 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 input:-ms-input-placeholder { /* Internet Explorer 10+ */  
   color: #999!important;  
 }
+.xiajia {
+	position: absolute;
+	top: .15rem;
+	right: .24rem;
+	line-height: .42rem;
+	border: 1px solid #fc9335;
+	border-radius: 4px;
+}

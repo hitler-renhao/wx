@@ -73,6 +73,8 @@ $(function () {
 	localStorage.setItem("typeId", type); //获取判断
 	localStorage.setItem("openId", openId); // 判断店铺
 	var shopId = localStorage.getItem('shopId'); // 获取商家信息ID
+	// var shopId = location.search.substring(1).split('&')[2].split('=')[1];
+	//alert(shopId);
 	var tokenKey = localStorage.getItem('tokenKey'); // 登录凭证
 
 	// 注销
@@ -265,7 +267,7 @@ $(function () {
 	$('.shop-goods').on('click', '.textttt', function () {
 		console.log($(this))
 		var id = $(this).attr('data-id');
-		location.href = 'edit_goods.html?id=' + id + '&q';
+		location.href = 'del_goods.html?id=' + id;
 	})
 
 	//获取服务项目	
@@ -281,11 +283,13 @@ $(function () {
 			if (data.code == 200) {
 				var str = '';
 				var res = JSON.parse(data.data.shop.shopSkills);
-				console.log(res);
-				for (var i = 0; i < res.length; i++) {
-					str += '<li>' + res[i].title + '</li>'
+				console.log(res);				
+				if(res != "" || res != null){
+					for(var i = 0; i < res.length; i++) {
+						str += '<li>' + res[i].title + '</li>'
+					}
+					$('.proList').append(str);
 				}
-				$('.proList').append(str);
 			}
 
 		}

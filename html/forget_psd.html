@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<div id="container" style="margin-top:0;">		
+	<div id="container" style="margin-top:0;">
 		<form class="content">
 			<span class="conbox">
 				<img src="../images/phone.png" alt="" class="phoneImg" />
@@ -34,26 +34,23 @@
 			<span class="conbox">
 				<img src="../images/psd.png" alt="" />
 				<input type="password" placeholder="请再次输入新密码" id="yzm">
-			</span>	
-			<span class="conbox">
-				<!--<p>输入验证码:</p>-->
+			</span>
+			<!-- <span class="conbox">
 				<span class="aa">
 					<input type="text" placeholder="请输入验证码" id="getM2">			
 					<img src=""+global+"/captcha/createCaptcha" alt="" class="code" style="display: inline-block; float: right; width: 2.15rem; height: 0.6rem;  border-radius: 0.05rem;border:1px solid #ccc;margin-top:0.14rem;"/>
 				</span>
-			</span>	
+			</span>	 -->
 			<span class="conbox">
-				<!--<p>输入验证码:</p>-->
+				<img src="../images/psd.png" alt="" />
 				<span class="aa">
-					<input type="number" placeholder="请输入验证码" id="getM">			
+					<input type="number" placeholder="请输入验证码" id="getM">
 					<input type="button" value="获取验证码" name="get" class="get" disabled="disabled" style="width:2.15rem;height:0.65rem;margin-top:0.12rem;">
 				</span>
-			</span>	
-			
-			
-			<li class="btn">登录</li>
+			</span>
+			<li class="btn">确定</li>
 			<p class="info">
-				<label class="checked"></label>				
+				<label class="checked"></label>
 				<b>已阅读并同意</b><a href="In_agreement.html">《用户服务协议》</a>
 			</p>
 		</form>
@@ -61,62 +58,18 @@
 	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../js/common/common.js"></script>
 	<script type="text/javascript" src="../js/common/layer.js"></script>
-	<script type="text/javascript" src="../js/alljs/forget_psdprev.js?v1.0" ></script>
+	<script type="text/javascript" src="../js/alljs/forget_psdprev.js?v1.5"></script>
 	<script>
-		
-		/*是否同意阅读*/
-		 var colorArr = ['url(../images/c1.png)','url(../images/c2.png)'];
-		 //console.log(colorArr[0]);
-		 var count = 0;
-		 $('.info label').click(function() {
-		    var $this = $(this);
-		    $this.css({
-		    	'background':colorArr[count%2],
-		    	'background-size':'100% 100%'
-		    	});
-		    count++;
+		var colorArr = ['url(../images/c1.png)', 'url(../images/c2.png)'];
+		var count = 0;
+		$('.info label').click(function () {
+			var $this = $(this);
+			$this.css({
+				'background': colorArr[count % 2],
+				'background-size': '100% 100%'
+			});
+			count++;
 		});
-		/*是否同意阅读 -- end -- */
-		
-		
-//		var typeId = localStorage.getItem('typeId');
-//		var register = {
-//			init: function () {
-//				this.registerData();
-//			},
-//			registerData: function () {
-//				
-//				//1.店主  2.门店验光师  3.独立验光师   4.C端用户
-//				$(".btn").click(function () {
-//					var $optistmobile = $("#tel").val();
-//					var $password = $("#psd").val();
-//					var $messigeCode = $("#yzm").val();
-//					var isMobile = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-//					if (!$optistmobile) {
-//						layer.msg('请输入手机号码，不能为空');
-//						return false;
-//					} else if (!isMobile.test($optistmobile)) {
-//						layer.msg('请输入有效的手机号码');
-//						return false;
-//					}
-//					if (!$messigeCode) {
-//						layer.msg('请输入二次密码，不能为空');
-//						return false;
-//					}
-//					if (!$password) {
-//						layer.msg('请输入密码，不能为空');
-//						return false;
-//					}
-//					if ($password != $messigeCode) {
-//						layer.msg('两次密码不一致,请重新输入');
-//						return false;
-//					}
-//					console.log($optistmobile);
-//					
-//				})
-//			}
-//		}
-//		register.init();
 	</script>
 </body>
 

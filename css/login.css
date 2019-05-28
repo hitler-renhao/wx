@@ -118,3 +118,18 @@
 	background: #fc7000;
 	background: linear-gradient(to right, #fc7000, #ff5000);
 }
+
+.content .code {
+	width: 3rem;
+	float: left;
+	margin-left: .4rem;
+}
+.content .getCode {
+	float: right;
+	width: 2rem;
+	height: .7rem;
+	margin-top: .2rem;
+	background: linear-gradient(to right, #fc7000, #ff5000);
+	border-radius: 5px;
+	color: #fff;
+}

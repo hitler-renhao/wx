@@ -35,7 +35,6 @@
       height: 0.6rem;
       right: .1rem;
       top: 15%;
-      /* margin-top: -0.22rem; */
       font-size: .25rem;
     }
 	</style>
@@ -46,9 +45,7 @@
     <header>
       <a href="javascript:;" onclick="javascript:history.back(-1);"><img class="back" src="../images/jt_zuo.png" /></a>
       <p class="title">下架套餐</p>
-      <!-- <i class="layui-icon taocan">彻底删除此套餐</i> -->
     </header>
-    <!-- 套餐简介开始 -->
     <ul class="info">
       <li>
         <label><i>*</i>&nbsp;商品名称:</label>
@@ -67,9 +64,6 @@
         <input type="number" placeholder="请输入商品平台价" id="platform_price" />
       </li>
     </ul>
-    <!-- 套餐简介结束 -->
-
-    <!-- 套餐明细开始 -->
     <div class="combo_detail">
       <div class="add_combo">
         <span class="combo_title">套餐明细</span>
@@ -81,7 +75,6 @@
       <div class="combo_input combo_details">
         <div class="layui-row layui-col-space1">
           <div class="layui-col-xs1 layui-col-sm1 layui-col-md1">
-
           </div>
           <div class="layui-col-xs5 layui-col-sm5 layui-col-md5 centers">
             名称
@@ -98,9 +91,6 @@
         </div>
       </div>
     </div>
-    <!-- 套餐明细结束 -->
-
-    <!-- 套餐有效期开始 -->
     <div class="combo_detail">
       <div class="add_combo">
         <span class="combo_title">套餐有效期</span>
@@ -113,9 +103,6 @@
         </ul>
       </div>
     </div>
-    <!-- 套餐有效期结束 -->
-
-    <!-- 购买使用须知开始 -->
     <div class="combo_know">
       <div class="add_combo">
         <span class="combo_title">购买使用须知</span>
@@ -124,11 +111,8 @@
         <textarea name="" id="user_know">如：本品为套餐抵用券，需到店使用；套餐券不兑换、不折现、不找零；如您到店后变更套餐的部分商品如超出套餐价需要您补齐差价；
           镜片属于定制商品，凡已加工的商品，不支持退换货（如商品存在质量问题，则按照店铺的售后条款提供售后服务）</textarea>
         <i class="buy_know"><i class="text_number">122</i>/500</i>
-
       </div>
     </div>
-    <!-- 购买使用须知结束 -->
-    <!--上传图片-->
     <div class="combo_detail">
       <div class="add_combo">
         <span class="combo_title">套餐图片</span>
@@ -152,7 +136,6 @@
             <td>
               <div class="release_up_pic1">
                 <div class="up_pic1">
-                  <!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
                   <span id="chose_pic_btn1" style="">
                     <button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="idCardUp" /></button>
                     <img src="" alt="" id="goods-pic1" />
@@ -163,7 +146,6 @@
             <td>
               <div class="release_up_pic2">
                 <div class="up_pic2">
-                  <!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
                   <span id="chose_pic_btn2" style="">
                     <button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="idCardDown" /></button>
                     <img src="" alt="" id="goods-pic2" />
@@ -174,7 +156,6 @@
             <td>
               <div class="release_up_pic3">
                 <div class="up_pic3">
-                  <!-- <input type="file" accept="images/*"  id="headPortraitUpload"/> -->
                   <span id="chose_pic_btn3" style="">
                     <button type="button" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" id="zige" /></button>
                     <img src="" alt="" id="goods-pic3" />
@@ -183,17 +164,13 @@
               </div>
             </td>
           </tr>
-
         </tbody>
       </table>
     </div>
-
-    <!-- 发布协议 -->
     <div class="public_agreement">
       <img src="../images/check.png" alt="" class="public_check">
       <span>我已阅读并同意<a href="javascript:;">《e可平台商品发布协议》</a></span>
     </div>
-
     <a href="javascript:;" class="submit" style="z-index: 999999999999999999">重新上架</a>
   </div>
   <script type="text/javascript" src="../js/common/jquery-3.3.1.min.js?1.0"></script>

@@ -14,22 +14,23 @@
 
 <body>
 	<div class="container">
-		<!--顶部-->
 		<div class="header">
 			<img src="../images/ek.png" />
 			<p><b></b>&nbsp;
-				<!--<i class="iconfont"></i>-->
 			</p>
 			<span class="force">
 				<b>可使用积分<i></i></b>
 				<a href="goods_list_points.html">兑换</a>
 			</span>
 		</div>
-		<!--内容-->
 		<ul class="mainList">
 			<li onclick="location.href='My_mealCoupon.html'">
 				<img src="../images/my_one.png" alt="" />
 				<p>我的套餐</p>
+			</li>
+			<li onclick="location.href='my_coupon.html'">
+				<img src="../images/couponicon.png" alt="" />
+				<p>我的优惠券</p>
 			</li>
 			<li onclick="location.href='fill_order_list_C.html'">
 				<img src="../images/my_two.png" alt="" />
@@ -66,16 +67,13 @@
 	<script type="text/javascript" src="../js/common/common.js"></script>
 	<script>
 		$(function () {
-			// 获取openId
 			var tokenKey = localStorage.getItem('tokenKey')
 			if (!!tokenKey) {
 				getOpenid(1, tokenKey);
 				console.log(localStorage.getItem('openId'));
 			}
-			//判断是否登录	
 			var userId = localStorage.getItem('userId');
 			if (tokenKey == null || tokenKey == "") {
-				//alert(2);
 				layer.alert('您还未登录，请先登录', function () {
 					localStorage.setItem('typeId', '9');
 					location.href = 'login.html';
@@ -83,7 +81,6 @@
 			}
 			var phone = localStorage.getItem('iphone');
 			$('.header p b').text(phone);
-			//获取积分
 			$.ajax({
 				type: "post",
 				url: global + "/ekIntegral/list",

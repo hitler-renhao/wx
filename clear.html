@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="local">清除缓存</button>
+  <script src="./js/common/jquery-3.3.1.min.js"></script>
+  <script>
+    $('#local').click(function () {
+      localStorage.clear();
+      if (!localStorage.getItem('tokenKey')) {
+        alert('清理完成')
+      }
+    })
+  </script>
+</body>
+</html>

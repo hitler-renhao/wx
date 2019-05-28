@@ -7,9 +7,12 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>首页</title>
 	<link rel="stylesheet" href="../css/common/common.css" />
+	<link rel="stylesheet" href="../layui/css/layui.css">
+	<link rel="stylesheet" href="../css/common/layer.css" />
 	<link rel="stylesheet" href="../css/common/swiper-4.2.2.min.css" />
+	<script src="../js/common/Fontsize.js"></script>
 	<link rel="stylesheet" href="../css/common/footer.css" />
-	<link rel="stylesheet" href="../css/home_page.css?v1.8" />
+	<link rel="stylesheet" href="../css/home_page.css?v1.0" />
 	<style>
 		.tabbox .swiper-slide {
 				width: 2.8rem;
@@ -32,7 +35,6 @@
 
 <body>
 	<div id="container" style="margin-top:0;min-height:5rem;">
-		<!--搜索-->
 		<div class="searchbox">
 			<span class="addressbox">
 				<p></p>
@@ -43,19 +45,21 @@
 				<input type="text" placeholder="输入店铺名称/商品名称" class="ipt" readonly="" />
 			</span>
 		</div>
-		<!--banner-->
 		<div class="bannerbox">
 			<div class="swiper-container">
-			    <div class="swiper-wrapper">
-			      <div class="swiper-slide shopdel"><img src="../images/banner2.jpg" alt="图片1" class="bannerimg" /></div>
-			      <!--<div class="swiper-slide"><img src="../images/banner3.jpg" alt="图片2" class="bannerimg" /></div>-->
-			      <div class="swiper-slide" onclick="location.href='goods_list_points.html'"><img src="../images/banner4.jpg" alt="图片3" class="bannerimg" /></div>			      
-			      <!--<div class="swiper-slide"><img src="../images/banner5.jpg" alt="图片4" class="bannerimg" /></div>	
-			      <div class="swiper-slide"><img src="../images/banner6.jpg" alt="图片5" class="bannerimg" /></div>-->
-			    </div>
-			    <!-- Add Pagination -->
-			    <div class="swiper-pagination"></div>
-	  		</div>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide shopdel">
+						<img src="../images/banner2.jpg" alt="图片1" class="bannerimg" />
+					</div>
+					<div class="swiper-slide" onclick="location.href='goods_list_points.html'">
+						<img src="../images/banner4.jpg" alt="图片3" class="bannerimg" />
+					</div>
+					<div class="swiper-slide" onclick="location.href='Activity/activity_details.html'">
+						<img src="../images/banner8.jpg" alt="图片3" class="bannerimg" />
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
 		</div>
 		<ul class="infolist">
 			<li onclick="location.href='shop_list.html'">
@@ -73,7 +77,6 @@
 				</span>
 			</li>
 		</ul>
-		<!--眼镜分类-->
 		<ul id="tab" class="flex">
 			<a href="product_list.html?sunglasses">
 				<li>
@@ -90,7 +93,7 @@
 			<a href="product_list.html?contact">
 				<li>
 					<img class="frame" src="../images/sungress3.png" />
-					<p>隐形眼镜</p>
+					<p>其他</p>
 				</li>
 			</a>
 			<a href="product_list.html?careproduct">
@@ -100,6 +103,38 @@
 				</li>
 			</a>
 		</ul>
+
+		<!-- 活动优惠券 -->
+		<div class="activity-coupon">
+			<div class="tit">超值优惠等你来拿</div>
+			<div class="activity-coupon-info" id="activityInfo">
+				<div class="con">
+					<div class="price"><span><img src="../images/price.png" /></span>10</div>
+					<div class="limit">无门槛</div>
+					<div class="btn">立即领取</div>
+					<div class="line"><img src="../images/line.png" alt=""></div>
+				</div>
+				<!-- <div class="con">
+					<div class="price">￥10</div>
+					<div class="limit">无门槛</div>
+					<div class="btn">立即领取</div>
+					<div class="line"></div>
+				</div>
+				<div class="con">
+					<div class="price">￥10</div>
+					<div class="limit">无门槛</div>
+					<div class="btn">立即领取</div>
+					<div class="line"></div>
+				</div>
+				<div class="con">
+					<div class="price">￥10</div>
+					<div class="limit">无门槛</div>
+					<div class="btn">立即领取</div>
+				</div> -->
+			</div>
+			<div class="more" id="more">查看更多</div>
+		</div>
+
 		<div id="news">
 			<p class="gonggao">公告：</p>
 			<ul class="line" style="overflow: hidden;height:0.56rem;">
@@ -110,7 +145,6 @@
 				</div>
 			</ul>
 		</div>
-		<!--商品分类-->
 		<div class="mesu">
 			<div class="mesuleft" onclick="location.href='package_list.html'">
 				<h3 class="youh">优惠套餐</h3>
@@ -126,7 +160,7 @@
 						<a href="javascript:;" class="go">GO&nbsp;>></a>
 					</span>
 				</div>
-				<div class="mesurightbottom" onclick="location.href='shop_list.html?niceshop'">
+				<div class="mesurightbottom" onclick="location.href='shop_list.html'">
 					<img src="../images/home_house.png" class="house" />
 					<span class="houseright">
 						<h3>优选商家</h3>
@@ -136,8 +170,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!--人气商品-->
 		<div class="polupor">
 			<div class="head">
 				<h2>人气商品</h2>
@@ -149,30 +181,10 @@
 			<div class="tabbox">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
-						
-						<!--<div class="swiper-slide" style="width:2.8rem;">
-							<img src="../images/pou.png" class="img" />
-							<span class="goodinfo">
-				      	    	<p class="goodsname">陌森太阳镜男士太阳镜男士</p>				      	    	
-				      	    	<span class="imgbox">
-				      	    		<p class="pricebox"><h5>￥</h5><i>500</i><b>￥900</b></p>				      	    		
-				      	    	</span>
-							</span>
-						</div>
-						<div class="swiper-slide" style="width:2.8rem;">
-							<img src="../images/pou.png" class="img" />
-							<span class="goodinfo">
-				      	    	<p class="goodsname">陌森太阳镜男士太阳镜男士</p>				      	    	
-				      	    	<span class="imgbox">
-				      	    		<p class="pricebox"><h5>￥</h5><i>500</i><b>￥900</b></p>				      	    		
-				      	    	</span>
-							</span>
-						</div>	-->
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--优惠套餐-->
 		<div class="combobox">
 			<div class="heads">
 				<h2>优惠套餐</h2>
@@ -182,31 +194,8 @@
 				</a>
 			</div>
 			<div class="combo">
-				<!--<div class="comboleft">
-						<p>暴龙太阳镜 男士 </p>
-						<p>￥699.00</p>
-						<a href="javascript:;" class="buynow">立刻购买</a>
-						<img src="../images/book.png" alt="" class="sun" />
-					</div>
-					<div class="comboright">
-						<div class="comborighttop">
-							<span class="sunbox">
-								<p>暴龙太阳镜</p>
-								<p>￥699.00</p>
-							</span>
-							<img src="../images/book.png" alt="" class="sunone" />
-						</div>
-						<div class="comborightbottom">
-							<span class="sunbox">
-								<p>暴龙太阳镜</p>
-								<p>￥699.00</p>
-							</span>
-							<img src="../images/book.png" alt="" class="suntwo" />
-						</div>
-					</div>-->
 			</div>
 		</div>
-		<!--优选商家-->
 		<div class="combobox" style="margin-bottom:1rem;">
 			<div class="head">
 				<h2>优选商家</h2>
@@ -216,30 +205,8 @@
 				</a>
 			</div>
 			<ul class="content khfxPane" id="popular">
-				<!--<li>
-						<a href="javascript:;" class="style"></a>
-						<span class="opbox">
-							<span class="namebox">
-								<p class="name">啊啊啊啊</p>
-								<span class="star">
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-									<i></i>
-								</span>
-						<p class="evaluate1">营业时间：14:27-14:27</p>
-						<b class="bt">平台已认证</b>
-						<span class="renz">
-									<p>北京市市辖区海淀区远大路21号金源购物中心三层东侧</p>
-									<p>11.1656km</p>
-								</span>
-						</span>
-						</span>
-					</li>					-->
 			</ul>
 		</div>
-		<!-- footer -->
 		<footer>
 			<a class="one" href="home_page.html">
 				<li class="index">
@@ -266,54 +233,49 @@
 				</li>
 			</a>
 		</footer>
+		<div class="loading">
+			<img src="../images/activyicon.png" alt="" class="luck-btn" id="luckBtn">
+			<img src="../images/activitydel.png" alt="" class="luck-del" id="luckDel">
+		</div>
 	</div>
 	<div id="allmap"></div>
+	
 	<script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+	<!-- <script type="text/javascript" src="../js/common/lay/modules/layer.js"></script> -->
+	<script src="../js/common/common.js"></script>
+	<script type="text/javascript" src="../js/common/layer.js"></script>
+	<script src="../js/common/template.js"></script>
+	<script src="../js/common/layui.js"></script>
+	<script src="../js/common/layer.js"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KN9omYs9VP6sdG4c2kuem8PBDjCGqgfL"></script>
 	<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
-	<script type="text/javascript" src="../js/common/common.js"></script>
+	<script type="text/javascript" src="../js/common/common.js?v1.0"></script>
 	<script type="text/javascript" src="../js/common/swiper-4.2.2.min.js"></script>
 	<script type="text/javascript" src="../js/alljs/footer.js"></script>
 
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 	<script src="../js/common/jweixin-1.0.0.js" tppabs="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script src="../js/common/zepto.min.js" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
-	<script src="../js/common/demo.js?v1.0" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
+	<script src="../js/common/demo.js?v1.2" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
 
-	<script type="text/javascript" src="../js/alljs/home_page.js?v2.6"></script>
+	<script type="text/javascript" src="../js/alljs/home_page.js?v1.0"></script>
 
 	<script>
-		 var swiper = new Swiper('.bannerbox .swiper-container', {
-		 	direction: 'horizontal',
-			autoplay:  {
-		 		delay: 2000,
-		 	},
+		var swiper = new Swiper('.bannerbox .swiper-container', {
+			direction: 'horizontal',
+			autoplay: {
+				delay: 2000,
+			},
 			loop: true,
 			pagination: {
 				el: '.swiper-pagination',
 			}
-//					 	autoplay: {
-//					 		delay: 2000,
-//					 	},
-//					    pagination: {
-//					        el: '.swiper-pagination',
-//					    }
 		});
-		//			var mySwiper = new Swiper('.line .swiper-container', {
-		//				direction: 'vertical',
-		//				autoplay: {
-		//					delay: 2000,
-		//					stopOnLastSlide: false,
-		//					disableOnInteraction: false,
-		//				},
-		//				speed: 1000,
-		//				loop: true,
-		//			})
-
-		var swiper = new Swiper('.tabbox .swiper-container', {			
+		var swiper = new Swiper('.tabbox .swiper-container', {
 			observer: true, //修改swiper自己或子元素时，自动初始化swiper
 			observeParents: true, //修改swiper的父元素时，自动初始化swiper
-			slidesPerView: "auto"
+			slidesPerView: "auto",
+			freeMode: true,	// 默认展示第一个
 		});
 	</script>
 	<script>

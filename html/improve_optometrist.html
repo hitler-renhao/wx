@@ -27,13 +27,8 @@
 
 	<body>
 		<div id="container">
-			<!--内容-->
 			<form>
 				<ul class="content">
-					<!-- <li class="binding">
-						<label style="font-size:.3rem; padding-left: .1rem">绑定店铺:</label>
-						<input type="button" placeholder="请选择要绑定的店铺" id="bindingshop">
-					</li> -->
 					<li>
 						<label><i>*</i>个人介绍:</label>
 						<textarea rows="5" placeholder="您的履历、职业生涯进行介绍" id="introduction"></textarea>
@@ -44,7 +39,6 @@
 					</li>
 
 				</ul>
-				<!--服务列表-->
 				<div class="shop-pic">
 					<i class="fl" style="line-height:.6rem;color: red;">*&nbsp;</i>
 					<p class="textinfo">店内可提供服务项目</p>
@@ -53,37 +47,12 @@
 				<a href="javascript:;" class="submit">提交</a>
 			</form>
 		</div>
-		<!--服务类型弹框-->
 		<div class="bigbox">
 			<div class="serivebox">
 				<h4>服务项目
 					<i class="close">×</i>
 				</h4>
 				<ul class="seriveList">
-					<!--<li>						
-						<input type="checkbox" />
-						<p>标准验光</p>
-					</li>-->
-					<!--<li>						
-						<input type="checkbox" />
-						<p>青少年视觉动力检查</p>
-					</li>
-					<li>						
-						<input type="checkbox" />
-						<p>成年人视觉动力检查</p>
-					</li>
-					<li>						
-						<input type="checkbox" />
-						<p>45岁以上人群视觉动力检查</p>
-					</li>
-					<li>						
-						<input type="checkbox" />
-						<p>角膜接触镜标准验光</p>
-					</li>
-					<li>						
-						<input type="checkbox" />
-						<p>完全视功能检查</p>
-					</li>-->
 				</ul>
 				<input type="button" value="确认选择" class="sure" />
 			</div>
@@ -93,112 +62,6 @@
 		<script type="text/javascript" src="../js/common/layer.js"></script>
 		<script type="text/javascript" src="../js/alljs/improve_optometrist.js?v1.1"></script>
 		<script>
-//			/* 全局声明      */
-//				var textval = new Array(),
-//				idval = new Array(),
-//				typeArr = new Array();
-//			//服务技能
-//			$.ajax({
-//				type: "get",
-//				url: global + "/shop/serviceSkillsList",
-//				async: true,
-//				success: function(data) {
-//					console.log(data);
-//					var res = data.data;
-//					var str = '';
-//					for(var i = 0; i < res.length; i++) {
-//						str += '<li>' +
-//							'<input type="checkbox" />' +
-//							'<p id=' + res[i].id + '>' + res[i].title + '</p>' +
-//							'</li>'
-//					}
-//					$('.seriveList').append(str);
-//				}
-//			});
-//			//服务弹框
-//			$('#serivetype').click(function() {
-//				//alert(1);
-//				$('.bigbox').css({
-//					'display': 'block'
-//				});
-//			})
-//			var iptLength = $('.seriveList li input').length;
-//
-//			//console.log(iptLength);
-//			//			if(iptLength == 0) {
-//			//				alert(1)
-//			//				layer.msg('请选择服务类型');
-//			//			} else if(iptLength > 0 && iptLength <= 6) {
-//			//				/*$('.seriveList li input').click(function(){
-//			//					//$(this).attr('checked',checked);					
-//			//					if($(this).is(':checked')){						
-//			//						$(this).next().addClass('inro');
-//			//					}
-//			//				})*/
-//			//			}
-//			$('.sure').on('click', function() {
-//				//				if(iptLength == 0) {
-//				//				alert(1)
-//				//				layer.msg('请选择服务类型');
-//				//			}
-//				$('.bigbox').css({
-//					'display': 'none'
-//				});
-//				var liLength = $('.seriveList li').length;
-//
-//				for(var i = 0; i < liLength; i++) {
-//					if($('.seriveList li input').eq(i).is(':checked')) {
-//
-//						$('.seriveList li input').eq(i).next().attr("class", 'inro');
-//						$('.seriveList li input').eq(i).parents('li').attr("class", 'checked');
-//						textval.push($('.seriveList li').eq(i).find('.inro').text());
-//						idval.push($('.seriveList li p').eq(i).attr('id'));
-//
-//					} else {
-//						$('.seriveList li input').eq(i).next().attr("class", '');
-//
-//					}
-//				}
-//
-//				// 
-//				//				if(textval.length > 1) {
-//				//					textval = textval.substr(0, textval.length - 1)
-//				//				} else {
-//				//					textval = " ";
-//				//				}
-//				//				arr.push(textval);
-//				console.log(textval)
-//				console.log(idval);
-//				// 拼接服务项目json串	
-//				var len = $('.seriveList .checked').length;
-//				if(len == 0) {
-//					layer.msg('请选择服务项目');
-//					$('.bigbox').css({
-//						'display': 'block'
-//					});
-//				} else {
-//					for(var i = 0; i < len; i++) {
-//						var obj = {
-//							"id": idval[i],
-//							"title": textval[i]
-//						}
-//						typeArr.push(obj);
-//					}
-//					console.log(typeArr);
-//					$('#serivetype').val(textval);
-//					arr = [];
-//					textval = "";
-//				}
-//
-//			})
-//			$('.close').click(function() {
-//				$('.bigbox').css({
-//					'display': 'none'
-//				});
-//			})
-//			$('.shop-staff').click(function() {
-//				console.log($('#serivetype').val());
-//			})
 		</script>
 	</body>
 

@@ -71,7 +71,7 @@ $(function () {
 					'<p>电话: ' + res.shop.shop.phone + '</p>' +
 					'</li>'
 				$('.detail-ul').append(shopInfo)
-				$('.telphone').attr('href','tel:' + res.shop.shop.phone)
+				$('.telphone').attr('href', 'tel:' + res.shop.shop.phone)
 
 				// 套餐详细信息
 				var comboDetail = '';
@@ -109,70 +109,6 @@ $(function () {
 	}
 
 	$('#popularList').on('click', '.buyNow', function () {
-		// 获取openId
-		// 获取URL
-		$.ajax({
-			type: "post",
-			url: global + "/wexin/geturl",
-			dataType: "json",
-			data: {
-				"tokenKey": tokenKey,
-				'redirecturl': 'http://wx.bjysjglasses.com/ek/web/html/combo_detail.html?getOpenId=2'
-			},
-			success: function (res) {
-				console.log(res);
-				
-				if (res == 4400) {
-					layer.alert('未登录', function () {
-						location.href = './login.html';
-					})
-				} else {
-					// var URL = res.data.url;
-					// location.href = URL;
-				}
-				console.log(res.data.url);
-			},
-			error: function (res) {
-				layer.alert('未登录', function () {
-					location.href = './login.html';
-				})
-			}
-		});
-	})
-	// 获取openId
-	var index = 1;
-
-	function getOpenid() {
-		if (index >= 3) {
-			return;
-		}
-		$.ajax({
-			url: global + '/wexin/getOpenid',
-			type: "post",
-			data: {
-				'tokenKey': tokenKey
-			},
-			success: function (data) {
-				if (data.code == 400) {
-					setTimeout(function () {
-						getOpenid();
-						index++;
-					}, 5000)
-				} else if (data.code == 200) {
-					console.log(data.data.openid)
-					localStorage.setItem('openId', data.data.openid);
-					buySetMeal();
-				} else if (data == 4400) {
-					layer.alert('未登录', function () {
-						location.href = './login.html';
-					})
-				}
-
-			}
-		})
-	}
-	// 购买套餐生成订单号
-	function buySetMeal() {
 		var setmealid = localStorage.getItem('setmealid');
 		$.ajax({
 			type: "post",
@@ -199,7 +135,10 @@ $(function () {
 
 			}
 		});
-	}
+	})
+	// 获取openId
+	// 购买套餐生成订单号
+
 
 
 	function H5Pay(orderId) {
@@ -228,23 +167,23 @@ $(function () {
 		});
 
 		function onBridgeReady(res) {
-		WeixinJSBridge.invoke(
-			'getBrandWCPayRequest', {
-				"appId": res.appId,
-				"timeStamp": res.timeStamp,
-				"nonceStr": res.nonceStr,
-				"package": res.package,
-				"signType": 'MD5',
-				"paySign": res.paySign
-			},
-			function (res) {
-				if (res.err_msg == "get_brand_wcpay_request:ok") {
-					location.href = 'My_mealCoupon.html'
-				} else if (res.err_msg == "total_fee") {
-					alert('付款失败!')
+			WeixinJSBridge.invoke(
+				'getBrandWCPayRequest', {
+					"appId": res.appId,
+					"timeStamp": res.timeStamp,
+					"nonceStr": res.nonceStr,
+					"package": res.package,
+					"signType": 'MD5',
+					"paySign": res.paySign
+				},
+				function (res) {
+					if (res.err_msg == "get_brand_wcpay_request:ok") {
+						location.href = 'My_mealCoupon.html'
+					} else if (res.err_msg == "total_fee") {
+						alert('付款失败!')
+					}
 				}
-			}
-		);
+			);
 		}
 		if (typeof WeixinJSBridge == "undefined") {
 			if (document.addEventListener) {

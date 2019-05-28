@@ -1,4 +1,7 @@
 $(function () {
+	var tokenKey = localStorage.getItem("tokenKey");
+	var shopId = localStorage.getItem("shopId"); 
+	var userId = localStorage.getItem("userId"); 
 	var cityname = localStorage.getItem('cityname'); // 山东
 	var lon = localStorage.getItem('lon'); // 山东
 	var lat = localStorage.getItem('lat'); // 山东
@@ -21,7 +24,8 @@ $(function () {
 	} else {
 		mainPage(lon, lat, cityname)
 	}
-
+	
+	
 
 	function bMapTransWXMap(lon, lat) {
 		var geolocation = new BMap.Geolocation();
@@ -91,7 +95,7 @@ $(function () {
 						var bannerStr = '';
 						var res = data.data;
 						//					for(var i=0;i<res.length;i++){
-						bannerStr = '<div class="swiper-slide" shopId="' + res[0].shopId + '"><img src="' + res[0].imagePath + '" alt="图片1" class="bannerimg" /></div>'
+						bannerStr += '<div class="swiper-slide" shopId="' + res[0].shopId + '"><img src="' + res[0].imagePath + '" alt="图片1" class="bannerimg" /></div>'
 						//					}
 						$('.bannerbox .swiper-wrapper').html(bannerStr);
 						$('.bannerbox').on('click', '.swiper-slide', function () {
@@ -318,4 +322,97 @@ $(function () {
 		}
 	})
 
+    // 去除活动按钮
+	$("#luckDel").on("click",function(){
+		$(".loading").hide();
+	})
+	$("#luckBtn").on("click",function(){
+		location.href="Activity/activity_details.html"
+	})
+	// 查看更多
+	$("#more").on("click",function(){
+		location.href="Activity/activity_coupon.html";
+	})
+
+
+	// 优惠券列表
+	function getCouponlist(){
+		$.ajax({
+			type: 'GET',
+			url: global + '/coupon/pu/queryCouponListByShopId',
+			async: true,
+			data: {
+				shopId: shopId,
+				userId: userId,
+				longitude: lon,
+				latitude: lat,
+				faceValueOrder:"1"
+			},
+			success:function(data){
+			   console.log(data)
+			   if(data.code===200){
+				   str="";
+				   if(data.data.length===0){
+					 $(".activity-coupon").hide();
+				   }
+				   for(var i=0;i<data.data.length;i++){
+					   var oData=data.data[i];
+						str+='<div class="con">'+
+							'<div class="price">¥'+oData.faceValue+'</div>'+
+							'<div class="limit">'+oData.productLimitTitle+'</div>'+
+							'<div class="btn" couponId="' + oData.id + '">立即领取</div>'+
+						'</div>'+
+						'<div class="line"><img src="../images/line.png" alt=""></div>'
+				   }
+				   $("#activityInfo").html(str);
+			   }
+			}
+		});
+	}
+	getCouponlist();
+	$("#activityInfo").on("click",".btn",function(){
+		if(tokenKey == null || tokenKey == "") {
+			layer.alert('您还未登录，请先登录！', function() {
+				localStorage.removeItem('tokenKey');
+				location.href = 'login.html';
+			})
+			return;
+		}
+		var oAttr=$(this).attr("couponId");
+		$.ajax({
+			type: 'post',
+			url: global + '/coupon/saveCouponByUserId',
+			async: true,
+			data: {
+				// 'tokenKey': "3b49a49011cb43db9f63f7519f03f8a41551939572999",
+				'tokenKey': tokenKey,
+				'couponId': oAttr,
+			},
+			success: function (data) {
+				console.log(data)
+				if (data.code === 200) {
+					layui.use('layer', function () {
+						var layer = layui.layer;
+						layer.msg(data.msg);
+					});
+					getCouponlist();
+				} else {
+					if (data == 4400) {
+						layer.alert('您还未登录，请先登录！', function () {
+							location.href = 'login.html'
+						})
+					} else {
+						layui.use('layer', function () {
+							var layer = layui.layer;
+							layer.msg(data.msg);
+						});
+					}
+				}
+			},
+			error:function(error){
+				console.log(error);
+			}
+		})
+	})
+	
 })

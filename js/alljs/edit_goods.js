@@ -9,7 +9,7 @@ $(function() {
 	var shopId = localStorage.getItem('shopId');
 	var goodsId2 = location.search.substring(1).split('&');
 	var goodsId = goodsId2[0].split('=')[1];
-	console.log(goodsId2);
+	//console.log(goodsId2);
 	console.log(goodsId);
 	var flag = goodsId2[1];
 	console.log(flag);
@@ -733,55 +733,23 @@ $(function() {
 		//下架商品
 		del: function() {
 			$('.xiajia').click(function() {
-				var productId =
-					$('.bigbox').show();
-				$('.word a:nth-child(2)').click(function() {
-					//					var title = $('#title').val(); //商品名称
-					//					var beginPrice = $('#beginPrice').val();
-					//					var nowPrice = $('#nowPrice').val();
-					//					var type = $('.type .active').text();
-					//
-					//					var imgurl1 = $('#goods-pic').attr('src') // 回显图
-					//					var imgurl2 = $('#chose_pic_btns').attr('src') // 上传图
-					//					var imgurls = '';
-					//					if(!imgurl) {
-					//						imgurls = imgurl1
-					//					} else {
-					//						imgurls = imgurl2
-					//					}
-					//					//商品分类（1：优惠折扣 2：镜架 3：镜片 4：套餐 5：太阳镜 6：隐形眼镜 7：老花镜）
-					//					if(type == "优惠折扣") {
-					//						goodtype = 1;
-					//					} else if(type == "镜架") {
-					//						goodtype = 2;
-					//					} else if(type == "镜片") {
-					//						goodtype = 3;
-					//					} else if(type == "隐形眼镜") {
-					//						goodtype = 6;
-					//					} else if(type == "太阳镜") {
-					//						goodtype = 5;
-					//					} else if(type == "老花镜") {
-					//						goodtype = 7;
-					//					}
-					$.ajax({
-						type: "POST",
-						url: global + "/ekProduct/offProduct",
-						async: true,
-						data: {
-							"tokenKey": tokenKey,
-							"productId": goodsId,
-							"off": 'off'
-						},
-						success: function(data) {
-							$('.bigbox').hide();
-							layer.msg('下架成功', function() {
+				$.ajax({
+					type: "POST",
+					url: global + "/ekProduct/offProduct",
+					async: true,
+					data: {
+						"tokenKey": tokenKey,
+						"productId":goodsId,
+						"off": 'on'							
+					},
+					success: function(data) {
+						if(data.code == 200){
+							layer.msg('上架成功', function() {
 								location.href = 'goods_list.html';
 							})
 						}
-					})
-				})
-				$('.word a:first-child').click(function() {
-					$('.bigbox').hide();
+						
+					}
 				})
 			})
 		},
@@ -888,16 +856,19 @@ $(function() {
 				var Arrimg1 = JSON.stringify(imgArr2);
 				var Arrimg2 = JSON.stringify(imgArr3);
 				var Arrimg3 = JSON.stringify(imgArr);
-				var spec = JSON.stringify(specjson);
-				var parm = JSON.stringify(paramjson);
+				var spec2 = JSON.stringify(specjson);
+				console.log(spec);
+				var parm2 = JSON.stringify(paramjson);
 				var allPic = JSON.stringify(allpicjson);
 				//alert(spec);
 				//alert(parm);
 				//alert(allPic);
 				/*获取参数 --- end-----*/
-				if(!goodtype || !productname || !beginPrice || !nowPrice || !spec || !parm || !allPic ||  !Arrimg1 || !Arrimg2 || !Arrimg3) {
-					layer.alert('请完善信息');
-				} else {
+				
+				if(!goodtype || !productname || !beginPrice || !nowPrice || !specJson || !paramJson || !allPic ||  !Arrimg3 || !obj1 || !obj2) {
+					//console.log(1)
+					layer.alert('请完善信息');				
+				}else {
 					$.ajax({
 						type: "post",
 						url: global + "/ekProduct/updateProduct",
@@ -910,8 +881,8 @@ $(function() {
 							"beginPrice": beginPrice, //商品门市价
 							"nowPrice": nowPrice, //商品现价
 							"imgJson": allPic,
-							"specJson": spec, //规格 json [{spectName:ff,stock:xx,price:12}] (规格名称，规格库存，规格价格)
-							"paramJson": parm //参数 json [{dictKey:xx,dictValue:xx}]
+							"specJson": spec2, //规格 json [{spectName:ff,stock:xx,price:12}] (规格名称，规格库存，规格价格)
+							"paramJson": parm2 //参数 json [{dictKey:xx,dictValue:xx}]
 							//图片 json[{type:1,url:22.png,orders:1}] (type:1主图 2详情图 3介绍图) (url：文件路径) (orders：排序顺序)
 						},
 						success: function(data) {
@@ -921,9 +892,9 @@ $(function() {
 								//console.log(data);
 								if(flag == 'q2') {
 									layer.msg('修改成功', function() {
-										location.href = 'goods_list.html'
+										//location.href = 'goods_list.html'
 									});
-								} else if(flag == 'q') {
+								} else{
 									layer.msg('修改成功', function() {
 										location.href = 'shop_info.html'
 									});

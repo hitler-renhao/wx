@@ -62,13 +62,16 @@ $(function () {
               '</div>' +
               '</li>'
           }
-
+          
+          if(res.order.orderPayPrice===null){
+            res.order.orderPayPrice='0.00';       
+          }
           str += '</ul>' +
             '<!-- 订单信息 -->' +
             '<ul id="order_infor">' +
             '<li class="total">' +
-            '<p>优惠券优惠金额: <span class="fr order_info">￥0.00</span></p>' +
-            '<p>满减金额: <span class="fr order_info">¥0.00</span></p>' +
+            '<p>优惠券优惠金额: <span class="fr order_info">￥'+res.order.orderPayPrice+'</span></p>' +
+            // '<p>满减金额: <span class="fr order_info">¥0.00</span></p>' +
             '<p>运费: <span class="fr order_info">¥0.00</span></p>' +
             '<p>订单总金额: <span class="fr order_info">¥' + res.order.orderTotalPrice.toFixed(2) + '</span></p>' +
             '</li>' +
@@ -79,33 +82,38 @@ $(function () {
             '</ul>'
           var address = JSON.parse(res.order.addrJson);
           str += '<!-- 买家信息 -->' +
-            '<ul id="way">' +
-            '<aside>买家信息</aside>' +
-            '<li>' +
-            '<p><i>收货人: </i> <i>' + address.receiverName + '</i> </p>' +
-            '</li>' +
-            '<li>' +
-            '<p><i>收货地址: </i> <i>' + address.receiverAddress + '</i> </p>' +
-            '</li>' +
-            '<li>' +
-            '<p><i>下单时间: </i> <i>' + res.order.createTime.split('T')[0] + ' ' + res.order.createTime.split('T')[1] + '</i> </p>' +
-            '</li>' +
-            '<li class="fl phone">' +
-            '<a href="tel:' + address.receiverPhone + '">' +
-            '<img src="../images/tel_blue.jpg" alt="">' +
-            '<span style="margin-left: .24rem">拨打电话</span>' +
-            '</a>' +
-            '</li>' +
-            '<li class="fl">' +
+                      '<ul id="way">' +
+                        '<aside>买家信息</aside>' +
+                        '<li>' +
+                          '<p><i>收货人: </i> <i>' + res.order.buyUserName + '</i> </p>' +
+                        '</li>'
 
-            '</li>' +
-            '<li class="fl message" userid="' + res.order.userId + '">' +
-            '<img src="../images/IM.jpg" alt="">' +
-            '<span style="margin-left: .24rem">联系买家</span>' +
-            '</li>' +
-            '</ul>'
+            if (res.order.obtainMode == '0') {
+              str +=    '<li>' +
+                          '<p><i>收货地址: </i> <i>' + address.receiverAddress + '</i> </p>' +
+                        '</li>'
+            }
+            str +=      '</li>' +
+                        '<li>' +
+                          '<p><i>下单时间: </i> <i>' + data.data.order.createTime.split('T')[0] + ' ' + data.data.order.createTime.split('T')[1] + '</i> </p>' +
+                        '</li>' +
+
+
+                        '<li class="fl phone" style="border-top: 1px solid #f2f2f3; width: 49%; text-align: center">' +
+                          '<a href="tel:' + res.order.buyUserPhone + '">' +
+                            '<img src="../images/tel_blue.jpg" alt="" style="width: .4rem;">' +
+                            '<span>拨打电话</span>' +
+                          '</a>' +
+                        '</li>' +
+                        '<li class="fl" style="border-top: 1px solid #f2f2f3; border: 1px solid #f2f2f3; padding: .3rem 0; height: .2rem; width: 0;">' +
+
+                        '</li>' +
+                        '<li class="fl message" userid="' + res.order.userId + '" style="width: 49%; margin: 0; padding: 0; border: none; text-align: center; border-top: 1px solid #f2f2f3;">' +
+                          '<img src="../images/gps.png" alt="" style="width: .4rem;">' +
+                          '<span>进店导航</span>' +
+                        '</li>' +
+                      '</ul>'
           console.log(res.order.obtainMode);
-
           if (res.order.obtainMode == '0') {
             str += '<!-- 收货人信息 -->' +
               '<ul id="infor">' +
@@ -123,7 +131,6 @@ $(function () {
               '</li>' +
               '</ul>'
           }
-
           switch (res.order.orderStatus) {
             case '3':
               str += '<ul id="balance">' +

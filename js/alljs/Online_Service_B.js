@@ -414,18 +414,33 @@ function sendSingleMsg() {
         // var b_username = localStorage.getItem('b_username')
         // const url = 'http://test.bjysjglasses.com/ek/web/html/message_list.html'
         const url = 'http://wx.bjysjglasses.com/ek/web/html/message_list.html'
+        var c_username = localStorage.getItem('c_username');
         $.ajax({
-          url: global + '/wechat/userMsgRemind',
-          type: "post",
+          url: global + "/jiguang/allUserInfo",
+          type: "get",
           async: false,
           data: {
-            'tokenKey': tokenKey,
-            'userId': B_userId,
-            'url': url,
-            'userName': names
+            'userName': c_username
           },
-          success: function (data) {}
-        })
+          success: function (data) {
+            // 获取用户信息成功
+            if (data.code == 200) {
+              console.log(data);
+              $.ajax({
+                url: global + '/wechat/userMsgRemind',
+                type: "post",
+                async: false,
+                data: {
+                  'tokenKey': tokenKey,
+                  'userId': data.data[0].ekJguserData.userId,
+                  'url': url,
+                  'userName': names
+                },
+                success: function (data) {}
+              })
+            }
+          }
+        });
       }
       console.log(data);
       console.log(msg)

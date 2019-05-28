@@ -185,5 +185,5 @@ input::-webkit-input-placeholder {
   width: auto;
   margin-left: 2rem;
   line-height: 0.36rem;
-  display: none;
+  /* display: none; */
 }

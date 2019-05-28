@@ -1,0 +1,131 @@
+.container{
+    width: 100%;
+    height: 100%;
+}
+.nav{
+    width: 100%;
+    height: 1rem;
+}
+.nav li{
+    width: calc(100%/3);
+    height: 100%;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 0.32rem;
+    color: #333333;
+    float: left;
+}
+.nav .active{
+    color: #FF973E ;
+}
+.content>div{
+   display: none;
+}
+.content>div:nth-child(1){
+    display: block;
+    padding: 0 0.3rem;
+ }
+.unused .couponbg{
+    width: 100%;
+    height: 2rem;
+    background: pink;
+    /* background: url(../images/bgcoupon.png); */
+    background:url("../images/bgcoupon.png");
+    background-size: 100% 100%;
+    margin-top: 0.4rem;
+}
+.used .couponbg{
+    background:url("../images/bg_coupon_expired.png");    
+    background-size: 100% 100%;
+}
+.unused .couponbg>div{
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.unused .couponbg .coupon-left{
+    width: 42%;
+}
+.unused .couponbg .coupon-left p{
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: #ffff;
+    text-align: center;
+    padding-top: 0.66rem;
+}
+#namess {
+    text-align: right;
+    columns: #333333;
+    height: 0.3rem;
+    font-size: 0.26rem;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin-top: 0.1rem;
+}
+#namess b {
+    text-align: right;
+}
+.unused .couponbg .coupon-left div{
+    text-align: center;
+    color: #ffff;
+}
+.unused .couponbg .coupon-rig{
+   
+}
+.unused .couponbg .coupon-rig p{
+    text-align: right;
+    columns: #333333;
+    height: 0.3rem;
+    font-size: 0.28rem;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+}
+.unused .couponbg .coupon-rig p b{
+    font-weight: bold;
+}
+.unused .couponbg .coupon-rig div{
+    padding-top: 0.3rem;
+}
+.used .couponbg .coupon-rig div{
+    padding-top: 0.7rem;
+}
+.unused .couponbg .coupon-rig div span:nth-child(1){
+    font-size: 0.24rem;
+    color: #C8C8C8 ;
+}
+.unused .couponbg .coupon-rig div span:nth-child(2){
+    font-size: 0.26rem;
+    color: #FFFFFF  ;
+    padding-left: 0.35rem;
+    display: inline-block;
+    background: #ff973e;
+    padding: 0.05rem 0.2rem;
+    position: absolute;
+    right: 0;
+    border-radius: 0.23rem;
+    margin-top: -0.05rem;
+}
+.used .couponbg .coupon-rig div span:nth-child(2){
+    background: #c8c8c8;
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    /* width: 0.5rem; */
+    bottom: 0.1rem;
+}
+.used .couponbg .coupon-rig div .btn{
+    font-size: 0.26rem;
+    color: #FFFFFF;
+    /* margin-left: 0.35rem; */
+    /* display: inline-block;
+    background: #ff973e;
+    padding: 0.05rem 0.2rem;
+    position: absolute;
+    right: 0;
+    border-radius: 0.23rem; */
+}
+.used{
+    padding: 0 0.3rem;
+}

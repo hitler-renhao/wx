@@ -1,0 +1,170 @@
+.consume,
+.coupon {
+  overflow: hidden;
+  width: 6rem;
+  height: 3rem;
+  background: #FFFFFF;
+  box-shadow: 0 0 28px 0 #EEEEEE;
+  border-radius: 36px;
+  margin: .75rem auto;
+}
+
+.consume h2 {
+  font-size: .36rem;
+  line-height: .5rem;
+  margin: .44rem .7rem;
+  font-weight: 700;
+}
+
+.consume span {
+  font-family: PingFangSC-Semibold;
+  font-size: .8rem;
+  color: #FF5F4F;
+  margin-left: .7rem;
+  vertical-align: baseline;
+}
+
+.consume input {
+  width: 4rem;
+  height: 1rem;
+  font-family: PingFangSC-Semibold;
+  font-size: .8rem;
+  color: #FF5F4F;
+  border: none;
+}
+
+.coupon {
+  height: 2rem;
+}
+
+.coupon li {
+  font-size: .28rem;
+  line-height: .4rem;
+  height: .4rem;
+  margin: .44rem 0 0 .7rem;
+}
+
+.coupon .fr li {
+  margin: .44rem .7rem 0 0;
+}
+
+.coupon .fl li:first-child {
+  font-weight: 700;
+  color: #333333;
+}
+
+.coupon .fl li:last-child {
+  font-weight: 100;
+  color: #999;
+}
+
+.coupon .fr li:first-child {
+  width: 1.5rem;
+  height: 0.5rem;
+  line-height: .5rem;
+  text-align: center;
+  background: #FF973E;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.coupon .fr li:last-child {
+  margin-top: .34rem;
+  color: #ddd;
+}
+
+#balance {
+  width: 100%;
+  height: 0.98rem;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  -moz-box-shadow: 0px -6px 6px rgba(0, 0, 0, .1);
+  -webkit-box-shadow: 0px -6px 6px rgba(0, 0, 0, .1);
+  box-shadow: 0px -6px 6px rgba(0, 0, 0, .1);
+}
+
+#balance .left {
+  width: 1.5rem;
+  height: 100%;
+  float: left;
+  line-height: 0.98rem;
+  font-size: 0.28rem;
+  color: #808080;
+  position: relative;
+  padding-left: 0.42rem;
+}
+
+#balance .center {
+  width: 4.5rem;
+  height: 100%;
+  float: left;
+}
+
+#balance .center p {
+  font-size: 0.28rem;
+  color: #333;
+  line-height: 0.98rem;
+  margin-left: .64rem;
+}
+
+#balance .right {
+  width: 2.8rem;
+  height: 100%;
+  float: right;
+  background: #67a9fe;
+  color: #fff;
+  text-align: center;
+  line-height: 0.98rem;
+  font-size: 0.32rem;
+
+  background: linear-gradient(to right, #fc7500, #ff4b00);
+}
+
+/* 抽奖弹框 */
+.luck{
+  width: 60%;
+  background:white;
+  border-radius: 0.3rem;
+  box-shadow: 0.06rem 0.02rem 0.1rem #dddddd;
+  border: 1px solid #f2f2f4;
+  position: fixed;
+  left: 50%;
+  margin-left: -30%;
+  top: 30%;
+  padding: 0.1rem 0.2rem;
+  display: none;
+}
+.luck .luck-tit{
+  color: red;
+  width: 100%;
+  text-align: center;
+  font-size: 0.35rem;
+  margin: 0.2rem 0;
+}
+.luck .luck-btn{
+  width: 100%;
+  padding: 0.3rem 0.4rem;
+  box-sizing: border-box;
+}
+.luck .luck-btn>div{
+  width: 40%;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  float: left;
+  border-radius: 0.1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+.luck .luck-btn .luck-btn-lef{
+   background:white;
+   border: 1px solid gainsboro;
+}
+.luck .luck-btn .luck-btn-rig{
+  float: right;
+  background:white;
+  border: 1px solid gainsboro;
+  background: linear-gradient(to right, #fc7500, #ff4b00);
+  color: white;
+}

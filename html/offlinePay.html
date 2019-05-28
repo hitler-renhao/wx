@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>买单</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../css/common/common.css" />
+  <link rel="stylesheet" href="../css/common/header.css" />
+  <link rel="stylesheet" href="../css/common/layer.css" />
+  <link rel="stylesheet" href="../css/offlinePay.css?v1.2" />
+  <style>
+    #container {
+          margin: 0;
+          margin-bottom: 1rem;
+        }
+		</style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="consume">
+      <h2>请输入消费金额：</h2>
+      <span>¥</span>
+      <input type="text">
+    </div>
+    <div class="coupon">
+      <ul class="fl">
+        <li>优惠券</li>
+        <li>共优惠<span>0.00</span>元</li>
+      </ul>
+      <ul class="fr">
+        <li>已选一张</li>
+        <li class="fr">〉</lic>
+      </ul>
+    </div>
+    <div id="balance">
+      <div class="center">
+        <p>需支付 :&nbsp;&nbsp;&nbsp;&nbsp;<i class="totalMoney">0.00元</i></p>
+      </div>
+      <div class="right">
+        <p class="pay">立即支付</p>
+      </div>
+    </div>
+    <div class="luck" id="luck">
+      <div class="luck-tit">恭喜您</div>
+      <div class="luck-word">此次消费已满足中奖条件，除了有机会得MAC口红外，您额外获得一次抽奖机会，100%中奖哦！快去试试自己的手气吧！</div>
+      <div class="luck-btn">
+        <div class="luck-btn-lef" id="delBtn">暂不抽奖</div>
+        <div class="luck-btn-rig" id="toLuck">立即去抽奖</div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/common/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/common/common.js"></script>
+  <script type="text/javascript" src="../js/common/lay/modules/layer.js"></script>
+  <script type="text/javascript" src="../jsweixin.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+	<script src="../js/common/jweixin-1.0.0.js" tppabs="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="../js/common/zepto.min.js" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
+	<script src="../js/common/demo.js?v1.1" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
+  <script type="text/javascript" src="../js/alljs/offlinePay.js?v1.0"></script>
+</body>
+
+</html>

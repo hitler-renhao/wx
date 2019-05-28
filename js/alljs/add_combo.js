@@ -318,49 +318,54 @@ $(function () {
         var check = $('.public_check').attr('src');
 
         // 判断是否可以提交
-        if (!title || !combo_info || !shop_price || !platform_price || !details || !timess || !use_know || !imgUrl) {
+        if (!firstpic[0] || !firstpic[1] || !firstpic[2] || !firstpic[3]) {
           layer.msg('请将必填项填写完整')
         } else {
-          // 是否勾选平台发布协议
-          if (check == '../images/check.png') {
-            layer.msg('请勾选《e可平台商品发布协议》')
+          if (!title || !combo_info || !shop_price || !platform_price || !details || !timess || !use_know || !headPic11) {
+            layer.msg('请将必填项填写完整')
           } else {
-            layer.confirm('套餐一旦发布不可更改，如遇特殊情况需联系客服处理，您确定要发布此套餐吗？', {
-              btn: ['确认无误', '我再看看'],
-              btn1: function () {
-                $.ajax({
-                  type: 'post',
-                  url: global + "/ekSetMeal/addSetMeal",
-                  async: true,
-                  data: {
-                    'tokenKey': tokenKey, // 店铺ID
-                    'shopId': shopId, // 图片
-                    'name': title, // 介绍
-                    'explains': combo_info,
-                    'price': shop_price,
-                    'nowPrice': platform_price, //
-                    'timess': timess,
-                    'content': use_know,
-                    'off': 1,
-                    'mealInfo': details,
-                    'imgInfo': imgUrl
-                  },
-                  success: function (data) {
-                    if (data.code == 200) {
-                      console.log(data);
-                      location.href = '../html/shop_info.html?typeid=' + typeId + '&openid' + openId;
-                    } else if (data == 4400) {
-                      layer.alert('未登录', function () {
-                        location.href = '../html/login.html';
-                      })
-                    }
+            // 是否勾选平台发布协议
+            if (check == '../images/check.png') {
+              layer.msg('请勾选《e可平台商品发布协议》')
+            } else {
+              layer.confirm('套餐一旦发布不可更改，如遇特殊情况需联系客服处理，您确定要发布此套餐吗？', {
+                btn: ['确认无误', '我再看看'],
+                btn1: function () {
+                  $.ajax({
+                    type: 'post',
+                    url: global + "/ekSetMeal/addSetMeal",
+                    async: true,
+                    data: {
+                      'tokenKey': tokenKey, // 店铺ID
+                      'shopId': shopId, // 图片
+                      'name': title, // 介绍
+                      'explains': combo_info,
+                      'price': shop_price,
+                      'nowPrice': platform_price, //
+                      'timess': timess,
+                      'content': use_know,
+                      'off': 1,
+                      'mealInfo': details,
+                      'imgInfo': imgUrl
+                    },
+                    success: function (data) {
+                      if (data.code == 200) {
+                        console.log(data);
+                        location.href = '../html/shop_info.html?typeid=' + typeId + '&openid' + openId;
+                      } else if (data == 4400) {
+                        layer.alert('未登录', function () {
+                          location.href = '../html/login.html';
+                        })
+                      }
 
-                  }
-                })
-              }
-            })
+                    }
+                  })
+                }
+              })
+            }
           }
         }
+
 
 
       })

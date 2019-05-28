@@ -12,14 +12,12 @@
 	<link rel="stylesheet" href="../css/common/layer.css" />
 	<link rel="stylesheet" href="../css/common/iconfont.css">
 	<link rel="stylesheet" href="../css/common/swiper-4.2.2.min.css" />
-	<link rel="stylesheet" href="../css/shop_info.css" />
+	<link rel="stylesheet" href="../css/shop_info.css?v1.3" />
 
 </head>
 
 <body>
 	<div id="container">
-		<!--验光师列表-->
-		<!-- 顶部图片渲染 -->
 		<div class="shop_header" id="shopHeaderList">
 		</div>
 		<script type="text/html" id="shopHeaderTpl">
@@ -30,8 +28,6 @@
 				<% } %>
 				<% } %>
 			</script>
-
-		<!-- 基本信息渲染 -->
 		<section id="popularList">
 		</section>
 		<script type="text/html" id="popularTpl">
@@ -40,7 +36,6 @@
 					<% if (data.imgs[i].type == '1') { %>
 					<span class="shop_one">
 						<a href="javascript:;" class="style1" style="background:url('<%:=data.imgs[i].imagePath %>') no-repeat;background-size:cover;background-position: center center;display:block;width:0.96rem;height:0.96rem;border-radius: 0.1rem;margin:0.22rem 0 0.2rem 0.17rem;float:left;"></a>
-						<!--<img src="<%:=data.imgs[i].imagePath %>" class="head-pic" alt="门店照片" />-->
 						<% } %>
 						<% } %>
 						<span class="infobox">
@@ -64,7 +59,6 @@
 							<a href="tel: <%:=data.shop.phone%>" class="telephone" style="color:#1f9ef5">tel: <%:=data.shop.phone%></a>							
 						</p>
 						<p class="address">
-							<!--<i class="iconfont icon-location"></i>-->
 							<% var address = data.shop.addresInfo.split(',')[0] + data.shop.addresInfo.split(',')[1] + data.shop.addresInfo.split(',')[2] %>
 							<% localStorage.setItem('shop_address', address) %>
 							<span class="" style="">地址：<%:=address%><%:=data.shop.addres%></span>
@@ -72,60 +66,31 @@
 					</span>
 				</div>
 			</script>
-
-		<!-- 营业时间渲染 -->
 		<nav id="timeList">
 		</nav>
-		<!--<script type="text/html" id="timeTpl">
-				<div class="void"></div>
-				<p class="times"> <i>营业时间：<%:=data.shop.businessHours%></i><span>(周一-周日)</span> <b class="fr right">
-				<i class="iconfont icon-renzheng" style="color:yellow;"></i> 平台已认证</b> </p>
-			</script>-->
+		<!-- 店铺详情也买您添加用户可领取优惠券 -->
+		<div class="receive-coupon" id="receive-coupon">
+           <div class="couponbg">
+			   <div class="price">￥200</div>
+			   <div class="scope">
+				   <span>无门槛</span>
+				   <span>领取</span>
+			   </div>
+		   </div>
+			<div class="couponbg-lingqu">
+				<div class="price">￥200</div>
+			</div>
+		</div>
 
-		<!--切换按钮-->
 		<div class="content-tab">
 			<ul class="content_top" id="aBtn">
 				<li class="active" id="product-display">商品展示</li>
 				<li id="shop-details">店铺详情</li>
 			</ul>
 		</div>
-
-		<!-- 商品展示开始 -->
 		<div id="products">
-
-			<!--<ul class="left-tab fl">
-					<a href="#hot">
-						<i class="iconfont icon-rexiaochanpin"></i>
-						<li>优惠折扣</li>
-					</a>
-					<a href="#mirror">
-						<i class="iconfont icon-yanjing"></i>
-						<li>镜架</li>
-					</a>
-					<a href="#lens">
-						<i class="iconfont icon-jingpian"></i>
-						<li>镜片</li>
-					</a>
-					<a href="#contact-lenses">
-						<i class="iconfont icon-gehu-yinxingyanjing"></i>
-						<li>隐形眼镜</li>
-					</a>
-
-					<a href="#sun-glasses">
-						<i class="iconfont icon-icon-test"></i>
-						<li>太阳镜</li>
-					</a>
-					<a href="#presbyopic-glasses">
-						<i class="iconfont icon-yanjing1"></i>
-						<li>老花镜
-							<li>
-					</a>
-				</ul>-->
 			<div class="swiper-container">
 				<ul class="swiper-wrapper swiList">
-					<!--<a href="javascript:;" class="cur preferential">
-							<li class="swiper-slide">优惠折扣</li>
-						</a>						-->
 					<a href="javascript:;" class="mirror">
 						<li class="swiper-slide">镜架</li>
 					</a>
@@ -136,7 +101,7 @@
 						<li class="swiper-slide">配镜套餐</li>
 					</a>
 					<a href="javascript:;" class="contact">
-						<li class="swiper-slide">隐形眼镜</li>
+						<li class="swiper-slide">其他</li>
 					</a>
 					<a href="javascript:;" class="sun">
 						<li class="swiper-slide">太阳镜</li>
@@ -151,34 +116,6 @@
 			</div>
 
 			<div class="shop-goods fr">
-				<!--优惠折扣-->
-				<!--<aside class="introduces" id="mirror">优惠折扣:</aside>-->
-				<!--<ul id="preferentialList" style="display:block;">
-					</ul>
-					<script type="text/html" id="preferentialTpl">
-						<% var j = 0; %>
-						<% for(var i = 0; i < data.length; i++) { %>
-						<% if (data[i].type == '1') { %>
-						<% j++; %>
-						<li class="textttt" data-id="<%:=data[i].id%>">
-							<img src="<%:=data[i].image%>" alt="">
-							<p class="product-text1">
-								<%:=data[i].title%>
-							</p>
-							<p class="product-text">
-								<del>原价:¥<span><%:=data[i].beginPrice.toFixed(2)%></span></del><span class="space"></span>
-								<span class="now-price">现价:¥<b><%:=data[i].nowPrice.toFixed(2)%></b></span>
-							</p>
-						</li>
-						<% } %>
-						<% } %>
-						<% if (j == 0) { %>
-						<% $('.preferential').hide().attr('hiddens', 'hidden') %>
-						<% $('#preferentialList').css({'displsy':'none'}) %>
-						<% } %>
-					</script>-->
-				<!--镜架-->
-				<!--<aside class="introduces" id="mirror">镜架:</aside>-->
 				<ul id="mirrorList" style="display:block;" class="goodsBox">
 				</ul>
 				<script type="text/html" id="mirrorTpl">
@@ -203,8 +140,6 @@
 						<% $('#mirrorList').css({'displsy':'none'}) %>
 						<% } %>
 					</script>
-				<!--镜片-->
-				<!--<aside class="introduces" id="lens">镜片:</aside>-->
 				<ul id="lensList" style="display:block;" class="goodsBox">
 				</ul>
 				<script type="text/html" id="lensTpl">
@@ -229,8 +164,6 @@
 						<% $('#lensList').css({'displsy':'none'})%>
 						<% } %>
 					</script>
-				<!--配镜套餐-->
-				<!--<aside class="introduces" id="hot">配镜套餐:</aside>-->
 				<ul id="hotList" style="display:block;">
 				</ul>
 				<script type="text/html" id="hotTpl" class="goodsBox">
@@ -258,8 +191,6 @@
 						<% $('#hotList').css({'displsy':'none'})%>
 						<% } %>
 					</script>
-				<!--配镜套餐结束-->
-				<!--<aside class="introduces" id="contact-lenses">隐形眼镜:</aside>-->
 				<ul id="contactLensesList" style="display:block;" class="goodsBox">
 				</ul>
 				<script type="text/html" id="contactLensesTpl">
@@ -284,8 +215,6 @@
 						<% $('#contactLensesList').css({'displsy':'none'}) %>
 						<% } %>
 					</script>
-
-				<!--<aside class="introduces" id="sun-glasses">太阳镜:</aside>-->
 				<ul id="sunGlassesList" style="display:block;" class="goodsBox">
 				</ul>
 				<script type="text/html" id="sunGlassesTpl">
@@ -310,8 +239,6 @@
 						<% $('#sunGlassesList').css({'displsy':'none'}) %>
 						<% } %>
 					</script>
-				<!--老花镜-->
-				<!--<aside class="introduces" id="presbyopic-glasses">老花镜:</aside>-->
 				<ul id="presbyopicGlassesList" style="display:block;" class="goodsBox">
 				</ul>
 				<script type="text/html" id="presbyopicGlassesTpl">
@@ -336,7 +263,6 @@
 						<% $('#presbyopicGlassesList').css({'displsy':'none'})%>
 						<% } %>
 					</script>
-				<!--护理产品-->
 				<ul id="niceGlassesList" style="display:block;" class="goodsBox">
 				</ul>
 				<script type="text/html" id="niceGlassesTpl">
@@ -365,20 +291,14 @@
 			<div class="clearboth"></div>
 
 		</div>
-		<!--商品为空-->
 		<div class="goodsNone">
 			<img src="../images/none.png" alt="" class="shopnone" style="width:3.3rem;" />
 			<p class="inner">这个店家还没上传商品呢，您可直 接到店去挑选商品，或者查看相似的店家！</p>
 			<p class="ekinfo">本店由“e可眼镜”技术支持，想关注更多搜索微信公众号“e可眼镜”</p>
 		</div>
-		<!-- 商品展示结束 -->
-
-		<!-- 店铺详情开始 -->
 		<div class="con" id="mall-detail">
 			<article class="showbox" id="shopdel">
 				<aside class="introduce">店铺设施介绍:</aside>
-
-				<!-- 店内设施介绍 -->
 				<article class="introduce-detail" id="shopDetailList">
 				</article>
 				<script type="text/html" id="shopDetailTpl">
@@ -386,8 +306,6 @@
 							<%:=data.shop.introduce%>
 						</p>
 					</script>
-
-				<!-- 店内设施图片 -->
 				<div class="introduce-pic" id="introducePicList">
 				</div>
 				<script type="text/html" id="introducePicTpl">
@@ -395,12 +313,9 @@
 						<% if (data.imgs[i].type == '2') { %>
 						<% j++ %>
 						<img src="<%:=data.imgs[i].imagePath %>" alt="店铺介绍" class="shopdel<%:=j %>" id="a" />
-						<!--<%:=j %>-->
 						<% } %>
 						<% } %>
 					</script>
-
-				<!-- 店内验光师 -->
 				<div class="comment_list" id="shopStaffList">
 				</div>
 				<script type="text/html" id="shopStaffTpl">
@@ -427,22 +342,11 @@
 						<% } %>
 					</script>
 			</article>
-			<!-- <article id="boss"></article> -->
-			<!--服务项目-->
 			<span class="boxone">
 				<h4 class="pro">可提供服务项目：</h4>
-				<!--展示服务项目-->
 				<ul class="proList">
-					<!--<li>标准验光</li>
-						<li>青少年视觉动力检查</li>
-						<li>成年人视觉动力检查</li>
-						<li>45岁以上人群视觉动力检查</li>
-						<li>角膜接触镜标准验光</li>
-						<li>完全视功能检查</li>-->
 				</ul>
 			</span>
-			<!--服务项目结束-->
-			<!-- 用户评价 -->
 			<article id="evaluation" style="padding:0 0.24rem;display:block;border-top:0.2rem solid #f0f4f3;">
 				<aside class="introduce">用户评价:</aside>
 				<ul class="evalist" id="evalistList">
@@ -493,17 +397,20 @@
 					</script>
 			</article>
 		</div>
-		<!-- 店铺详情结束 -->
-
-		<!-- 底部 -->
 		<footer></footer>
 
-		<div class="bottom">
-			<div id="evaluate" class="btn fl">写评价</div>
-			<div id="consult" class="btn fr">立即咨询</div>
+		<div class="footer">
+			<div id="evaluate" class="btn fl">
+				<img src="../images/pingjia.png" alt="">
+				<p>去评价</p>
+			</div>
+			<div class="line">|</div>
+			<div id="consult" class="btn fr fl">
+				<img src="../images/zixun.png" alt="">
+				<p>立即咨询</p>
+			</div>
+			<div id="buy" class="btn buy">我要买单</div>
 		</div>
-		<!--<a href="#evaluation">跳转到用户评价</a>
-				<a href="#shopdel">跳转到店铺介绍</a>-->
 		<div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">
 			<div id="innerdiv" style="position:absolute;">
 				<img id="bigimg" style="border:5px solid #fff;" src="" />
@@ -517,13 +424,11 @@
 	<script src="../js/common/layui.js"></script>
 	<script src="../js/common/layer.js"></script>
 	<script type="text/javascript" src="../js/common/swiper-4.2.2.min.js"></script>
-
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 	<script src="../js/common/jweixin-1.0.0.js" tppabs="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script src="../js/common/zepto.min.js" tppabs="http://203.195.235.76/jssdk/js/zepto.min.js"></script>
 	<script src="../js/common/demo.js?v1.0" tppabs="http://203.195.235.76/jssdk/js/demo.js"></script>
-
-	<script src="../js/alljs/shop_detail.js?v1.8"></script>
+	<script src="../js/alljs/shop_detail.js?v1.5"></script>
 	<script type="text/javascript" src="../jsweixin.js"></script>
 	<script>
 		var swiper = new Swiper('.swiper-container', {
@@ -538,16 +443,13 @@
 	</script>
 
 	<script>
-		//配置套餐跳转详情
 		$('#hotList').on('click', '.textttt', function () {
 			console.log($(this))
 			var id = $(this).attr('data-id');
 			localStorage.setItem('setmealid', id);
 			location.href = 'combo_detail.html?getOpenId=1';
 		})
-		//商品跳转详情
 		$('.goodsBox').on('click', '.textt', function () {
-			//console.log($(this))
 			var productId = $(this).attr('data-id');
 			localStorage.setItem('productId', productId);
 			localStorage.setItem('productImg', $(this).children('img').attr('src'));
@@ -564,14 +466,12 @@
 				$('#mall-detail').css('display', 'block');
 				$('#products').css('display', 'none');
 			})
-			//商品tab切换
 			$('.swiList a').click(function () {
 				//alert(1);
 				$(".swiList a").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
 				$(".shop-goods ul").hide().eq($(this).index()).show();
 			})
 			setTimeout(function () {
-				//					console.log($('.hot').attr('hiddens'))
 				if (!$('.mirror').attr('hiddens')) {
 					$("#mirrorList").show().siblings().hide();
 					$(".mirror").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
@@ -587,7 +487,6 @@
 				} else if (!$('.sun').attr('hiddens')) {
 					$("#sunGlassesList").show().siblings().hide();
 					$(".sun").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
-
 				} else if (!$('.presbyopic').attr('hiddens')) {
 					$("#presbyopicGlassesList").show().siblings().hide();
 					$(".presbyopic").eq($(this).index()).addClass("cur").siblings().removeClass('cur');
@@ -599,19 +498,6 @@
 		})
 	</script>
 	<script>
-
-
-		/*
-		 * 注意：
-		 * 1. 所有的JS接口只能在公众号绑定的域名下调用，公众号开发者需要先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。
-		 * 2. 如果发现在 Android 不能分享自定义内容，请到官网下载最新的包覆盖安装，Android 自定义分享接口需升级至 6.0.2.58 版本及以上。
-		 * 3. 常见问题及完整 JS-SDK 文档地址：http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html
-		 *
-		 * 开发中遇到问题详见文档“附录5-常见错误及解决办法”解决，如仍未能解决可通过以下渠道反馈：
-		 * 邮箱地址：weixin-open@qq.com
-		 * 邮件主题：【微信JS-SDK反馈】具体问题
-		 * 邮件内容说明：用简明的语言描述问题所在，并交代清楚遇到该问题的场景，可附上截屏图片，微信团队会尽快处理你的反馈。
-		 */
 		var href = location.href;
 		var shopId = href.split('?')[1].split('=')[1].split('#')[0].split('&')[0];
 		var shopName;
@@ -624,21 +510,15 @@
 				"shopId": shopId
 			},
 			success: function (data) {
-				//console.log(data);
 				var res = data.data;
 				shopName = res.shop.shopname;
 				localStorage.setItem('lat', res.shop.latitude)
 				localStorage.setItem('lon', res.shop.longitude)
-				//console.log(shopName);
 				for (var i = 0; i < res.imgs.length; i++) {
 					if (res.imgs[i].type == '1') {
 						headImg = res.imgs[i].imagePath;
 					}
 				}
-				//alert(shopName);
-				//alert(headImg);
-				//					console.log(shopName);
-				//					console.log(headImg);
 				var appid = "";
 				var timestamp = "";
 				var signature = "";
@@ -648,14 +528,12 @@
 					url: global + '/wexin/pu/getWxData',
 					async: false,
 					success: function (data) {
-						//alert('ajax');
 						appid = data.data.appid;
 						timestamp = data.data.timestamp;
 						signature = data.data.signature;
 						noncestr = data.data.noncestr;
 					}
 				});
-				//alert(123);
 				wx.config({
 					debug: false,
 					appId: appid,
@@ -701,18 +579,13 @@
 						'openCard'
 					]
 				});
-				//alert('a')
-
 				wx.ready(function () {
-					//分享到朋友圈
 					wx.onMenuShareTimeline({
 						title: shopName,
 						desc: '我在这里发现一个好店！速来围观！！！',
 						link: 'http://wx.bjysjglasses.com/ek/web/html/shop_detail.html?shopId=' + shopId,
 						imgUrl: headImg,
 						trigger: function (res) {
-							// 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回						
-							//layer.msg('用户点击发送给朋友')
 						},
 						success: function (res) {
 							layer.msg('已分享')
@@ -721,18 +594,14 @@
 							layer.msg('已取消');
 						},
 						fail: function (res) {
-							//alert(JSON.stringify(res));
 						}
 					});
-					//分享给朋友
 					wx.onMenuShareAppMessage({
 						title: shopName,
 						desc: '我在这里发现一个好店！速来围观！！！',
 						link: 'http://wx.bjysjglasses.com/ek/web/html/shop_detail.html?shopId=' + shopId,
 						imgUrl: headImg,
 						trigger: function (res) {
-							// 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回						
-							//layer.msg('用户点击发送给朋友')
 						},
 						success: function (res) {
 							layer.msg('已分享')
@@ -741,18 +610,14 @@
 							layer.msg('已取消');
 						},
 						fail: function (res) {
-							//alert(JSON.stringify(res));
 						}
 					});
-					//分享给QQ
 					wx.onMenuShareQQ({
 						title: shopName,
 						desc: '我在这里发现一个好店！速来围观！！！',
 						link: 'http://wx.bjysjglasses.com/ek/web/html/shop_detail.html?shopId=' + shopId,
 						imgUrl: headImg,
 						trigger: function (res) {
-							// 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回						
-							//layer.msg('用户点击发送给朋友')
 						},
 						success: function (res) {
 							layer.msg('已分享')
@@ -761,18 +626,14 @@
 							layer.msg('已取消');
 						},
 						fail: function (res) {
-							//alert(JSON.stringify(res));
 						}
 					});
-					//分享给QQ空间
 					wx.onMenuShareQZone({
 						title: shopName,
 						desc: '我在这里发现一个好店！速来围观！！！',
 						link: 'http://wx.bjysjglasses.com/ek/web/html/shop_detail.html?shopId=' + shopId,
 						imgUrl: headImg,
 						trigger: function (res) {
-							// 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回						
-							//layer.msg('用户点击发送给朋友')
 						},
 						success: function (res) {
 							layer.msg('已分享')
@@ -781,7 +642,6 @@
 							layer.msg('已取消');
 						},
 						fail: function (res) {
-							//alert(JSON.stringify(res));
 						}
 					});
 				});
